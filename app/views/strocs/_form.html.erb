@@ -1,0 +1,25 @@
+<%= form_for(@stroc) do |f| %>
+  <% if @stroc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@stroc.errors.count, "error") %> prohibited this stroc from being saved:</h2>
+
+      <ul>
+      <% @stroc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label : name %><br>
+    <%= f.text_field : name %>
+  </div>
+  <div class="field">
+    <%= f.label :symbol %><br>
+    <%= f.text_field :symbol %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
