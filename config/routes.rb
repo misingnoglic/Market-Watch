@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :strocs
+  resources :stocks
 
   resources :investments
 
