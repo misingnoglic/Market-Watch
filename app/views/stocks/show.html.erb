@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Stock name:</strong>
+  <%= @stock.stock_name %>
+</p>
+
+<p>
+  <strong>Stock symbol:</strong>
+  <%= @stock.stock_symbol %>
+</p>
+
+<%= link_to 'Edit', edit_stock_path(@stock) %> |
+<%= link_to 'Back', stocks_path %>
