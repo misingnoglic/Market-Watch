@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :watchlists
+
+  resources :portfolios
+
   resources :stocks
 
   resources :users
