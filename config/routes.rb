@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :watchlists
-
   resources :portfolios
+
+  resources :watchlists
 
   resources :stocks
 

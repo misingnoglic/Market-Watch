@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  number_shares: 
+  number_shares: 1
 
 two:
-  number_shares: 
+  number_shares: 1
