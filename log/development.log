@@ -907,6 +907,7 @@ Started GET "/assets/watchlists-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 
 Started GET "/assets/application-17e4801155788a176bbbc02f37563650.js?body=1" for ::1 at 2015-03-01 22:45:39 -0500
 
 
+<<<<<<< Updated upstream
 Started GET "/portfolio" for ::1 at 2015-03-01 22:46:29 -0500
 
 ActionController::RoutingError (No route matches [GET] "/portfolio"):
@@ -1778,3 +1779,131 @@ Started GET "/assets/application-17e4801155788a176bbbc02f37563650.js?body=1" for
 
 
 Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-02 15:08:59 -0500
+=======
+Started GET "/stocks" for ::1 at 2015-03-02 14:28:39 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StocksController#index as HTML
+  [1m[35mStock Load (0.8ms)[0m  SELECT "stocks".* FROM "stocks"
+  Rendered stocks/index.html.erb within layouts/application (314.5ms)
+Completed 200 OK in 550ms (Views: 529.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/portfolios-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-02 14:28:39 -0500
+
+
+Started GET "/assets/stocks-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-02 14:28:39 -0500
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-02 14:28:39 -0500
+
+
+Started GET "/assets/scaffolds-9c8bb17a604688be13a2004823700df7.css?body=1" for ::1 at 2015-03-02 14:28:40 -0500
+
+
+Started GET "/assets/watchlists-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-02 14:28:40 -0500
+
+
+Started GET "/assets/application-ca383bc129e3187d6e761f2ecbbfe66e.css?body=1" for ::1 at 2015-03-02 14:28:40 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-02 14:28:40 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-02 14:28:40 -0500
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-02 14:28:40 -0500
+
+
+Started GET "/assets/portfolios-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-02 14:28:40 -0500
+
+
+Started GET "/assets/stocks-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-02 14:28:40 -0500
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-02 14:28:40 -0500
+
+
+Started GET "/assets/watchlists-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-02 14:28:40 -0500
+
+
+Started GET "/assets/application-17e4801155788a176bbbc02f37563650.js?body=1" for ::1 at 2015-03-02 14:28:40 -0500
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 18:02:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StocksController#index as HTML
+  [1m[35mStock Load (0.6ms)[0m  SELECT "stocks".* FROM "stocks"
+  Rendered stocks/index.html.erb within layouts/application (180.2ms)
+Completed 500 Internal Server Error in 224ms
+
+ActionView::Template::Error (private method `test' called for #<Stock:0x007f89ece1e420>):
+    22:         <td><%= link_to 'Show', stock %></td>
+    23:         <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
+    24:         <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    25:         <td> <%=stock.test %></td>
+    26:       </tr>
+    27:     <% end %>
+    28:   </tbody>
+  app/views/stocks/index.html.erb:25:in `block in _app_views_stocks_index_html_erb__1853422736138301492_70115213188380'
+  app/views/stocks/index.html.erb:17:in `_app_views_stocks_index_html_erb__1853422736138301492_70115213188380'
+
+
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.8ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (103.0ms)
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 18:04:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StocksController#index as HTML
+  [1m[35mStock Load (0.2ms)[0m  SELECT "stocks".* FROM "stocks"
+  Rendered stocks/index.html.erb within layouts/application (129.2ms)
+Completed 500 Internal Server Error in 162ms
+
+ActionView::Template::Error (private method `test' called for #<Stock:0x007fa33e433cd8>):
+    22:         <td><%= link_to 'Show', stock %></td>
+    23:         <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
+    24:         <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    25:         <td> <%=stock.test %></td>
+    26:       </tr>
+    27:     <% end %>
+    28:   </tbody>
+  app/views/stocks/index.html.erb:25:in `block in _app_views_stocks_index_html_erb__1742000616082630324_70169523650660'
+  app/views/stocks/index.html.erb:17:in `_app_views_stocks_index_html_erb__1742000616082630324_70169523650660'
+
+
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.1ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (105.4ms)
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 18:05:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StocksController#index as HTML
+  [1m[35mStock Load (0.2ms)[0m  SELECT "stocks".* FROM "stocks"
+  Rendered stocks/index.html.erb within layouts/application (126.0ms)
+Completed 500 Internal Server Error in 156ms
+
+ActionView::Template::Error (private method `test' called for #<Stock:0x007fd7954334c8>):
+    22:         <td><%= link_to 'Show', stock %></td>
+    23:         <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
+    24:         <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    25:         <td> <%=stock.test %></td>
+    26:       </tr>
+    27:     <% end %>
+    28:   </tbody>
+  app/views/stocks/index.html.erb:25:in `block in _app_views_stocks_index_html_erb__1384073846196370654_70281961040540'
+  app/views/stocks/index.html.erb:17:in `_app_views_stocks_index_html_erb__1384073846196370654_70281961040540'
+
+
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (96.7ms)
+>>>>>>> Stashed changes
