@@ -1,3 +1,4 @@
+#require 'yahoofinance'
 class StocksController < ApplicationController
   before_action :set_stock, only: [:show, :edit, :update, :destroy]
 
@@ -11,6 +12,8 @@ class StocksController < ApplicationController
   # GET /stocks/1.json
   def show
   end
+
+
 
   # GET /stocks/new
   def new
