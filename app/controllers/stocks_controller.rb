@@ -54,6 +54,11 @@ class StocksController < ApplicationController
     end
   end
 
+  def butt
+    @butt = "100"
+  end
+  helper_method :butt
+
   # DELETE /stocks/1
   # DELETE /stocks/1.json
   def destroy
@@ -74,4 +79,6 @@ class StocksController < ApplicationController
     def stock_params
       params.require(:stock).permit(:stock_name, :stock_symbol)
     end
+
+
 end
