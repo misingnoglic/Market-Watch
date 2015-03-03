@@ -4795,3 +4795,542 @@ Migrating to User (20150303014121)
   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150303014121"]]
   [1m[35m (2.3ms)[0m  commit transaction
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/users" for ::1 at 2015-03-02 21:14:41 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/Users/shraddha/Market-Watch/app/controllers/users_controller.rb:78: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/users_controller.rb:78: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (21.8ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (169.8ms)
+
+
+Started GET "/users" for ::1 at 2015-03-02 21:16:23 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users"  ORDER BY "users"."user_name" ASC
+  Rendered users/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 305ms (Views: 292.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1" for ::1 at 2015-03-02 21:16:29 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 173ms (Views: 158.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2015-03-02 21:16:38 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (28.6ms)
+  Rendered users/new.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 164ms (Views: 162.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-03-02 21:16:58 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G+CPbRYzCALL9x8MLElL93L0O8G7Gohn71pI9ML4Xa9ZuwqGFMqe5QbgnH9EM/oUtn69HV7pM61cZCksbL9DfA==", "user"=>{"user_name"=>"shraddha", "password"=>"[FILTERED]", "email"=>"shraddha@example.com"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 2ms
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/users_controller.rb:31:in `create'
+
+
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.8ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (109.9ms)
+
+
+Started GET "/users" for ::1 at 2015-03-02 21:20:28 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"  ORDER BY "users"."user_name" ASC
+  Rendered users/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 127ms (Views: 125.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2015-03-02 21:20:30 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/_form.html.erb (1.7ms)
+  Rendered users/edit.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 127ms (Views: 125.5ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/1" for ::1 at 2015-03-02 21:20:32 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qr4y7kPfNFQVghqjW+I6X6IDN5kGwnpok7gapNxt+CPo5bcFQSais9iVmdAzmIu8ZomxReMxwaIghnt8cirm8A==", "user"=>{"user_name"=>"subahu", "password"=>"[FILTERED]", "email"=>"subahur"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 4ms
+
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  app/controllers/users_controller.rb:49:in `block in update'
+  app/controllers/users_controller.rb:48:in `update'
+
+
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.7ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (110.2ms)
+
+
+Started PATCH "/users/1" for ::1 at 2015-03-02 21:21:30 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kNl2RSnYv9Ow7I1UDR4js4wyiP1XgJMOlC/ZMWVVbwvSgvOuKyEpNH37DidlZJJQSLgOIbJzKMQnEbjpyxJx2A==", "user"=>{"user_name"=>"subahu", "password"=>"[FILTERED]", "email"=>"subahur"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 15ms
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/users_controller.rb:49:in `block in update'
+  app/controllers/users_controller.rb:48:in `update'
+
+
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (106.4ms)
+
+
+Started POST "/users/console/repl_sessions/5a1f1cbd5d3168b65d05ccf0f3c52643/trace" for ::1 at 2015-03-02 21:21:54 -0500
+
+
+Started POST "/users/console/repl_sessions/5a1f1cbd5d3168b65d05ccf0f3c52643/trace" for ::1 at 2015-03-02 21:21:57 -0500
+
+
+Started GET "/users/1" for ::1 at 2015-03-02 21:22:34 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 140ms (Views: 138.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2015-03-02 21:22:37 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/_form.html.erb (3.0ms)
+  Rendered users/edit.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 136ms (Views: 134.3ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/1" for ::1 at 2015-03-02 21:22:39 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xfYBgrma4n7V46k6U/Q7NMbXj3jx1LPPdAUZQdYW7J2HrYRpu2N0mRj0Kkk7jorXAl0JpBQnCAXHO3iZeFHyTg==", "user"=>{"user_name"=>"subahu", "password"=>"[FILTERED]", "email"=>"subahur"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 4ms
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/users_controller.rb:49:in `block in update'
+  app/controllers/users_controller.rb:48:in `update'
+
+
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (110.3ms)
+
+
+Started GET "/users/1" for ::1 at 2015-03-02 21:28:16 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 151ms (Views: 139.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2015-03-02 21:28:19 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/_form.html.erb (4.4ms)
+  Rendered users/edit.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 131ms (Views: 130.2ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/1" for ::1 at 2015-03-02 21:28:26 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cgvVOWdUUOyMRHdd3BD7+PZWjGSSAyBlOnwTB9CY/bwwUFDSZa3GC0FT9C60akobMtwKuHfwm6+JQnLfft/jbw==", "user"=>{"user_name"=>"subahu", "password"=>"[FILTERED]", "email"=>"subahur@example.com"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 7ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'={"user_name"=>"subahu", "password"=>"", "email"=>"subahur@example.com"}):
+  app/controllers/users_controller.rb:47:in `update'
+
+
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (119.3ms)
+
+
+Started GET "/users/1" for ::1 at 2015-03-02 21:29:48 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 148ms (Views: 135.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2015-03-02 21:29:50 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/_form.html.erb (2.3ms)
+  Rendered users/edit.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 134ms (Views: 132.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/1" for ::1 at 2015-03-02 21:29:57 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v1vk2gdcFm7v09o79lOgGxOdd1FmNci4bXJRiBPB5ZD9AGExBaWAiSLEWUieKRH41xfxjYPGc3LeTDBQvYb7Qw==", "user"=>{"user_name"=>"subahu", "password"=>"[FILTERED]", "email"=>"subahur@example.com"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 5ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'={"user_name"=>"subahu", "password"=>"", "email"=>"subahur@example.com"}):
+  app/controllers/users_controller.rb:47:in `update'
+
+
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (95.2ms)
+
+
+Started GET "/users/1" for ::1 at 2015-03-02 21:31:05 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 176ms (Views: 164.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2015-03-02 21:31:06 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/_form.html.erb (4.4ms)
+  Rendered users/edit.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 139ms (Views: 137.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/1" for ::1 at 2015-03-02 21:31:11 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YWCmYyprzClqMVQwmLqaNYDgXfTDv7aaObEsF7MdgX0jOyOIKJJazqcm10PwwCvWRGrbKCZMDVCKj03PHVqfrg==", "user"=>{"user_name"=>"subahu", "password"=>"[FILTERED]", "email"=>"subahur@example.com"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('subahur@example.com') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (4.0ms)
+  Rendered users/edit.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 178ms (Views: 151.8ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/1" for ::1 at 2015-03-02 21:31:23 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fsY1Gr2sFU3RSmvnKH5034KXeyKem02HWWiyL2XjuT48nbDxv1WDqhxd6JRABMU8Rh39/nto9k3qVtP3y6Sn7Q==", "user"=>{"user_name"=>"subahu", "password"=>"[FILTERED]", "email"=>"subahur@example.com"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('subahur@example.com') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.erb (3.1ms)
+  Rendered users/edit.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 233ms (Views: 132.6ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/1" for ::1 at 2015-03-02 21:31:25 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bR04rpUoS+StO8pp7bsMQ722hsNZ07efSlYGSfGA7OcvRr1Fl9HdA2AsSRqFwb2geTwAH7wgDFX5aGeRX8fyNA==", "user"=>{"user_name"=>"subahu", "password"=>"[FILTERED]", "email"=>"subahur@example.com"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('subahur@example.com') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (2.3ms)
+  Rendered users/edit.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 243ms (Views: 137.4ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/1" for ::1 at 2015-03-02 21:31:27 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k0EcHBX4XPs6RSqB3rrx8va1MRVjuzXGMxlFTZBfUkvRGpn3FwHKHPdSqfK2wEARMj+3yYZIjgyAJySVPhhMmA==", "user"=>{"user_name"=>"subahu", "password"=>"[FILTERED]", "email"=>"subahur@example.com"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('subahur@example.com') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.erb (2.7ms)
+  Rendered users/edit.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 224ms (Views: 125.9ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/1" for ::1 at 2015-03-02 21:31:33 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HCqtN1a1pA1fmUEbiZR8rwb4E99rph2bspqMRaUNSVtecSjcVEwy6pKOwmjh7s1MwnKVA45VplEBpO2dC0pXiA==", "user"=>{"user_name"=>"subahu", "password"=>"[FILTERED]", "email"=>"subahur@example.com"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('subahur@example.com') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (2.5ms)
+  Rendered users/edit.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 249ms (Views: 140.1ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/users/1" for ::1 at 2015-03-02 21:31:37 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+ZfOGGGQyVe1WKKiLHg/fX+2eHdVuxKSEQH1+vGpxnO7zEvzY2lfsHhPIdFEAo6euzz+q7BIqViiP5QiX+7YoA==", "user"=>{"user_name"=>"subahu", "password"=>"[FILTERED]", "email"=>"subahur@example.com"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('subahur@example.com') AND "users"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.erb (4.3ms)
+  Rendered users/edit.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 234ms (Views: 128.0ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/users/1" for ::1 at 2015-03-02 21:31:51 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FnuzG/trlqxVxwZ2c6S5THzLRekd9Uoku/mJC1hV2u9UIDbw+ZIAS5jQhQUb3givuEHDNfgG8e4Ix+jT9hLEPA==", "user"=>{"user_name"=>"subahu", "password"=>"[FILTERED]", "email"=>"subahur@example.com"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('subahur@example.com') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (3.0ms)
+  Rendered users/edit.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 238ms (Views: 134.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for ::1 at 2015-03-02 21:32:09 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"  ORDER BY "users"."user_name" ASC[0m
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 132ms (Views: 130.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2015-03-02 21:32:12 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.8ms)
+  Rendered users/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 135ms (Views: 134.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-03-02 21:32:26 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"05Mlv2XpoJW87lpUi1K/4jvdpHN6vePNvCQgvJ7WZ7WRyKBUZxA2cnH52SfjKA4B/1cir59OWAcPGkFkMJF5Zg==", "user"=>{"user_name"=>"Shraddha", "password"=>"[FILTERED]", "email"=>"shraddha@example.com"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('shraddha@example.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (2.6ms)
+  Rendered users/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 243ms (Views: 128.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2015-03-02 21:35:04 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users"  ORDER BY "users"."user_name" ASC[0m
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 149ms (Views: 146.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-03-02 21:35:06 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.2ms)
+  Rendered users/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 126ms (Views: 125.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-03-02 21:35:45 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fLF7CUDFfSWwZfCYurSOtiFwU3JEzndmKkQvzWglRB0+6v7iQjzrwn1yc+vSzj9V5frVrqE9zKyZek4VxmJazg==", "user"=>{"user_name"=>"Shraddha", "password"=>"[FILTERED]", "email"=>"shraddha@example.com"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 6ms
+
+ArgumentError (You need to supply at least one validation):
+  app/models/user.rb:5:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:31:in `create'
+
+
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (8.0ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (110.7ms)
+
+
+Started GET "/users" for ::1 at 2015-03-02 21:36:16 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users"  ORDER BY "users"."user_name" ASC
+  Rendered users/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 168ms (Views: 160.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2015-03-02 21:36:18 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/_form.html.erb (2.4ms)
+  Rendered users/edit.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 136ms (Views: 133.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/1" for ::1 at 2015-03-02 21:36:23 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cgw+I0aiqrv3bR0/ybUA68aXDC4vI+yvn8goRYpAIXwwV7vIRFs8XDp6nkyhz7EIAh2K8srQV2Us9kmdJAc/rw==", "user"=>{"user_name"=>"subahu", "password"=>"[FILTERED]", "email"=>"subahur@example.com"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('subahur@example.com') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "email" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["email", "subahur@example.com"], ["updated_at", "2015-03-03 02:36:23.031896"], ["id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 13ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users" for ::1 at 2015-03-02 21:36:23 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"  ORDER BY "users"."user_name" ASC
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 145ms (Views: 143.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2015-03-02 21:36:31 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.2ms)
+  Rendered users/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 138ms (Views: 137.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-03-02 21:36:40 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8k1MbomtNmuzEdY7OPHQhbUZ2AC+UG23jSymES0VvoCwFsmFi1SgjH4GVUhQi2FmcZNe3Fuj1n0+EsfJg1KgUw==", "user"=>{"user_name"=>"Shraddha", "password"=>"[FILTERED]", "email"=>"shraddha@example.com"}, "commit"=>"Create User"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('shraddha@example.com') LIMIT 1
+  [1m[36mSQL (8.0ms)[0m  [1mINSERT INTO "users" ("user_name", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_name", "Shraddha"], ["password_digest", "$2a$10$nayN20mcHlcR1e4FUs5Y7OAPEAyZliwef/F9e/FAMWY4e9Np0P4/S"], ["email", "shraddha@example.com"], ["created_at", "2015-03-03 02:36:40.932192"], ["updated_at", "2015-03-03 02:36:40.932192"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 111ms (ActiveRecord: 9.7ms)
+
+
+Started GET "/users" for ::1 at 2015-03-02 21:36:40 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"  ORDER BY "users"."user_name" ASC[0m
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 128ms (Views: 126.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/edit" for ::1 at 2015-03-02 21:45:35 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/_form.html.erb (7.1ms)
+  Rendered users/edit.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 156ms (Views: 154.4ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/2" for ::1 at 2015-03-02 21:45:55 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nhKJRwrtk6/s3foB8vvKPlw2Go7uWkvWNYqcpNezDeDcSQysCBQFSCHKeXKagXvdmLycUgup8ByGtP18efQTMw==", "user"=>{"user_name"=>"Shraddha", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"shraddha@example.com"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
+Unpermitted parameter: password_confirmation
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (8.5ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('shraddha@example.com') AND "users"."id" != 2) LIMIT 1
+  [1m[36mSQL (1.4ms)[0m  [1mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$10$k20YIvChL2cH.NRepYu23u7WPfhxAch5MkjSWs6GuFVws5fyUMxoG"], ["updated_at", "2015-03-03 02:45:56.033074"], ["id", 2]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 114ms (ActiveRecord: 11.2ms)
+
+
+Started GET "/users" for ::1 at 2015-03-02 21:45:56 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"  ORDER BY "users"."user_name" ASC[0m
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 130ms (Views: 128.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/edit" for ::1 at 2015-03-02 21:46:04 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/_form.html.erb (1.6ms)
+  Rendered users/edit.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 152ms (Views: 151.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/2" for ::1 at 2015-03-02 21:46:12 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1FoGQUNz7EwQu76L2nnk4nMsQ7s1Sq8nkUofwZeKmcWWAYOqQYp6q92sPfiyA1UBt6bFZ9C5FO0idH4ZOc2HFg==", "user"=>{"user_name"=>"Shraddha", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "email"=>"shraddha@example.com"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
+Unpermitted parameter: password_confirmation
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('shraddha@example.com') AND "users"."id" != 2) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$10$h7Mz7uJe9si3HW.f/jvvc.5AH4wph41jByHGb4yWhzqn89wFR1foa"], ["updated_at", "2015-03-03 02:46:12.326327"], ["id", 2]]
+  [1m[35m (8.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 110ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/users" for ::1 at 2015-03-02 21:46:12 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"  ORDER BY "users"."user_name" ASC[0m
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 140ms (Views: 138.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/edit" for ::1 at 2015-03-02 21:47:54 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/_form.html.erb (4.0ms)
+  Rendered users/edit.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 131ms (Views: 129.9ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/2" for ::1 at 2015-03-02 21:48:14 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yN1U2rLt73dDzzF87RIQ+gf/X+kI5R8807oSMWbmJ0uKhtExsBR5kI7Ysg+FaKEZw3XZNe0WpPZghHPpyKE5mA==", "user"=>{"user_name"=>"Shraddha1", "password"=>"[FILTERED]", "email"=>"shraddha@example.com"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('shraddha@example.com') AND "users"."id" != 2) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "user_name" = ?, "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["user_name", "Shraddha1"], ["password_digest", "$2a$10$VG0.VqGmbpt1VkuKahmUFOIRD.6LnqjK4sjHQf1GtcNeRG7E1A3tO"], ["updated_at", "2015-03-03 02:48:14.775650"], ["id", 2]]
+  [1m[35m (8.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 117ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/users" for ::1 at 2015-03-02 21:48:14 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"  ORDER BY "users"."user_name" ASC[0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 136ms (Views: 134.7ms | ActiveRecord: 0.2ms)
