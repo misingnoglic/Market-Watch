@@ -908,6 +908,7 @@ Started GET "/assets/application-17e4801155788a176bbbc02f37563650.js?body=1" for
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Started GET "/portfolio" for ::1 at 2015-03-01 22:46:29 -0500
 
 ActionController::RoutingError (No route matches [GET] "/portfolio"):
@@ -3868,6 +3869,7 @@ ActionView::Template::Error (SQLite3::SQLException: no such column: portfolios.u
   Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
   Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
   Rendered /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (114.5ms)
+<<<<<<< HEAD
 
 
 Started GET "/admin" for ::1 at 2015-03-02 19:21:52 -0500
@@ -4324,6 +4326,372 @@ ActionView::Template::Error (SQLite3::SQLException: no such column: portfolios.s
 Started GET "/stock" for ::1 at 2015-03-02 19:22:08 -0500
 
 ActionController::RoutingError (No route matches [GET] "/stock"):
+=======
+=======
+Started GET "/" for ::1 at 2015-03-02 09:21:24 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 47ms (Views: 32.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 09:21:29 -0500
+Processing by StocksController#index as HTML
+  [1m[35mStock Load (0.2ms)[0m  SELECT "stocks".* FROM "stocks"
+  Rendered stocks/index.html.erb within layouts/application (1235.1ms)
+Completed 200 OK in 2054ms (Views: 2036.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/portfolios-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-02 09:21:31 -0500
+
+
+Started GET "/assets/application-ca383bc129e3187d6e761f2ecbbfe66e.css?body=1" for ::1 at 2015-03-02 09:21:31 -0500
+
+
+Started GET "/assets/watchlists-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-02 09:21:31 -0500
+
+
+Started GET "/assets/stocks-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-02 09:21:31 -0500
+
+
+Started GET "/assets/scaffolds-9c8bb17a604688be13a2004823700df7.css?body=1" for ::1 at 2015-03-02 09:21:31 -0500
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-02 09:21:31 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-02 09:21:31 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-02 09:21:31 -0500
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-02 09:21:31 -0500
+
+
+Started GET "/assets/portfolios-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-02 09:21:31 -0500
+
+
+Started GET "/assets/stocks-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-02 09:21:31 -0500
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-02 09:21:31 -0500
+
+
+Started GET "/assets/watchlists-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-02 09:21:31 -0500
+
+
+Started GET "/assets/application-17e4801155788a176bbbc02f37563650.js?body=1" for ::1 at 2015-03-02 09:21:31 -0500
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 09:21:50 -0500
+Processing by StocksController#index as HTML
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+  Rendered stocks/index.html.erb within layouts/application (96.4ms)
+Completed 200 OK in 251ms (Views: 249.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks/new" for ::1 at 2015-03-02 09:22:29 -0500
+Processing by StocksController#new as HTML
+  Rendered stocks/_form.html.erb (64.9ms)
+  Rendered stocks/new.html.erb within layouts/application (93.0ms)
+Completed 200 OK in 210ms (Views: 208.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/stocks" for ::1 at 2015-03-02 09:22:37 -0500
+Processing by StocksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pen7eJ0DW2MxCR/F3xzlMSEZdXKjmAEArLELCYpaQYsP3wMZWYXSdBd/lkx90ltasaZ2BouojMNZqlzwCa/zAg==", "stock"=>{"stock_name"=>"google ", "stock_symbol"=>"goog "}, "commit"=>"Create Stock"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "stocks" ("stock_name", "stock_symbol", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["stock_name", "google "], ["stock_symbol", "goog "], ["created_at", "2015-03-02 14:22:37.382341"], ["updated_at", "2015-03-02 14:22:37.382341"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/stocks/3
+Completed 302 Found in 25ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/stocks/3" for ::1 at 2015-03-02 09:22:37 -0500
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStock Load (0.8ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered stocks/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 126ms (Views: 110.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 09:22:39 -0500
+Processing by StocksController#index as HTML
+  [1m[35mStock Load (0.2ms)[0m  SELECT "stocks".* FROM "stocks"
+  Rendered stocks/index.html.erb within layouts/application (169.5ms)
+Completed 200 OK in 266ms (Views: 265.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/stocks/2" for ::1 at 2015-03-02 09:23:00 -0500
+Processing by StocksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0p6BJ/aEJLI1vnXLG3f5H4Etuf0uRL7DKTAdEDAzvIh4qHlGMgKtpRPI/EK5uUd0EZK6iQZ0MwDcK0rps8YOAQ==", "id"=>"2"}
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "stocks" WHERE "stocks"."id" = ?[0m  [["id", 2]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/stocks
+Completed 302 Found in 6ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 09:23:00 -0500
+Processing by StocksController#index as HTML
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+  Rendered stocks/index.html.erb within layouts/application (128.4ms)
+Completed 200 OK in 220ms (Views: 218.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks/new" for ::1 at 2015-03-02 09:23:01 -0500
+Processing by StocksController#new as HTML
+  Rendered stocks/_form.html.erb (1.8ms)
+  Rendered stocks/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 117ms (Views: 116.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/stocks" for ::1 at 2015-03-02 09:23:08 -0500
+Processing by StocksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VKHrsBF16z56FPuKDCXv4zXUQ+8esE7iBgIL4ima3jL+lxPR1fNiKVxicgOu61GIpWtAmzaAwyHzGVwbqm9suw==", "stock"=>{"stock_name"=>"apple ", "stock_symbol"=>"appl"}, "commit"=>"Create Stock"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("stock_name", "stock_symbol", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["stock_name", "apple "], ["stock_symbol", "appl"], ["created_at", "2015-03-02 14:23:08.385147"], ["updated_at", "2015-03-02 14:23:08.385147"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/stocks/4
+Completed 302 Found in 8ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/stocks/4" for ::1 at 2015-03-02 09:23:08 -0500
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered stocks/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 99ms (Views: 97.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 09:23:10 -0500
+Processing by StocksController#index as HTML
+  [1m[35mStock Load (0.2ms)[0m  SELECT "stocks".* FROM "stocks"
+  Rendered stocks/index.html.erb within layouts/application (204.7ms)
+Completed 200 OK in 300ms (Views: 299.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/stocks/4" for ::1 at 2015-03-02 09:23:15 -0500
+Processing by StocksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5ZRxczOoyiwChmxGakoedoM3r0zUQXtQy0fnUiulMNdPookS9y5DOyTw5c/IhKAdE4isOPxx9pM+XLCrqFCCXg==", "id"=>"4"}
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "stocks" WHERE "stocks"."id" = ?[0m  [["id", 4]]
+  [1m[35m (3.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/stocks
+Completed 302 Found in 6ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 09:23:16 -0500
+Processing by StocksController#index as HTML
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+  Rendered stocks/index.html.erb within layouts/application (78.8ms)
+Completed 200 OK in 181ms (Views: 180.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks/new" for ::1 at 2015-03-02 09:23:17 -0500
+Processing by StocksController#new as HTML
+  Rendered stocks/_form.html.erb (1.6ms)
+  Rendered stocks/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 100ms (Views: 99.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/stocks" for ::1 at 2015-03-02 09:23:24 -0500
+Processing by StocksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q8NjEQCaFRy8Bs4dmmK59shC5rcOfleszis8JqjQDU7p9ZtwxBycC5pwR5Q4rAedWP3lwyZO2m87MGvfKyW/xw==", "stock"=>{"stock_name"=>"apple ", "stock_symbol"=>"aaaaa"}, "commit"=>"Create Stock"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("stock_name", "stock_symbol", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["stock_name", "apple "], ["stock_symbol", "aaaaa"], ["created_at", "2015-03-02 14:23:24.102802"], ["updated_at", "2015-03-02 14:23:24.102802"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/stocks/5
+Completed 302 Found in 7ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/stocks/5" for ::1 at 2015-03-02 09:23:24 -0500
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered stocks/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 104ms (Views: 102.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 09:23:25 -0500
+Processing by StocksController#index as HTML
+  [1m[35mStock Load (0.3ms)[0m  SELECT "stocks".* FROM "stocks"
+  Rendered stocks/index.html.erb within layouts/application (269.5ms)
+Completed 200 OK in 359ms (Views: 357.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/stocks/5" for ::1 at 2015-03-02 09:23:30 -0500
+Processing by StocksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"msh1+rotfoMHkoGyKeAinJipCd8/dgCNwwJ2w8AzqMww/o2bfqv3lCHkCDuLLpz3CBYKqxdGjU42GSE6Q8YaRQ==", "id"=>"5"}
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "stocks" WHERE "stocks"."id" = ?[0m  [["id", 5]]
+  [1m[35m (3.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/stocks
+Completed 302 Found in 7ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 09:23:30 -0500
+Processing by StocksController#index as HTML
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+  Rendered stocks/index.html.erb within layouts/application (77.5ms)
+Completed 200 OK in 184ms (Views: 182.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks/new" for ::1 at 2015-03-02 09:23:32 -0500
+Processing by StocksController#new as HTML
+  Rendered stocks/_form.html.erb (1.6ms)
+  Rendered stocks/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 104ms (Views: 103.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/stocks" for ::1 at 2015-03-02 09:23:38 -0500
+Processing by StocksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"twWZsuNT6scJPIrQRsi7vs2WShgDSt0WX0HZsPtmgBodM2HTJ9Vj0C9KA1nkBgXVXSlJbCt6UNWqWo5JeJMykw==", "stock"=>{"stock_name"=>"asdasd", "stock_symbol"=>"appl"}, "commit"=>"Create Stock"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("stock_name", "stock_symbol", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["stock_name", "asdasd"], ["stock_symbol", "appl"], ["created_at", "2015-03-02 14:23:38.537377"], ["updated_at", "2015-03-02 14:23:38.537377"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/stocks/6
+Completed 302 Found in 6ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/stocks/6" for ::1 at 2015-03-02 09:23:38 -0500
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered stocks/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 88ms (Views: 86.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 09:23:39 -0500
+Processing by StocksController#index as HTML
+  [1m[35mStock Load (0.2ms)[0m  SELECT "stocks".* FROM "stocks"
+  Rendered stocks/index.html.erb within layouts/application (201.5ms)
+Completed 200 OK in 305ms (Views: 304.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/stocks/6" for ::1 at 2015-03-02 09:23:50 -0500
+Processing by StocksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IHP+F6xQyoGXLhlc3mUebs3nBqAsyF0XHl8I9C8j7S+KRQZ2aNZDlrFYkNV8q6AFXVgF1AT40NTrRF8NrNZfpg==", "id"=>"6"}
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "stocks" WHERE "stocks"."id" = ?[0m  [["id", 6]]
+  [1m[35m (3.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/stocks
+Completed 302 Found in 7ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 09:23:50 -0500
+Processing by StocksController#index as HTML
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+  Rendered stocks/index.html.erb within layouts/application (81.0ms)
+Completed 200 OK in 180ms (Views: 178.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks/new" for ::1 at 2015-03-02 09:23:52 -0500
+Processing by StocksController#new as HTML
+  Rendered stocks/_form.html.erb (1.6ms)
+  Rendered stocks/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 99ms (Views: 98.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/stocks" for ::1 at 2015-03-02 09:23:59 -0500
+Processing by StocksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XcRqN+nfuhN5uWvoj+mGyzrb/ozeooKsgH6iOUY69/H38pJWLVkzBF/P4mEtJzigqmT9+PaSD291ZfXAxc9FeA==", "stock"=>{"stock_name"=>"apple", "stock_symbol"=>"appl"}, "commit"=>"Create Stock"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("stock_name", "stock_symbol", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["stock_name", "apple"], ["stock_symbol", "appl"], ["created_at", "2015-03-02 14:23:59.629430"], ["updated_at", "2015-03-02 14:23:59.629430"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/stocks/7
+Completed 302 Found in 8ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/stocks/7" for ::1 at 2015-03-02 09:23:59 -0500
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered stocks/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 101ms (Views: 99.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 09:24:01 -0500
+Processing by StocksController#index as HTML
+  [1m[35mStock Load (0.2ms)[0m  SELECT "stocks".* FROM "stocks"
+  Rendered stocks/index.html.erb within layouts/application (172.9ms)
+Completed 200 OK in 279ms (Views: 278.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 10:37:19 -0500
+Processing by StocksController#index as HTML
+  [1m[36mStock Load (0.3ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+  Rendered stocks/index.html.erb within layouts/application (6458.5ms)
+Completed 500 Internal Server Error in 6469ms
+
+ActionView::Template::Error (undefined method `lastTrade' for nil:NilClass):
+    18:       <tr>
+    19:         <td><%= stock.stock_name %></td>
+    20:         <td><%= stock.stock_symbol %></td>
+    21:         <td><%= YahooFinance::get_quotes( YahooFinance::StandardQuote, stock.stock_symbol )[stock.stock_symbol.upcase].lastTrade %></td>
+    22:         <td><%= link_to 'Show', stock %></td>
+    23:         <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
+    24:         <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  app/views/stocks/index.html.erb:21:in `block in _app_views_stocks_index_html_erb___2989989149950620035_70098695891520'
+  app/views/stocks/index.html.erb:17:in `_app_views_stocks_index_html_erb___2989989149950620035_70098695891520'
+
+
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (12.9ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (155.4ms)
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 10:37:27 -0500
+Processing by StocksController#index as HTML
+  [1m[35mStock Load (0.2ms)[0m  SELECT "stocks".* FROM "stocks"
+  Rendered stocks/index.html.erb within layouts/application (74.2ms)
+Completed 500 Internal Server Error in 85ms
+
+ActionView::Template::Error (undefined method `lastTrade' for nil:NilClass):
+    18:       <tr>
+    19:         <td><%= stock.stock_name %></td>
+    20:         <td><%= stock.stock_symbol %></td>
+    21:         <td><%= YahooFinance::get_quotes( YahooFinance::StandardQuote, stock.stock_symbol )[stock.stock_symbol.upcase].lastTrade %></td>
+    22:         <td><%= link_to 'Show', stock %></td>
+    23:         <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
+    24:         <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  app/views/stocks/index.html.erb:21:in `block in _app_views_stocks_index_html_erb___2989989149950620035_70098695891520'
+  app/views/stocks/index.html.erb:17:in `_app_views_stocks_index_html_erb___2989989149950620035_70098695891520'
+
+
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (11.3ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.2ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (139.9ms)
+
+
+Started GET "/stocks/7" for ::1 at 2015-03-02 10:37:31 -0500
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered stocks/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 207ms (Views: 205.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks" for ::1 at 2015-03-02 10:37:34 -0500
+Processing by StocksController#index as HTML
+  [1m[35mStock Load (0.2ms)[0m  SELECT "stocks".* FROM "stocks"
+  Rendered stocks/index.html.erb within layouts/application (1336.0ms)
+Completed 200 OK in 1444ms (Views: 1442.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/portfolio" for ::1 at 2015-03-02 10:37:58 -0500
+
+ActionController::RoutingError (No route matches [GET] "/portfolio"):
+>>>>>>> origin/master
   web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
   web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
   actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
@@ -4345,6 +4713,7 @@ ActionController::RoutingError (No route matches [GET] "/stock"):
   rack (1.6.0) lib/rack/lock.rb:17:in `call'
   rack (1.6.0) lib/rack/content_length.rb:15:in `call'
   rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+<<<<<<< HEAD
   /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
   /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
   /Users/shraddha/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
@@ -4373,3 +4742,38 @@ Processing by StocksController#edit as HTML
   Rendered stocks/_form.html.erb (10.8ms)
   Rendered stocks/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 137ms (Views: 119.7ms | ActiveRecord: 0.7ms)
+=======
+  /Users/grg/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/grg/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/grg/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.6ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (4.6ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.2ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (165.4ms)
+
+
+Started GET "/portfolios" for ::1 at 2015-03-02 10:38:00 -0500
+Processing by PortfoliosController#index as HTML
+  [1m[36mPortfolio Load (0.2ms)[0m  [1mSELECT "portfolios".* FROM "portfolios"[0m
+  Rendered portfolios/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 115ms (Views: 102.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/portfolios/new" for ::1 at 2015-03-02 10:38:02 -0500
+Processing by PortfoliosController#new as HTML
+  Rendered portfolios/_form.html.erb (6.4ms)
+  Rendered portfolios/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 115ms (Views: 111.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/portfolios" for ::1 at 2015-03-02 10:38:06 -0500
+Processing by PortfoliosController#index as HTML
+  [1m[35mPortfolio Load (0.2ms)[0m  SELECT "portfolios".* FROM "portfolios"
+  Rendered portfolios/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 110ms (Views: 109.3ms | ActiveRecord: 0.2ms)
+>>>>>>> Stashed changes
+>>>>>>> origin/master
