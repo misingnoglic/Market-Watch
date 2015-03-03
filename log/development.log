@@ -5664,3 +5664,316 @@ Processing by AdminController#index as HTML
   [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
   Rendered admin/index.html.erb within layouts/application (0.8ms)
 Completed 200 OK in 214ms (Views: 205.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for ::1 at 2015-03-03 11:51:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 910ms (Views: 895.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-03-03 11:51:26 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 223ms (Views: 222.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-03-03 11:51:55 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jh85QlzqfFuYUwBxt7lW2UmevEreKfmuAKx3GbFJSD6MKcEjmGz1TL4lifgVd+iy2SG/PvYZdG31tyDgMrz6tw==", "user_name"=>"subahu", "password"=>"[FILTERED]", "commit"=>"Login"}
+Completed 500 Internal Server Error in 18ms
+
+NoMethodError (undefined method `find_by_name' for #<Class:0x007fabc7800c30>):
+  app/controllers/sessions_controller.rb:6:in `create'
+
+
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (9.4ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (157.9ms)
+
+
+Started GET "/users" for ::1 at 2015-03-03 11:52:08 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"  ORDER BY "users"."user_name" ASC
+  Rendered users/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 234ms (Views: 231.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2015-03-03 11:52:13 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/_form.html.erb (59.1ms)
+  Rendered users/edit.html.erb within layouts/application (88.3ms)
+Completed 200 OK in 314ms (Views: 274.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/1" for ::1 at 2015-03-03 11:52:23 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CSi2RcteOw89/SBvVGdGTpAUsvA3I0ktsmUATSxyR0ujHk4kD9iyGBuLqeb2qfglAKuxhB8TxO5Hfle0r4f1wg==", "user"=>{"user_name"=>"subahu", "password"=>"[FILTERED]", "email"=>"subahur@example.com"}, "commit"=>"Update User", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('subahur@example.com') AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["password_digest", "$2a$10$HDiPwTr9rEIilXe5Veh/YeCnOtFo2OGmf9ZgkVFL3VGDEez9uuDLa"], ["updated_at", "2015-03-03 16:52:23.448207"], ["id", 1]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 129ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/users" for ::1 at 2015-03-03 11:52:23 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"  ORDER BY "users"."user_name" ASC
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 207ms (Views: 206.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2015-03-03 11:52:31 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 203ms (Views: 202.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-03-03 11:52:38 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RB0BxDu5UdvKuYbtSGoLXP5FsSOrI9vXpUlD4sHpiWruK/ml/z/YzOzPD2TqpLU3bvqyV4MTVhRQUhQbQhw74w==", "user_name"=>"subahu", "password"=>"[FILTERED]", "commit"=>"Login"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `find_by_name' for #<Class:0x007fabc7800c30>):
+  app/controllers/sessions_controller.rb:6:in `create'
+
+
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.5ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (131.2ms)
+
+
+Started GET "/login" for ::1 at 2015-03-03 11:54:58 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 205ms (Views: 204.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-03-03 11:55:05 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2M0BEahlnT6mt5bgGhvYS0iBJ+Th9LGy45CUxzhzu6ly+/lwbOMUKYDBH2m41WYg2D4kkMnEPHEWi8M+u4YJIA==", "user_name"=>"subahu", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (subahu) LIMIT 1[0m
+SQLite3::SQLException: no such column: subahu: SELECT  "users".* FROM "users" WHERE (subahu) LIMIT 1
+Completed 500 Internal Server Error in 13ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: subahu: SELECT  "users".* FROM "users" WHERE (subahu) LIMIT 1):
+  app/controllers/sessions_controller.rb:6:in `create'
+
+
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (8.7ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.4ms)
+  Rendered /Users/grg/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (131.4ms)
+
+
+Started GET "/login" for ::1 at 2015-03-03 11:55:32 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 200ms (Views: 199.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-03-03 11:55:39 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sFeUByzMduFjhquzd2yxq/bEPDag0KmDditr2jUKe6caYWxm6Er/9kXwIjrVog/AZns/QojgJECDMDwjtv/JLg==", "user_name"=>"subahu", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" LIMIT 1
+Redirected to http://localhost:3000/login
+Completed 302 Found in 106ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/login" for ::1 at 2015-03-03 11:55:39 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 193ms (Views: 192.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-03-03 11:57:45 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U1yIGVAZa3AkeMJ6wozFxD3rbXRCKzuPCmK5HSisDfn5anB4lJ/iZwIOS/NgQnuvrVRuAGobtkz/ee7kq1m/cA==", "user_name"=>"subahu", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "subahu"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 102ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for ::1 at 2015-03-03 11:57:46 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 202ms (Views: 201.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-03-03 11:57:51 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mVxPEHHSJG59IQ6Y04XK3kEmJV6vvrpxPsW4Fmbwj6UzardxtVSteVtXhxFxS3S10ZkmKoeON7LL3u/v5QU9LA==", "user_name"=>"subahu", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "subahu"]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 96ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/admin" for ::1 at 2015-03-03 11:57:51 -0500
+Processing by AdminController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered admin/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 210ms (Views: 208.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2015-03-03 11:58:02 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 203ms (Views: 202.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-03-03 11:58:05 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o7cNLyzvtlXnsGcczLo5lFzF6PGGXmEgVsx1jbyT1H8JgfVO6Gk/QsHG7pVudIf/zHrrha5u7OOj1yJ0P2Zm9g==", "user_name"=>"subahu", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "subahu"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 112ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for ::1 at 2015-03-03 11:58:05 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 196ms (Views: 194.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-03-03 11:58:10 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yeRZUSOEA4c2UWIKKbB0INpbF6JkR6kr5knpjZuf195j0qEw5wKKkBAn64OLfspLSuQU1kx3JOgTUr50GGplVw==", "user_name"=>"subahu", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "subahu"]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 94ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for ::1 at 2015-03-03 11:58:10 -0500
+Processing by AdminController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered admin/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 201ms (Views: 199.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2015-03-03 11:59:14 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 196ms (Views: 195.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2015-03-03 11:59:20 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"  ORDER BY "users"."user_name" ASC[0m
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 200ms (Views: 199.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/edit" for ::1 at 2015-03-03 11:59:22 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/_form.html.erb (2.3ms)
+  Rendered users/edit.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 204ms (Views: 201.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/2" for ::1 at 2015-03-03 11:59:27 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S0NsDppD4nLjtQ8HsGCFVe0VHoAcADo6X7gfiUupNJfhdZRvXsVrZcXDho4Srjs+faod9DQwt/mqo0hwyFyGHg==", "user"=>{"user_name"=>"Shraddha1", "password"=>"[FILTERED]", "email"=>"shraddha@example.com"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('shraddha@example.com') AND "users"."id" != 2) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$10$HGEIJGQiOqfEG.OgHFO8xO7NEXINbjVj3aQ0IXJZGUlsHXPUoR8Ay"], ["updated_at", "2015-03-03 16:59:27.690694"], ["id", 2]]
+  [1m[35m (4.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 107ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/users" for ::1 at 2015-03-03 11:59:27 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"  ORDER BY "users"."user_name" ASC[0m
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 207ms (Views: 206.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2015-03-03 11:59:32 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 192ms (Views: 191.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-03-03 11:59:36 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xKV2HWWK2Mg7rH6/RJOlj1+K7PlTOzbSofMb3yb/Wmxuk458oQxR3x3a9zbmXRvkzzXvjXsLuxFU6EwmpQro5Q==", "user_name"=>"shraddha", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "shraddha"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for ::1 at 2015-03-03 11:59:36 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 202ms (Views: 201.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-03-03 11:59:41 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HvfTGtYffuxsuFpWTqtfiYf1pz+fEqLJOKnjxEd4/4W0wSt7Epn3+0rO09/sZeHiF0qkS7ciLwrNsrQ9xI1NDA==", "user_name"=>"shraddha1", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1[0m  [["user_name", "shraddha1"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for ::1 at 2015-03-03 11:59:41 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 204ms (Views: 203.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-03-03 11:59:49 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nz6qr/AyjQIIZyIrTHM/EnFVNCjj1yx8lJSQORDmowg1CFLONLQEFS4Rq6LuvYF54eo3XMvnob9hj8fAkxMRgQ==", "user_name"=>"shraddha1", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "shraddha1"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2015-03-03 11:59:49 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 193ms (Views: 192.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2015-03-03 11:59:56 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"  ORDER BY "users"."user_name" ASC[0m
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 219ms (Views: 217.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for ::1 at 2015-03-03 12:00:06 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N5dyjGdFs0hC1rNVpvx0a04r7jvtOggevvPbLaSHc5KdoYrto8M6X2SgOtwEMsoA3pTtT8UKhd1L6IzUJ3LBGw==", "user_name"=>"Shraddha1", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT 1  [["user_name", "Shraddha1"]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 90ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/admin" for ::1 at 2015-03-03 12:00:06 -0500
+Processing by AdminController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered admin/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 200ms (Views: 199.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2015-03-03 12:00:13 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 195ms (Views: 194.0ms | ActiveRecord: 0.0ms)
