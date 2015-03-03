@@ -2,10 +2,10 @@
 
 one:
   user_name: username
-  password: lalalala
+  password_digest: lalalala
   email: lalalala@gmail.com
 
 two:
   user_name: MyString
-  password: MyString
+  password_digest: MyString
   email: MyString

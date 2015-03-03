@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150228234156) do
+ActiveRecord::Schema.define(version: 20150303014121) do
 
   create_table "portfolios", force: :cascade do |t|
     t.integer  "number_shares"
@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 20150228234156) do
 
   create_table "users", force: :cascade do |t|
     t.string   "user_name"
-    t.string   "password"
+    t.string   "password_digest"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "watchlists", force: :cascade do |t|
