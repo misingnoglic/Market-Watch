@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 #for API stuff
 gem 'yahoofinance'
 
+# rails_admin gem
+gem 'fastercsv' # Only required on Ruby 1.8 and below
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record

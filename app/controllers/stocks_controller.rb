@@ -54,10 +54,6 @@ class StocksController < ApplicationController
     end
   end
 
-  def butt
-    @butt = "100"
-  end
-  helper_method :butt
 
   # DELETE /stocks/1
   # DELETE /stocks/1.json
