@@ -124,3 +124,5 @@ bower.json
 .powenv
 
 
+
+db/migrate/20150303005552_create_users.rb
