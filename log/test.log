@@ -819,3 +819,85 @@ UserTest: test_user_attributes_must_not_be_empty
 PortfolioTest: test_number_of_shares_must_be_positive
 -----------------------------------------------------
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM "portfolios"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "portfolios" ("number_shares", "created_at", "updated_at", "id") VALUES (1, '2015-03-03 03:57:35', '2015-03-03 03:57:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "portfolios" ("number_shares", "created_at", "updated_at", "id") VALUES (1, '2015-03-03 03:57:35', '2015-03-03 03:57:35', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "stocks"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "stocks" ("stock_name", "stock_symbol", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-03-03 03:57:35', '2015-03-03 03:57:35', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stocks" ("stock_name", "stock_symbol", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-03-03 03:57:35', '2015-03-03 03:57:35', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("user_name", "password_digest", "email", "created_at", "updated_at", "id") VALUES ('username', 'lalalala', 'lalalala@gmail.com', '2015-03-03 03:57:35', '2015-03-03 03:57:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("user_name", "password_digest", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-03-03 03:57:35', '2015-03-03 03:57:35', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "watchlists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "watchlists" ("created_at", "updated_at", "id") VALUES ('2015-03-03 03:57:35', '2015-03-03 03:57:35', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "watchlists" ("created_at", "updated_at", "id") VALUES ('2015-03-03 03:57:35', '2015-03-03 03:57:35', 298486374)
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------------------------------------------------
+UserTest: test_user_is_not_valid_without_password_digest_length_6_to_20_characters
+----------------------------------------------------------------------------------
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('xxxxxx@gmail.com') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------
+UserTest: test_user_is_not_valid_without_a_unique_email
+-------------------------------------------------------
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('lalalala@gmail.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+UserTest: test_user_attributes_must_not_be_empty
+------------------------------------------------
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+-----------------------------------------------------
+PortfolioTest: test_number_of_shares_must_be_positive
+-----------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM "portfolios"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "portfolios" ("number_shares", "created_at", "updated_at", "id") VALUES (1, '2015-03-03 04:29:52', '2015-03-03 04:29:52', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "portfolios" ("number_shares", "created_at", "updated_at", "id") VALUES (1, '2015-03-03 04:29:52', '2015-03-03 04:29:52', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "stocks"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "stocks" ("stock_name", "stock_symbol", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-03-03 04:29:52', '2015-03-03 04:29:52', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stocks" ("stock_name", "stock_symbol", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-03-03 04:29:52', '2015-03-03 04:29:52', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("user_name", "password_digest", "email", "created_at", "updated_at", "id") VALUES ('dave', '$2a$10$E6HBXsvJ7cmuXr4pyCjzMeTTk3DOmzu8YdzmDPQqlkmlPi66rBz2m', 'lalalala@gmail.com', '2015-03-03 04:29:52', '2015-03-03 04:29:52', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("user_name", "password_digest", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2015-03-03 04:29:52', '2015-03-03 04:29:52', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "watchlists"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "watchlists" ("created_at", "updated_at", "id") VALUES ('2015-03-03 04:29:52', '2015-03-03 04:29:52', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "watchlists" ("created_at", "updated_at", "id") VALUES ('2015-03-03 04:29:52', '2015-03-03 04:29:52', 298486374)
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------------------------------------------------
+UserTest: test_user_is_not_valid_without_password_digest_length_6_to_20_characters
+----------------------------------------------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('xxxxxx@gmail.com') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------
+UserTest: test_user_is_not_valid_without_a_unique_email
+-------------------------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('lalalala@gmail.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+UserTest: test_user_attributes_must_not_be_empty
+------------------------------------------------
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------
+PortfolioTest: test_number_of_shares_must_be_positive
+-----------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
