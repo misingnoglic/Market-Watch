@@ -6106,3 +6106,336 @@ Started GET "/assets/watchlists-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 
 
 
 Started GET "/assets/application-d7eca2729d9f3ab230c989ab9b65a7dc.js?body=1" for ::1 at 2015-03-04 00:18:44 -0500
+
+
+Started GET "/stocks" for ::1 at 2015-03-04 00:33:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StocksController#index as HTML
+  [1m[35mStock Load (0.5ms)[0m  SELECT "stocks".* FROM "stocks"
+  Rendered stocks/index.html.erb within layouts/application (956.2ms)
+Completed 500 Internal Server Error in 994ms
+
+ActionView::Template::Error (String can't be coerced into Float):
+    20:         <td><%= stock.stock_name %></td>
+    21:         <td><%= stock.stock_symbol %></td>
+    22:         <td><%= stock.price %></td>
+    23:         <td><%= stock.historical_price(1) %></td>
+    24:         <td><%= link_to 'Show', stock %></td>
+    25:         <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
+    26:         <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  app/models/stock.rb:15:in `/'
+  app/models/stock.rb:15:in `historical_price'
+  app/views/stocks/index.html.erb:23:in `block in _app_views_stocks_index_html_erb__2843377633237594336_70292900858940'
+  app/views/stocks/index.html.erb:18:in `_app_views_stocks_index_html_erb__2843377633237594336_70292900858940'
+
+
+  Rendered /Users/arya/.rvm/gems/ruby-2.1.2/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (15.0ms)
+  Rendered /Users/arya/.rvm/gems/ruby-2.1.2/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/arya/.rvm/gems/ruby-2.1.2/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/arya/.rvm/gems/ruby-2.1.2/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /Users/arya/.rvm/gems/ruby-2.1.2/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (42.5ms)
+
+
+Started GET "/stocks" for ::1 at 2015-03-04 00:34:14 -0500
+Processing by StocksController#index as HTML
+  [1m[36mStock Load (0.6ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+  Rendered stocks/index.html.erb within layouts/application (681.3ms)
+Completed 200 OK in 1001ms (Views: 994.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:34:15 -0500
+
+
+Started GET "/assets/scaffolds-9c8bb17a604688be13a2004823700df7.css?body=1" for ::1 at 2015-03-04 00:34:15 -0500
+
+
+Started GET "/assets/sessions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:34:15 -0500
+
+
+Started GET "/assets/portfolios-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:34:15 -0500
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:34:15 -0500
+
+
+Started GET "/assets/stocks-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:34:15 -0500
+
+
+Started GET "/assets/watchlists-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:34:15 -0500
+
+
+Started GET "/assets/application-ca383bc129e3187d6e761f2ecbbfe66e.css?body=1" for ::1 at 2015-03-04 00:34:15 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-04 00:34:15 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-04 00:34:15 -0500
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-04 00:34:15 -0500
+
+
+Started GET "/assets/admin-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:34:15 -0500
+
+
+Started GET "/assets/portfolios-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:34:15 -0500
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:34:15 -0500
+
+
+Started GET "/assets/stocks-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:34:16 -0500
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:34:16 -0500
+
+
+Started GET "/assets/watchlists-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:34:16 -0500
+
+
+Started GET "/assets/application-d7eca2729d9f3ab230c989ab9b65a7dc.js?body=1" for ::1 at 2015-03-04 00:34:16 -0500
+
+
+Started GET "/stocks" for ::1 at 2015-03-04 00:34:55 -0500
+Processing by StocksController#index as HTML
+  [1m[35mStock Load (1.1ms)[0m  SELECT "stocks".* FROM "stocks"
+  Rendered stocks/index.html.erb within layouts/application (1421.7ms)
+Completed 200 OK in 1701ms (Views: 1691.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/portfolios-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/sessions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/scaffolds-9c8bb17a604688be13a2004823700df7.css?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/stocks-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/application-ca383bc129e3187d6e761f2ecbbfe66e.css?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/watchlists-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/admin-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/portfolios-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/stocks-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/watchlists-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/assets/application-d7eca2729d9f3ab230c989ab9b65a7dc.js?body=1" for ::1 at 2015-03-04 00:34:57 -0500
+
+
+Started GET "/stocks" for ::1 at 2015-03-04 00:35:16 -0500
+Processing by StocksController#index as HTML
+  [1m[36mStock Load (2.2ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+  Rendered stocks/index.html.erb within layouts/application (984.4ms)
+Completed 200 OK in 1211ms (Views: 1200.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/scaffolds-9c8bb17a604688be13a2004823700df7.css?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/stocks-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/watchlists-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/portfolios-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/sessions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/application-ca383bc129e3187d6e761f2ecbbfe66e.css?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/admin-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/portfolios-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/stocks-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/watchlists-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/assets/application-d7eca2729d9f3ab230c989ab9b65a7dc.js?body=1" for ::1 at 2015-03-04 00:35:18 -0500
+
+
+Started GET "/stocks" for ::1 at 2015-03-04 00:35:48 -0500
+Processing by StocksController#index as HTML
+  [1m[35mStock Load (0.9ms)[0m  SELECT "stocks".* FROM "stocks"
+  Rendered stocks/index.html.erb within layouts/application (741.1ms)
+Completed 200 OK in 1088ms (Views: 1075.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/portfolios-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/sessions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/scaffolds-9c8bb17a604688be13a2004823700df7.css?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/stocks-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/application-ca383bc129e3187d6e761f2ecbbfe66e.css?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/watchlists-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/admin-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/portfolios-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/stocks-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/watchlists-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/application-d7eca2729d9f3ab230c989ab9b65a7dc.js?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:35:49 -0500
+
+
+Started GET "/stocks" for ::1 at 2015-03-04 00:55:52 -0500
+Processing by StocksController#index as HTML
+  [1m[36mStock Load (1.1ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+  Rendered stocks/index.html.erb within layouts/application (742.5ms)
+Completed 200 OK in 1118ms (Views: 1106.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/admin-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/scaffolds-9c8bb17a604688be13a2004823700df7.css?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/sessions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/portfolios-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/stocks-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/application-ca383bc129e3187d6e761f2ecbbfe66e.css?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/watchlists-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/admin-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/portfolios-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/sessions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/stocks-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/watchlists-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-04 00:55:53 -0500
+
+
+Started GET "/assets/application-d7eca2729d9f3ab230c989ab9b65a7dc.js?body=1" for ::1 at 2015-03-04 00:55:53 -0500
