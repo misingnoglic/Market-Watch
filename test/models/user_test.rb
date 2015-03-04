@@ -39,7 +39,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "There cannot be less one available user" do
-    dave = User.create(name: 'dave', password: 'secret', password_confirmation: 'secret')
+    dave = User.create(user_name: 'dave', password: 'secret', password_confirmation: 'secret')
 
     assert_raise "Can't delete last user" do
       dave.destroy
