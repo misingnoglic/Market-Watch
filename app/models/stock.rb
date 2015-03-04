@@ -14,6 +14,10 @@ class Stock < ActiveRecord::Base
   def historical_price(days_ago)
     (YahooFinance::get_historical_quotes_days( self.stock_symbol, days_ago ).last.last.to_f)
   end
+
+  def open
+    YahooFinance::get_quotes( YahooFinance::StandardQuote, self.stock_symbol )[self.stock_symbol.upcase].open
+  end
 end
 
 
