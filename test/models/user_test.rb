@@ -45,13 +45,7 @@ class UserTest < ActiveSupport::TestCase
       dave.destroy
     end
    
-    try{
-      dave.destroy
-    }
-   
-    catch{
-    assert_equal User.count, 1
-    }
+  
   end 
    
 
