@@ -20,23 +20,40 @@ class UserTest < ActiveSupport::TestCase
     assert_equal "has already been taken", user.errors[:email].join('; ') 
   end
 
-  #test "user is not valid without password_digest length 6 to 20 characters" do
-  #  user = User.new(user_name: "xxxxxx",
-  #  email: "xxxxxx@gmail.com")
-  #  
-  #  user.password_digest = "12345"
-  #  user.invalid?
-  #  assert_equal "is too short (minimum is 6 characters)",
-  #  user.errors[:password_digest].join('; ')
-  #
-  #  user.password_digest = "012345678901234567890"
-  #  user.invalid?
-  #  assert_equal "is too long (maximum is 20 characters)",
-  #  user.errors[:password_digest].join('; ')
-  #
-  #  user.password_digest = "1234567"
-  #  assert user.valid?
-  #end
+  test "user is not valid without password_digest length 6 to 20 characters" do
+    user = User.new(user_name: "xxxxxx",
+    email: "xxxxxx@gmail.com")
+    
+    user.password_digest = "12345"
+    user.invalid?
+    assert_equal "is too short (minimum is 6 characters)",
+    user.errors[:password_digest].join('; ')
+
+    user.password_digest = "012345678901234567890"
+    user.invalid?
+    assert_equal "is too long (maximum is 20 characters)",
+    user.errors[:password_digest].join('; ')
+
+    user.password_digest = "1234567"
+    assert user.valid?
+  end
+
+  test "There cannot be less one available user" do
+    dave = User.create(name: 'dave', password: 'secret', password_confirmation: 'secret')
+
+    assert_raise "Can't delete last user" do
+      dave.destroy
+    end
+   
+    try{
+      dave.destroy
+    }
+   
+    catch{
+    assert_equal User.count, 1
+    }
+  end 
+   
 
   
 end
