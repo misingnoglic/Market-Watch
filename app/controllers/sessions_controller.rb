@@ -15,6 +15,6 @@ end
 
 def destroy
 session[:user_id] = nil
-redirect_to stock_url, notice: "Logged out"
+redirect_to login_url, notice: "Logged out"
 end
 end
