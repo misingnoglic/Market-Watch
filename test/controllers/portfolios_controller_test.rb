@@ -18,7 +18,7 @@ class PortfoliosControllerTest < ActionController::TestCase
 
   test "should create portfolio" do
     assert_difference('Portfolio.count') do
-      post :create, portfolio: { number_shares: @portfolio.number_shares }
+      post :create, portfolio: {  }
     end
 
     assert_redirected_to portfolio_path(assigns(:portfolio))
@@ -35,7 +35,7 @@ class PortfoliosControllerTest < ActionController::TestCase
   end
 
   test "should update portfolio" do
-    patch :update, id: @portfolio, portfolio: { number_shares: @portfolio.number_shares }
+    patch :update, id: @portfolio, portfolio: {  }
     assert_redirected_to portfolio_path(assigns(:portfolio))
   end
 

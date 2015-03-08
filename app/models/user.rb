@@ -14,12 +14,6 @@ class User < ActiveRecord::Base
     #validates :password_digest, length: { in: 6..20 }
     has_secure_password
 
-    has_many :portfolios
-    has_many :watchlists
-    has_many :stocks, through: :portfolios
-    has_many :stocks, through: :watchlists
-
-
 
 end
 

@@ -22,6 +22,7 @@
         <td><%= stock.price %></td>
         <td><%= "#{((1-(stock.price / stock.open))*100).round(2)}%" %></td>
         <td><%= link_to 'Show', stock %></td>
+        <td><%= link_to 'Add to portfolio', line_items_path(stock_id: stock) %></td>
         <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
         <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

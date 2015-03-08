@@ -1,11 +1,4 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Number shares:</strong>
-  <%= @portfolio.number_shares %>
-</p>
-
-
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
 <%= link_to 'Back', portfolios_path %>
-<%= button_to 'Logout', logout_path, :method => :delete %>

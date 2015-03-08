@@ -9,4 +9,14 @@ class ApplicationController < ActionController::Base
       redirect_to login_url, notice: "Please log in" end
   end
 
+
+	private
+	def current_portfolio 
+		Portfolio.find(session[:portfolio_id])
+	rescue ActiveRecord::RecordNotFound 
+		portfolio = Portfolio.create 
+		session[:portfolio_id] = portfolio.id
+		portfolio
+	end
+
 end

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :line_items
+
+  resources :portfolios
+
   get 'admin' => 'admin#index'
 
   controller :sessions do
@@ -7,16 +11,12 @@ Rails.application.routes.draw do
     delete 'logout' => :destroy
   end
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :portfolios
-  
-  resources :watchlists
-
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'  
   resources :stocks
 
   resources :users
 
-  resources :user do 
+  resources :stock do 
       resources :portfolios 
   end 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -11,18 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150304163158) do
+ActiveRecord::Schema.define(version: 20150308202855) do
 
-  create_table "portfolios", force: :cascade do |t|
-    t.integer  "user_id"
+  create_table "line_items", force: :cascade do |t|
     t.integer  "stock_id"
-    t.integer  "number_shares"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "portfolio_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
-  add_index "portfolios", ["stock_id"], name: "index_portfolios_on_stock_id"
-  add_index "portfolios", ["user_id"], name: "index_portfolios_on_user_id"
+  create_table "portfolios", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "stocks", force: :cascade do |t|
     t.string   "stock_name"
