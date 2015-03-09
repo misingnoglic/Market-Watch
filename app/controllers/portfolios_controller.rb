@@ -25,7 +25,7 @@ class PortfoliosController < ApplicationController
   # POST /portfolios.json
   def create
     @portfolio = Portfolio.new
-    session[:portfolio_id] = @portfolio.id
+    
 
     respond_to do |format|
       if @portfolio.save
@@ -66,6 +66,7 @@ class PortfoliosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_portfolio
       @portfolio = Portfolio.find(params[:id])
+      session[:portfolio_id] = @portfolio.id
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
