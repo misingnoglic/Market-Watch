@@ -32,7 +32,8 @@ class UsersController < ApplicationController
       @portfolio = Portfolio.new(user_id: @user.id)
 
     respond_to do |format|
-      if @user.save && @portfolio.save
+      if @user.save  && @portfolio.save
+        NewuserMailer.sample_email(@user).deliver_now
         format.html { redirect_to users_url, notice: 'User #{@user.user_name} was successfully created.' }
         format.json { render @user, status: :created, location: @user }
       else
