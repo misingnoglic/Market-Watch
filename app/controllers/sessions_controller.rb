@@ -8,7 +8,7 @@ def create
 if user and user.authenticate(params[:password])
     session[:user_id] = user.id
     portfolio = user.portfolio
-    redirect_to user
+    redirect_to portfolio
 else
 	redirect_to login_url, alert: "Invalid user/password combination"
 	end

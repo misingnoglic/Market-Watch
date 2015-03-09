@@ -26,8 +26,7 @@ class LineItemsController < ApplicationController
   def create
     @portfolio = current_portfolio
     stock = Stock.find(params[:stock_id])
-    @line_item = @portfolio.add_product(stock.id)
-   
+    @line_item = @portfolio.line_items.build(stock: stock)
 
     respond_to do |format|
       if @line_item.save

@@ -8,7 +8,6 @@
       <th>Stock name</th>
       <th>Stock symbol</th>
       <th>Last Trade Price</th>
-      <th>Number Shares</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,14 +18,11 @@
       <tr>
         <td><%= item.stock.stock_name %></td>
         <td><%= item.stock.stock_symbol %></td>
-        <td><%= item.stock.price %></td>   
-        <td><%= item.number_shares %></td>    
+        <td><%= item.stock.price %></td>        
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to 'Add New Investment', new_line_item_path %>
 
 
 
