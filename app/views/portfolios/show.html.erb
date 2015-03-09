@@ -4,8 +4,11 @@
 <h2>Your Portfolio</h2>
 <ul>
 <% @portfolio.line_items.each do |item| %>
-<li><%= item.stock.stock_id %></li>
+<li><%= item.stock.stock_symbol %></li>
 <% end %>
 </ul>
+
+
+
 
 

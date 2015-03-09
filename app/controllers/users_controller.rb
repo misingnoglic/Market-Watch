@@ -29,7 +29,8 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
       @user = User.new(user_params)
-      @portfolio = Portfolio.new(user_id: @user.id)
+      @portfolio = Portfolio.new
+      @portfolio[:user_id] = @user.id
 
     respond_to do |format|
       if @user.save  && @portfolio.save

@@ -7,7 +7,9 @@ def create
 	user = User.find_by_user_name(params[:user_name])
 if user and user.authenticate(params[:password])
     session[:user_id] = user.id
-    redirect_to portfolio_path(user)
+    @portfolio = Portfolio.find(20)
+    #@portfolio = Portfolio.find_by_user_id(session[:user_id])
+    redirect_to portfolio_path(@portfolio)
 else
 	redirect_to login_url, alert: "Invalid user/password combination"
 	end

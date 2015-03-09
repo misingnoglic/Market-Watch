@@ -19,4 +19,6 @@ class ApplicationController < ActionController::Base
 		portfolio
 	end
 
+ 
+
 end
