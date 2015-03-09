@@ -1,4 +1,9 @@
+<% if notice %>
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
-<%= link_to 'Back', portfolios_path %>
+<% end %>
+<h2>Your Portfolio</h2>
+<ul>
+<% @portfolio.line_items.each do |item| %>
+<li><%= item.stock.stock_id %></li>
+<% end %>
+</ul
