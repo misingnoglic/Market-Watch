@@ -16,6 +16,11 @@ Rails.application.routes.draw do
 
   resources :users
 
+
+  resources :user do 
+      resources :portfolios 
+  end 
+
   resources :stock do 
       resources :portfolios 
   end 

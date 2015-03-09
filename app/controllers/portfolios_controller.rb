@@ -64,11 +64,11 @@ class PortfoliosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_portfolio
-      @portfolio = Portfolio.find(params[:id])
+      @portfolio = Portfolio.find_by_user_id(params[:user_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def portfolio_params
-      params[:portfolio]
+      require(:portfolio).permit(:user_id)
     end
 end

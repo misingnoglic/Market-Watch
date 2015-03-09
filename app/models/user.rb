@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
     #validates :password_digest, length: { in: 6..20 }
     has_secure_password
 
+    has_one :portfolio
+
 
 end
 
