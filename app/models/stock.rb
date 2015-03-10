@@ -26,7 +26,7 @@ class Stock < ActiveRecord::Base
       returned_list.push([price_list.first,price_list.last.to_f])
     end
     #returned_list = returned_list.reverse
-    return returned_list + [['Date','Price']]
+    return [['Date','Price']]+returned_list
     #return returned_list
   end
 

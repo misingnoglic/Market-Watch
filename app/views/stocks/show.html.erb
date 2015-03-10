@@ -1,3 +1,32 @@
+
+    <script type="text/javascript"
+            src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
+
+    <script type="text/javascript">
+        google.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable(<%= raw @stock.chart_prices(7) %>);
+
+            var options = {
+                title: 'Stock Graph',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -8,6 +37,8 @@
 <p>
   <strong>Stock symbol:</strong>
   <%= @stock.stock_symbol %>
+
+  <div id="curve_chart" style="width: 900px; height: 500px"></div>
 </p>
 
 <%= link_to 'Edit', edit_stock_path(@stock) %> |
