@@ -6,7 +6,9 @@ class Stock < ActiveRecord::Base
 
     #attr_accessor :stock_symbol
   def price
-      YahooFinance::get_quotes( YahooFinance::StandardQuote, self.stock_symbol )[self.stock_symbol.upcase].lastTrade
+    prices = YahooFinance::get_quotes( YahooFinance::StandardQuote, self.stock_symbol.upcase )
+    puts prices
+    prices[self.stock_symbol.upcase].lastTrade
   end
 
   def historical_price(days_ago)
@@ -17,6 +19,16 @@ class Stock < ActiveRecord::Base
     YahooFinance::get_quotes( YahooFinance::StandardQuote, self.stock_symbol )[self.stock_symbol.upcase].open
   end
 
+  def chart_prices(days_ago)
+    prices = (YahooFinance::get_historical_quotes_days( self.stock_symbol, days_ago ))
+    returned_list = []
+    prices.each do |price_list|
+      returned_list.push([price_list.first,price_list.last.to_f])
+    end
+    #returned_list = returned_list.reverse
+    return returned_list + [['Date','Price']]
+    #return returned_list
+  end
 
   private
   # ensure that there are no line items referencing this product
