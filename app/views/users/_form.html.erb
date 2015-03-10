@@ -22,6 +22,12 @@
     <%= f.label :password, 'Password' %>:
     <%= f.password_field :password, size:40 %>
   </div>
+     <div><%= label :admin, "User" %>
+      <%= f.radio_button :admin, false , :checked => true , :value => false %>
+    </div>
+  <div><%= label :admin, "Admin"%>
+       <%= f.radio_button :admin,  true, :value => true%></div>
+  </div>
 <!--
   <div>
     <%= f.label :password_confirmation, 'Confirm' %>:
