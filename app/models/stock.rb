@@ -16,7 +16,7 @@ class Stock < ActiveRecord::Base
   end
 
   def open
-    YahooFinance::get_quotes( YahooFinance::StandardQuote, self.stock_symbol )[self.stock_symbol.upcase].open
+    YahooFinance::get_quotes( YahooFinance::StandardQuote, self.stock_symbol.upcase )[self.stock_symbol.upcase].open
   end
 
   def chart_prices(days_ago)
