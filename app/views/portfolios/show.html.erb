@@ -26,6 +26,7 @@
       </tr>
     <% end %>
   </tbody>
+  <%= button_to 'Logout', logout_path, :method => :delete %>
 </table>
 <%= link_to 'Back', portfolios_path %>
 <%= link_to 'Add New Investment', stocks_path%>
