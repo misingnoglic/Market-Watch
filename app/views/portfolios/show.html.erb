@@ -20,7 +20,8 @@
         <td><%= item.stock.stock_name %></td>
         <td><%= item.stock.stock_symbol %></td>
         <td><%= item.stock.price %></td>   
-        <td><%= item.number_shares %></td>    
+        <td><%= item.number_shares %></td>
+        <td><%= link_to 'Show', item.stock %></td>    
       </tr>
     <% end %>
   </tbody>
