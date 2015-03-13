@@ -1,37 +1,38 @@
-<% require 'yahoofinance' %>
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Stocks</h1>
-
-<table>
+<%- model_class = Stock -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Stock name</th>
-      <th>Stock symbol</th>
-      <th>Last Trade Price</th>
-      <th>Change Today</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:stock_name) %></th>
+      <th><%= model_class.human_attribute_name(:stock_symbol) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @stocks.each do |stock| %>
       <tr>
+        <td><%= link_to stock.id, stock_path(stock) %></td>
         <td><%= stock.stock_name %></td>
         <td><%= stock.stock_symbol %></td>
-        <td><%= stock.price %></td>
-        <td><%= "#{((1-(stock.price / stock.open))*100).round(2)}%" %></td>
-        <td><%= link_to 'Show', stock %></td>
-        <td><%= button_to 'Add to Portfolio', line_items_path(stock_id: stock) %></td>
-        <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
-        <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        
+        <td><%=l stock.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_stock_path(stock), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      stock_path(stock),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
-
 </table>
 
-<br>
-
-<%= link_to 'New Stock', new_stock_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_stock_path,
+            :class => 'btn btn-primary' %>
