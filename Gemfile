@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'faker'
+
 #for API stuff
 gem 'yahoofinance'
 

@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+User.destroy_all
+puts "Creating 5 users"
+1.upto(5) do |i|
+	u= User.create(user_name: "user#{i}" ,password: "password", email: Faker::Internet.email)
+	portfolio = Portfolio.new
+     portfolio[:user_id] = u.id
+      portfolio.save
+end

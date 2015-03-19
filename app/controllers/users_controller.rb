@@ -28,13 +28,13 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-      @user = User.new(user_params)
+      @user = User.create(user_params)
       @portfolio = Portfolio.new
+      @portfolio[:user_id] = @user.id
       @portfolio.save
-      @user.portfolio = @portfolio
     respond_to do |format|
-      if @user.save  
-        NewuserMailer.sample_email(@user).deliver_now
+      if @user  
+        #NewuserMailer.sample_email(@user).deliver_now
         format.html { redirect_to users_url, notice: 'User #{@user.user_name} was successfully created.' }
         format.json { render @user, status: :created, location: @user }
       else
