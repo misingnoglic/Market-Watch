@@ -1,9 +1,9 @@
-<% if notice %>
-<p id="notice"><%= notice %></p>
-<% end %>
-<h2>Your Portfolio</h2>
-<table>
-<thead>
+<%- model_class = Portfolio -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
     <tr>
       <th>Stock name</th>
       <th>Stock symbol</th>
@@ -30,6 +30,9 @@
 </table>
 <%= link_to 'Back', portfolios_path %>
 <%= link_to 'Add New Investment', stocks_path%>
+<%= link_to t('.Add New Investment', :default => t("helpers.links.new")),
+             stocks_path,
+            :class => 'btn btn-primary' %>
 
 
 
