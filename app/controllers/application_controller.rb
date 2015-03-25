@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
 	private
 	def current_portfolio 
-		Portfolio.find_by_user_id(session[:portfolio_id])
+		Portfolio.find_by_user_id(session[:user_id])
 	rescue ActiveRecord::RecordNotFound 
 		portfolio = Portfolio.create 
 		session[:portfolio_id] = portfolio.id
