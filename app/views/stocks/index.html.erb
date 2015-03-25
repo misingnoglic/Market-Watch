@@ -21,6 +21,7 @@
         <td><%= stock.stock_symbol %></td>
 	<td><%= stock.price %></td>
         <td><%=l stock.created_at %></td>
+        <td><%= button_to 'Add to Portfolio', line_items_path(stock_id: stock) %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_stock_path(stock), :class => 'btn btn-default btn-xs' %>
