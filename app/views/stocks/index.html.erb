@@ -8,6 +8,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:stock_name) %></th>
       <th><%= model_class.human_attribute_name(:stock_symbol) %></th>
+      <th><%= model_class.human_attribute_name(:stock_price) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -18,6 +19,7 @@
         <td><%= link_to stock.id, stock_path(stock) %></td>
         <td><%= stock.stock_name %></td>
         <td><%= stock.stock_symbol %></td>
+	<td><%= stock.price %></td>
         <td><%=l stock.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
