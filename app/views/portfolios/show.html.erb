@@ -22,11 +22,15 @@
         <td><%= item.stock.stock_symbol %></td>
         <td><%= item.stock.price %></td>   
         <td><%= item.number_shares %></td>
-        <td><%= link_to 'Show', item.stock %></td>    
+        <td><%= link_to 'Show', item.stock %></td>
+	<td> <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      line_item_path(item),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %> </td>
       </tr>
     <% end %>
   </tbody>
-  <%= button_to 'Logout', logout_path, :method => :delete %>
 </table>
 <%= link_to 'Back', portfolios_path %>
 <%= link_to 'Add New Investment', stocks_path%>
