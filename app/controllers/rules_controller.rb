@@ -1,19 +1,23 @@
 class RulesController < ApplicationController
   before_action :set_rule, only: [:show, :edit, :update, :destroy]
 
+
   # GET /rules
   # GET /rules.json
   def index
+    @portfolio = current_portfolio
     @rules = Rule.all
   end
 
   # GET /rules/1
   # GET /rules/1.json
   def show
+    @portfolio = current_portfolio
   end
 
   # GET /rules/new
   def new
+    @portfolio = current_portfolio
     @rule = Rule.new
   end
 
@@ -24,15 +28,21 @@ class RulesController < ApplicationController
   # POST /rules
   # POST /rules.json
   def create
+   
 
     @portfolio = current_portfolio
-    stock = Stock.find_by_stock_symbol(params[:stock_symbol])
-    @rule = @portfolio.add_rule(stock.id, params[:target_price])
+    /@stock = Stock.find_by_stock_symbol(params[:stock_symbol])/
+    @rule = Rule.create(rule_params)
+    @rule[:portfolio_id] = @portfolio.id
+    /@rule[:stock_id] = @stock.id/
+    @portfolio.save
+    
 
     respond_to do |format|
       if @rule.save
         format.html { redirect_to @rule, notice: 'Rule was successfully created.' }
         format.json { render :show, status: :created, location: @rule }
+        @portfolio.save
       else
         format.html { render :new }
         format.json { render json: @rule.errors, status: :unprocessable_entity }
@@ -68,10 +78,11 @@ class RulesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_rule
       @rule = Rule.find(params[:id])
+      @portfolio = current_portfolio
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rule_params
-      params.require(:rule).permit(:target_price, :portfolio_id, :stock_id, :stock_symbol)
+      params.require(:rule).permit(:target_price, :portfolio_id, :stock_id)
     end
 end
