@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Rules</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Target price</th>
+      <th>Portfolio</th>
+      <th>Stock</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rules.each do |rule| %>
+      <tr>
+        <td><%= rule.target_price %></td>
+        <td><%= rule.portfolio_id %></td>
+        <td><%= rule.stock_id %></td>
+        <td><%= link_to 'Show', rule %></td>
+        <td><%= link_to 'Edit', edit_rule_path(rule) %></td>
+        <td><%= link_to 'Destroy', rule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rule', new_rule_path %>

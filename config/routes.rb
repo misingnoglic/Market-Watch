@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :rules
+
   resources :line_items
 
   resources :portfolios
@@ -16,6 +18,9 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :portfolios do 
+      resources :rules 
+  end 
 
   resources :stock do 
       resources :portfolios 
