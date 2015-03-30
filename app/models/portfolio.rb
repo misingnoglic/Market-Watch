@@ -13,8 +13,8 @@ class Portfolio < ActiveRecord::Base
     	current_item
 	end
 
-	def add_rule(stock_id)
-      	current_item = line_items.build(stock_id: stock_id)
+	def add_rule(stock_id, target_price)
+      	current_item = rules.build(stock_id: stock_id, target_price: target_price)
 	end
 
 

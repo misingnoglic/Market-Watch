@@ -4,7 +4,7 @@ class Rule < ActiveRecord::Base
 
 
 	validates :portfolio, presence: true, length: { minimum: 1 }
-	validates :target, presence: true, numericality: true
+	validates :target_price , presence: true, numericality: true
 
 	attr_accessor :stock_symbol
 end

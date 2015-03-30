@@ -9,12 +9,14 @@
 
 User.destroy_all
 Portfolio.destroy_all
+Rule.destroy_all
 puts "Creating 5 users"
 1.upto(5) do |i|
 	u= User.create(user_name: "user#{i}" ,password: "password", email: Faker::Internet.email)
 	portfolio = Portfolio.new
      portfolio[:user_id] = u.id
       portfolio.save
+
 end
 
 puts "Creating 1 admin"

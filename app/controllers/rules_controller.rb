@@ -27,7 +27,7 @@ class RulesController < ApplicationController
 
     @portfolio = current_portfolio
     stock = Stock.find_by_stock_symbol(params[:stock_symbol])
-    @rule = @portfolio.add_rule(stock.id)
+    @rule = @portfolio.add_rule(stock.id, params[:target_price])
 
     respond_to do |format|
       if @rule.save
