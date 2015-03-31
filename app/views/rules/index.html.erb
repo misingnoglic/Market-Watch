@@ -17,7 +17,7 @@
       <tr>
         <td><%= rule.target_price %></td>
         <td><%= rule.portfolio_id %></td>
-        <td><%= rule.stock_id %></td>
+        <td><%= rule.stock.stock_name %></td>
         <td><%= link_to 'Show', rule %></td>
         <td><%= link_to 'Edit', edit_rule_path(rule) %></td>
         <td><%= link_to 'Destroy', rule, method: :delete, data: { confirm: 'Are you sure?' } %></td>

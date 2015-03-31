@@ -31,11 +31,12 @@ class RulesController < ApplicationController
    
 
     @portfolio = current_portfolio
-    /@stock = Stock.find_by_stock_symbol(params[:stock_symbol])/
+    @stock = Stock.find_by_stock_symbol(params[:rule][:stock_symbol])
     @rule = Rule.create(rule_params)
     @rule[:portfolio_id] = @portfolio.id
-    /@rule[:stock_id] = @stock.id/
+    @rule[:stock_id] = @stock.id
     @portfolio.save
+    @stock.save
     
 
     respond_to do |format|
@@ -83,6 +84,6 @@ class RulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rule_params
-      params.require(:rule).permit(:target_price, :portfolio_id, :stock_id)
+      params.require(:rule).permit(:target_price, :portfolio_id, :stock_id, :stock_symbol)
     end
 end
