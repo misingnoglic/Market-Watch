@@ -1,7 +1,7 @@
 #require 'yahoofinance'
 class StocksController < ApplicationController
     before_action :set_stock, only: [:show, :edit, :update, :destroy]
-    skip_before_filter :authorize
+    
   # GET /stocks
   # GET /stocks.json
   def index
