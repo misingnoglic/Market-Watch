@@ -36,7 +36,10 @@
   </tbody>
 </table>
 
-<%= button_to 'Logout', logout_path, :method => :delete %>
+
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_stock_path,
             :class => 'btn btn-primary' %>
+
+<%= button_to 'Logout', logout_path, :method => :delete %>
+            
