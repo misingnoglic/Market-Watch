@@ -57,3 +57,6 @@ gem "twitter-bootstrap-rails"
   gem "figaro"
 end
 
+
+gem 'sucker_punch', '~> 1.0'
+
