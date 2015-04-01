@@ -1,3 +1,6 @@
+require 'rule_engine'
+require 'yahoofinance'
+
 class RulesController < ApplicationController
   before_action :set_rule, only: [:show, :edit, :update, :destroy]
 
@@ -6,6 +9,7 @@ class RulesController < ApplicationController
   # GET /rules.json
   def index
     @portfolio = current_portfolio
+    ::RuleEngine.start
     @rules = Rule.all
   end
 

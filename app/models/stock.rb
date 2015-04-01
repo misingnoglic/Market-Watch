@@ -1,8 +1,6 @@
 require 'yahoofinance'
 class Stock < ActiveRecord::Base
 
-  
-
   has_many :line_items
   has_many :rules
   before_destroy :ensure_not_referenced_by_any_line_item
@@ -32,10 +30,6 @@ class Stock < ActiveRecord::Base
     #returned_list = returned_list.reverse
     return [['Date','Price']]+returned_list
     #return returned_list
-  end
-
-  def percent
-    ((1-(price / open))*100).round(2) 
   end
   
   private
