@@ -8,7 +8,8 @@ class Stock < ActiveRecord::Base
   before_destroy :ensure_not_referenced_by_any_line_item
 
     #attr_accessor :stock_symbol
-  def price
+
+    def price
     prices = YahooFinance::get_quotes( YahooFinance::StandardQuote, self.stock_symbol.upcase )
     puts prices
     prices[self.stock_symbol.upcase].lastTrade
@@ -33,6 +34,10 @@ class Stock < ActiveRecord::Base
     #return returned_list
   end
 
+  def percent
+    ((1-(price / open))*100).round(2) 
+  end
+  
   private
   # ensure that there are no line items referencing this product
   def ensure_not_referenced_by_any_line_item 

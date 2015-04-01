@@ -1,10 +1,12 @@
 #require 'yahoofinance'
+  require 'update_stocks'
 class StocksController < ApplicationController
     before_action :set_stock, only: [:show, :edit, :update, :destroy]
     
   # GET /stocks
   # GET /stocks.json
   def index
+    ::UpdateStocks.update
     @stocks = Stock.all
   end
 
@@ -74,7 +76,7 @@ class StocksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stock_params
-      params.require(:stock).permit(:stock_name, :stock_symbol)
+      params.require(:stock).permit(:stock_name, :stock_symbol, :last_trade_price, :percent_change)
     end
 
 
