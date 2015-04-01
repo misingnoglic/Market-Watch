@@ -24,7 +24,21 @@ puts "Creating 1 admin"
 u= User.create(user_name: "admin1" ,password: "password", email: Faker::Internet.email, admin: true)
 
 
-puts "Creating 3 stocks"
+puts "Creating 15 stocks"
 Stock.create(stock_name: "Apple" ,stock_symbol: "AAPL")
 Stock.create(stock_name: "Google" ,stock_symbol: "GOOG")
 Stock.create(stock_name: "Microsoft" ,stock_symbol: "MSFT")
+Stock.create(stock_name: "3M" ,stock_symbol: "MMM")
+Stock.create(stock_name: "American Express" ,stock_symbol: "AXP")
+Stock.create(stock_name: "Boeing" ,stock_symbol: "BA")
+Stock.create(stock_name: "Caterpillar" ,stock_symbol: "CAT")
+Stock.create(stock_name: "Chevron" ,stock_symbol: "CVX")
+Stock.create(stock_name: "Cisco" ,stock_symbol: "CSCO")
+Stock.create(stock_name: "Coca-Coca" ,stock_symbol: "KO")
+Stock.create(stock_name: "Disney" ,stock_symbol: "DIS")
+Stock.create(stock_name: "Golman Sachs" ,stock_symbol: "GS")
+Stock.create(stock_name: "Home Depot" ,stock_symbol: "HD")
+Stock.create(stock_name: "IBM" ,stock_symbol: "IBM")
+Stock.create(stock_name: "Intel" ,stock_symbol: "INTC")
+
+
