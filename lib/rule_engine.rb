@@ -8,7 +8,7 @@ class RuleEngine
 		rules = Rule.all
 		rules.each do |rule|
 			stock = rule.stock
-			if rule.tarfget_price < = stock.last_trade_price
+			if rule.target_price <= stock.last_trade_price
 				RuleMailer.sample_email(rule).deliver_now
 			end
 		end
