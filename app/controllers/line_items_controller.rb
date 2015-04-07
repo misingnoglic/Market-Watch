@@ -25,10 +25,18 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     @portfolio = current_portfolio
-    stock = Stock.find(params[:stock_id])
-    @line_item = @portfolio.add_product(stock.id)
-   
+    stock_s = params[:stock_symbol]
+    begin
+      stock =Stock.find_by!(stock_symbol: stock_s)
+    rescue ActiveRecord::RecordNotFound
+      new_params = ActionController::Parameters.new ( {stock:  {stock_name: params[:stock_name], stock_symbol: params[:stock_symbol]}})
+      stock = Stock.new(stock_params(new_params))
+      stock.save
+    end
+    @line_item = @portfolio.add_product(stock[:id])
+    @line_item.save
 
+     
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to @line_item.portfolio, notice: 'Line item was successfully created.' }
@@ -57,9 +65,10 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
+    curr_portfolio = @line_item.portfolio
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to line_items_url, notice: 'Line item was successfully destroyed.' }
+      format.html { redirect_to curr_portfolio, notice: 'Line item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
