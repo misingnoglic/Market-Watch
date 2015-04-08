@@ -34,8 +34,9 @@
     <% end %> 
   </tbody> 
 </table> 
- 
- 
+
+<h4>Portfolio Value: <%= @current_value.round(2) %></h4>
+
 <%= form_tag(line_items_path, method: "create") do %> 
   <%= label_tag(:stock, "stock_name:") %> 
   <%= text_field_tag(:stock_name) %> 
@@ -43,5 +44,6 @@
   <%= text_field_tag(:stock_symbol) %> 
   <%= submit_tag("Add Investment") %> 
 <% end %> 
+
  
 <%= link_to 'Back', portfolios_path %>
