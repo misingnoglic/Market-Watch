@@ -1,5 +1,6 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
+  before_action :portfolio_value
 
   # GET /portfolios
   # GET /portfolios.json
@@ -59,6 +60,13 @@ class PortfoliosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to portfolios_url, notice: 'Portfolio was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def portfolio_value
+    @current_value = 0
+    @portfolio.line_items.each do |item|
+      @current_value = @current_value + item.stock.price 
     end
   end
 
