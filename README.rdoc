@@ -11,4 +11,8 @@ Directions for running project:
 
 
 You can see your portfolio by clicking on the portfolios tab
+On the page you will see two fields. The first one will be called 'stock name' , while the second will be called 'stock_symbol'. The former can be named whatever you want it to be named and the latter has be the correct symbol of the stock you want. For example I can have "stock name: Google stock symbol GOOG" or "stock name: foo stock symbol GOOG". Both will work but "stock name: Google stock symbol: foo" will fail.
+
+Clicking show graph on a investment and refreshing the page will display a graph of the price history of the stock.
+
 
