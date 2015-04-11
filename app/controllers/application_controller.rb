@@ -19,6 +19,9 @@ class ApplicationController < ActionController::Base
 		portfolio
 	end
 
+def stock_params (params)
+      params.require(:stock).permit(:stock_name, :stock_symbol, :last_trade_price, :percent_change)
+    end
  
 
 end
