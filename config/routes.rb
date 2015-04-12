@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   resources :portfolios do 
       resources :rules 
   end 
+  
+
 
   resources :stock do 
       resources :portfolios 

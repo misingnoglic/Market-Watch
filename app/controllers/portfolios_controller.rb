@@ -13,6 +13,7 @@ class PortfoliosController < ApplicationController
   def show
   end
 
+
   # GET /portfolios/new
   def new
     @portfolio = Portfolio.new

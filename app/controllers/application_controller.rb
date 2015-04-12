@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :authorize
+
+
   protected
   def authorize
     unless User.find_by_id(session[:user_id])
@@ -17,11 +19,13 @@ class ApplicationController < ActionController::Base
 		portfolio = Portfolio.create 
 		session[:portfolio_id] = portfolio.id
 		portfolio
+               
 	end
 
 def stock_params (params)
       params.require(:stock).permit(:stock_name, :stock_symbol, :last_trade_price, :percent_change)
     end
- 
+
+helper_method :current_portfolio
 
 end
