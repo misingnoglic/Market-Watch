@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401050032) do
+ActiveRecord::Schema.define(version: 20150415044423) do
 
   create_table "line_items", force: :cascade do |t|
     t.integer  "stock_id"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 20150401050032) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.integer  "number_shares", default: 1
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.boolean  "seen"
+    t.integer  "notifiable_id"
+    t.string   "notifiable_type"
   end
 
   create_table "portfolios", force: :cascade do |t|
