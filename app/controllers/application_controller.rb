@@ -12,20 +12,28 @@ class ApplicationController < ActionController::Base
   end
 
 
-	private
-	def current_portfolio 
-		Portfolio.find_by_user_id(session[:user_id])
-	rescue ActiveRecord::RecordNotFound 
-		portfolio = Portfolio.create 
-		session[:portfolio_id] = portfolio.id
-		portfolio
+    private
+    def current_portfolio 
+        Portfolio.find_by_user_id(session[:user_id])
+    rescue ActiveRecord::RecordNotFound 
+        portfolio = Portfolio.create 
+        session[:portfolio_id] = portfolio.id
+        portfolio
                
-	end
-
-def stock_params (params)
-      params.require(:stock).permit(:stock_name, :stock_symbol, :last_trade_price, :percent_change)
     end
 
+        def current_user?
+          if (session[:user_id]) then
+            return session[:user_id]
+          else
+            return -1
+          end
+        end
+def stock_params (params)
+      params.require(:stock).permit(:stock_name, :stock_symbol, :last_trade_price, :percent_change)
+end
+
 helper_method :current_portfolio
+helper_method :current_user?
 
 end
