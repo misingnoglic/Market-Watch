@@ -22,10 +22,18 @@ class ApplicationController < ActionController::Base
                
 	end
 
+        def current_user?
+          if (session[:user_id]) then
+            return session[:user_id]
+          else
+            return -1
+          end
+        end
 def stock_params (params)
       params.require(:stock).permit(:stock_name, :stock_symbol, :last_trade_price, :percent_change)
-    end
+end
 
 helper_method :current_portfolio
+helper_method :current_user?
 
 end
