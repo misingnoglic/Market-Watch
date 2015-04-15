@@ -55,9 +55,4 @@ ActiveRecord::Schema.define(version: 20150401050032) do
     t.boolean  "admin",           default: false
   end
 
-  create_table "watchlists", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end

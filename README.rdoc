@@ -1,4 +1,3 @@
-Now Running on Codeship!
 == README
 
 Directions for running project:
