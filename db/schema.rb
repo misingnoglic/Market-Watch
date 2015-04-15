@@ -11,53 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401050032) do
+ActiveRecord::Schema.define(version: 0) do
 
-  create_table "line_items", force: :cascade do |t|
-    t.integer  "stock_id"
-    t.integer  "portfolio_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.integer  "number_shares", default: 1
-  end
-
-  create_table "portfolios", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-  end
-
-  add_index "portfolios", ["user_id"], name: "index_portfolios_on_user_id"
-
-  create_table "rules", force: :cascade do |t|
-    t.float    "target_price"
-    t.integer  "portfolio_id"
-    t.integer  "stock_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  create_table "stocks", force: :cascade do |t|
-    t.string   "stock_name"
-    t.string   "stock_symbol"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.float    "last_trade_price", default: 0.0
-    t.float    "percent_change",   default: 0.0
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "user_name"
-    t.string   "password_digest"
-    t.string   "email"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.boolean  "admin",           default: false
-  end
-
-  create_table "watchlists", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
 end
