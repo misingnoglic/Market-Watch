@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +30,11 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Home</a></li>
               <li><%= link_to "Stocks", stocks_path  %></li>
-              <li><%= link_to "My Porfolio", portfolio_path(current_portfolio) unless current_user? == nil%></li>
+<<<<<<< HEAD
+              <li><%= link_to "My Porfolio", portfolio_path(current_portfolio) unless current_user? == -1%></li>
+=======
+              <li><%= link_to "My Porfolio", portfolio_path(current_portfolio) unless current_portfolio == nil %></li>
+>>>>>>> d74de2d5dd79b9d20e72521672de41763c468335
               <li><%= link_to "Rules", rules_path %></li>
             </ul>
             <ul class="nav navbar-nav navbar-right" >
@@ -54,5 +56,3 @@
 
 </body>
 </html>
-
-
