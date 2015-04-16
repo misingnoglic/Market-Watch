@@ -33,4 +33,4 @@ class ApplicationController < ActionController::Base
   helper_method :current_user?
 
 end
-
+>>>>>>> 03d1af387bdad9ba4ae7323d2bd22b03aeae0c30
