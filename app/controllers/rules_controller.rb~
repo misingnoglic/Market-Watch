@@ -10,7 +10,7 @@ class RulesController < ApplicationController
   def index
     @user = current_user
     ::RuleEngine.start
-    @rules = @user.rules
+    @rules = Rule.all
   end
 
   # GET /rules/1

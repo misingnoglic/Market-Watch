@@ -16,7 +16,7 @@
   </thead>
 
   <tbody>
-    <% @rules.each do |rule| %>
+    <% rules.each do |rule| %>
       <tr>
         <td><%= rule.target_price %></td>
         <td><%= rule.stock.stock_name %></td>

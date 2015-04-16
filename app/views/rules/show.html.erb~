@@ -5,7 +5,10 @@
   <%= @rule.target_price %>
 </p>
 
-
+<p>
+  <strong>Portfolio:</strong>
+  <%= @rule.portfolio_id %>
+</p>
 
 <p>
   <strong>Stock:</strong>

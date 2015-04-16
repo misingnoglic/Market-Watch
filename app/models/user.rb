@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
     #validates :password_digest, length: { in: 6..20 }
 
     has_secure_password
+    has_many  :rules
     has_many :notifications
     has_one :portfolio
 

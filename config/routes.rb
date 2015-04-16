@@ -20,11 +20,11 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :notifications
+    resources :rules
   end
 
-  resources :portfolios do 
-    resources :rules 
-  end 
+  resources :portfolios 
+  
   
 
 

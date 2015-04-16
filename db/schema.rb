@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20150416012039) do
 
   create_table "rules", force: :cascade do |t|
     t.float    "target_price"
-    t.integer  "portfolio_id"
+    t.integer  "user_id"
     t.integer  "stock_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
