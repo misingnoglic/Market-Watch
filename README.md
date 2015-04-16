@@ -1,7 +1,6 @@
-== README
+== README ==
 
-=begin html
-<img src="https://codeship.com/projects/1a2def90-c4f3-0132-ed41-32942c6ecf59/status?branch=master" align="right" alt="Figure 1." />
+![badge](https://codeship.com/projects/1a2def90-c4f3-0132-ed41-32942c6ecf59/status?branch=master)
 
 =end
 Directions for running project:
