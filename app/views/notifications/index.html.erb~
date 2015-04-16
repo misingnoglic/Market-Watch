@@ -9,11 +9,13 @@
       <th>Stock symbol</th>
     </tr>
   </thead>
-
+  
+  <tbody>
     <% @notifications.each do |notification| %>
       <tr>
         <td><%= notification.symbol %> </td>
         <td><%= notification.content %> </td>
+        <td><%= "Alert Target Price #{notification.rule.target_price} reached!" %>
         <td><%= link_to 'Show', notification %></td>
         <td><%= link_to 'Edit', edit_notification_path(notification) %></td>
         <td><%= link_to 'Destroy', notification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
