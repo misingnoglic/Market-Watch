@@ -9,9 +9,11 @@ class RuleEngine
 		rules.each do |rule|
 			stock = rule.stock
 			if rule.target_price <= stock.last_trade_price
-                                notification = stock.notifications.build()
-                  		#notification.user = 
-				RuleMailer.sample_email(rule).deliver_now
+                                notification = rule.notifications.create(symbol: stock[:stock_symbol], content: stock[:stock_name])
+			        Rails.logger.debug "xyz #{notification.attributes.inspect}"
+                             Rails.logger.debug "zyx #{stock.attributes.inspect}"
+				 Rails.logger.debug "hello-xyz #{stock[:symbol]}"
+				#RuleMailer.sample_email(rule).deliver_now
 			end
 		end
 

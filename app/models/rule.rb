@@ -1,7 +1,7 @@
 class Rule < ActiveRecord::Base
 	belongs_to :stock
 	belongs_to :portfolio
-        has_many :notifications, :as => :notifiable
+        has_many :notifications
 	accepts_nested_attributes_for :stock
 
 

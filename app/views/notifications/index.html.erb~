@@ -9,8 +9,7 @@
       <th>Stock symbol</th>
     </tr>
   </thead>
-  
-  <tbody>
+
     <% @notifications.each do |notification| %>
       <tr>
         <td><%= notification.symbol %> </td>

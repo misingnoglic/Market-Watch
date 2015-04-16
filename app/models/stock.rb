@@ -3,7 +3,6 @@ class Stock < ActiveRecord::Base
 
   has_many :line_items
   has_many :rules
-  has_many :notifications, :as => :notifiable
 
 
   before_destroy :ensure_not_referenced_by_any_line_item

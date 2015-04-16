@@ -11,12 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20150330030844) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
+ActiveRecord::Schema.define(version: 20150416012039) do
 
   create_table "line_items", force: :cascade do |t|
     t.integer  "stock_id"
@@ -27,12 +22,15 @@ ActiveRecord::Schema.define(version: 20150330030844) do
   end
 
   create_table "notifications", force: :cascade do |t|
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean  "seen"
-    t.integer  "notifiable_id"
-    t.string   "notifiable_type"
+    t.text     "content"
+    t.text     "symbol"
+    t.integer  "rule_id"
   end
+
+  add_index "notifications", ["rule_id"], name: "index_notifications_on_rule_id"
 
   create_table "portfolios", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -40,7 +38,7 @@ ActiveRecord::Schema.define(version: 20150330030844) do
     t.integer  "user_id"
   end
 
-  add_index "portfolios", ["user_id"], name: "index_portfolios_on_user_id", using: :btree
+  add_index "portfolios", ["user_id"], name: "index_portfolios_on_user_id"
 
   create_table "rules", force: :cascade do |t|
     t.float    "target_price"
@@ -66,7 +64,6 @@ ActiveRecord::Schema.define(version: 20150330030844) do
     t.boolean  "admin",           default: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-
   end
 
 end

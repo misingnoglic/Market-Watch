@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   resources :notifications
 
-  resources :rules do
-    resources :notifications
-  end
+  resources :rules 
+  
 
   resources :line_items
 
