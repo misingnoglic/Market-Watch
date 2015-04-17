@@ -1,5 +1,8 @@
-== README
+== README ==
+Now running on codeship!
+![badge](https://codeship.com/projects/1a2def90-c4f3-0132-ed41-32942c6ecf59/status?branch=master)
 
+=end
 Directions for running project:
 
 1. Simply clone the git repo (make sure rails and ruby are installed)
