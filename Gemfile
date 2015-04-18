@@ -5,6 +5,8 @@ gem 'faker'
 #for API stuff
 gem 'yahoofinance'
 
+gem 'pusher'
+
 # rails_admin gem
 gem 'fastercsv' # Only required on Ruby 1.8 and below
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'

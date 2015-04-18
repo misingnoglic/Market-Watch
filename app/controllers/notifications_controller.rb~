@@ -4,7 +4,10 @@ class NotificationsController < ApplicationController
   # GET /notifications
   # GET /notifications.json
   def index
-    @notifications = Notification.where (["user_id = ?", current_user.id])
+    temp = current_user.rules.map do |rule|
+      rule.notifications
+    end
+    @notifications = temp.flatten
   end
 
   # GET /notifications/1
@@ -25,6 +28,9 @@ class NotificationsController < ApplicationController
   # POST /notifications.json
   def create
     @notification = Notification.new(notification_params)
+    Pusher['test_channel'].trigger('my_event', {
+      message: 'hello world'
+    })
 
     respond_to do |format|
       if @notification.save

@@ -1,10 +1,9 @@
 
-require 'pusher'
 
 Rails.application.configure do
 
 
-
+require 'pusher'
 
 
 Pusher.app_id = '116280'

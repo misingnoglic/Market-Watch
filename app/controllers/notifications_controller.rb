@@ -28,6 +28,9 @@ class NotificationsController < ApplicationController
   # POST /notifications.json
   def create
     @notification = Notification.new(notification_params)
+    Pusher['test_channel'].trigger('my_event', {
+      message: 'hello world'
+    })
 
     respond_to do |format|
       if @notification.save
