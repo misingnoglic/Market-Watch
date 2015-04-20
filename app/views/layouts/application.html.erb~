@@ -16,7 +16,7 @@
 
      channel.bind('client-new_message', function(data) {
 
-      msg = data.stock_symbol + 'has hit the price of' + data.target + "with a current value of" + data.stock_price ;
+      msg = data.stock_symbol + 'has hit the price of' + data.target + " with a current value of " + data.stock_price ;
       Notification.requestPermission( function () {
         var notification = new Notification ('pop', {
           body: msg
