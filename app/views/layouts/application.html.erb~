@@ -2,29 +2,65 @@
 <html>
 <head>
   <title>Store</title>
+ <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
   <script src="http://js.pusher.com/2.0/pusher.min.js"></script>
-  <script src="//js.pusher.com/2.2/pusher.min.js"></script>
-  <script>
-    // Enable pusher logging - don't include this in production
-    Pusher.log = function(message) {
-      if (window.console && window.console.log) {
-        window.console.log(message);
-      }
-    };
+  <script src="/javascripts/jquery.titlealert.js"></script>
+     <script type="text/javascript" charset="utf-8">
+      $(function() {
 
-    var pusher = new Pusher('b79e3ab119cc8a15cad7');
-    var channel = pusher.subscribe('test_channel');
-    channel.bind('my_event', function(data) {
-      alert(data.message);
+            var pusher = new Pusher('b79e3ab119cc8a15cad7'); // Replace with your app key
+    	    var channel = pusher.subscribe('private-'+<%= current_user.id.to_s if current_user %>);
+
+     channel.bind('client-new_message', function(data) {
+
+      msg = data.stock_symbol + 'has hit the price of' + data.target + "with a current value of" + data.stock_price ;
+      Notification.requestPermission( function () {
+        var notification = new Notification ('pop', {
+          body: msg
+        });
+      })
+      });
+
+   function dom_notify(msg) {
+  $('#notify').text(msg);
+  $('#notify').fadeIn();
+  setTimeout(function() {
+    $('#notify').fadeOut
+    ();
+  }, 20000);
+}
+ 
+      });
+
+
+
+    // Some useful debug msgs
+    pusher.connection.bind('connecting', function() {
+      $('div#status').text('Connecting to Pusher...');
     });
+    pusher.connection.bind('connected', function() {
+      $('div#status').text('Connected to Pusher!');
+    });
+    pusher.connection.bind('failed', function() {
+      $('div#status').text('Connection to Pusher failed :(');
+    });
+    channel.bind('subscription_error', function(status) {
+      $('div#status').text('Pusher subscription_error');
+    });
+
+   
+
+
+    </script>
+
 
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
   <![endif]-->
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -56,7 +92,7 @@
       </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
   </nav>
-
+  <div id="notify">A little notification here</div>
   <div class="container">
     <div class="row">
       <div class="span9"><%= yield %></div>

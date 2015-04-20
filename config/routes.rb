@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   resources :portfolios
 
+
+  post 'pusher/auth'
+
   get 'admin' => 'admin#index'
 
   controller :sessions do

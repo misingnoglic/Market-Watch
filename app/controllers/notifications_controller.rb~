@@ -4,6 +4,7 @@ class NotificationsController < ApplicationController
   # GET /notifications
   # GET /notifications.json
   def index
+    
     temp = current_user.rules.map do |rule|
       rule.notifications
     end
@@ -13,6 +14,7 @@ class NotificationsController < ApplicationController
   # GET /notifications/1
   # GET /notifications/1.json
   def show
+    
   end
 
   # GET /notifications/new
@@ -27,20 +29,19 @@ class NotificationsController < ApplicationController
   # POST /notifications
   # POST /notifications.json
   def create
-    @notification = Notification.new(notification_params)
-    Pusher['test_channel'].trigger('my_event', {
-      message: 'hello world'
-    })
 
-    respond_to do |format|
+    @notification = Notification.new(notification_params)
+
+      Pusher['private-'+current_user.id.to_s].trigger('client-new_message', {:stock_symbol => "goog ", :stock_price => "100"})
+
       if @notification.save
-        format.html { redirect_to @notification, notice: 'Notification was successfully created.' }
-        format.json { render :show, status: :created, location: @notification }
+     redirect_to @notification
+   
       else
         format.html { render :new }
         format.json { render json: @notification.errors, status: :unprocessable_entity }
       end
-    end
+    
   end
 
   # PATCH/PUT /notifications/1
