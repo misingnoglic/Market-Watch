@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'twitter'
+gem 'sentimental'
+
 gem 'faker'
 
 #for API stuff

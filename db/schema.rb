@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416012039) do
+ActiveRecord::Schema.define(version: 20150421014603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,16 @@ ActiveRecord::Schema.define(version: 20150416012039) do
     t.datetime "updated_at",                     null: false
     t.float    "last_trade_price", default: 0.0
     t.float    "percent_change",   default: 0.0
+  end
+
+  create_table "tweets", force: :cascade do |t|
+    t.text     "screen_name"
+    t.text     "content"
+    t.text     "sentiment"
+    t.float    "sentiment_score"
+    t.integer  "stock_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Screen name:</strong>
+  <%= @tweet.screen_name %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @tweet.content %>
+</p>
+
+<p>
+  <strong>Sentiment:</strong>
+  <%= @tweet.sentiment %>
+</p>
+
+<p>
+  <strong>Sentiment score:</strong>
+  <%= @tweet.sentiment_score %>
+</p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @tweet.stock_id %>
+</p>
+
+<%= link_to 'Edit', edit_tweet_path(@tweet) %> |
+<%= link_to 'Back', tweets_path %>
