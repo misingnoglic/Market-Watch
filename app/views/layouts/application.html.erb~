@@ -8,21 +8,65 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
   <script src="http://js.pusher.com/2.0/pusher.min.js"></script>
   <script src="/javascripts/jquery.titlealert.js"></script>
+<%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+<style>
+.alert-minimalist {
+	background-color: rgb(241, 242, 240);
+	border-color: rgba(149, 149, 149, 0.3);
+	border-radius: 3px;
+	color: rgb(149, 149, 149);
+	padding: 10px;
+}
+.alert-minimalist > [data-notify="icon"] {
+	height: 50px;
+	margin-right: 12px;
+}
+.alert-minimalist > [data-notify="title"] {
+	color: rgb(51, 51, 51);
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.alert-minimalist > [data-notify="message"] {
+	font-size: 80%;
+}
+</style>
      <script type="text/javascript" charset="utf-8">
+
       $(function() {
 
             var pusher = new Pusher('b79e3ab119cc8a15cad7'); // Replace with your app key
     	    var channel = pusher.subscribe('private-'+<%= current_user.id.to_s if current_user %>);
 
      channel.bind('client-new_message', function(data) {
+$(document).ready(function() {
+$.notify({
+	icon: 'https://randomuser.me/api/portraits/med/men/77.jpg',
+	title: data.stock_symbol,
+	message: data.stock_symbol + ' has hit the price of ' + data.target
+},{
+	type: 'minimalist',
+	delay: 5000,
+	icon_type: 'image',
+	template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+		'<img data-notify="icon" class="img-circle pull-left">' +
+		'<span data-notify="title">{1}</span>' +
+		'<span data-notify="message">{2}</span>' +
+	'</div>'
+});
+});
+});
 
-      msg = data.stock_symbol + 'has hit the price of' + data.target + " with a current value of " + data.stock_price ;
+    /*  msg = data.stock_symbol + 'has hit the price of' + data.target + " with a current value of " + data.stock_price ;
       Notification.requestPermission( function () {
         var notification = new Notification ('pop', {
           body: msg
         });
       })
-      });
+  });
 
    function dom_notify(msg) {
   $('#notify').text(msg);
@@ -32,6 +76,8 @@
     ();
   }, 20000);
 }
+
+*/
  
       });
 
@@ -92,7 +138,7 @@
       </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
   </nav>
-  <div id="notify">A little notification here</div>
+
   <div class="container">
     <div class="row">
       <div class="span9"><%= yield %></div>
