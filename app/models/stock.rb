@@ -1,5 +1,7 @@
 require 'yahoofinance'
 require 'json'
+require 'open-uri'
+
 class Stock < ActiveRecord::Base
 
   has_many :line_items
@@ -20,7 +22,14 @@ class Stock < ActiveRecord::Base
   def get_image_by_symbol
     name = YahooFinance::get_quotes( YahooFinance::StandardQuote, self.stock_symbol.upcase )[self.stock_symbol.upcase].name.gsub(" ","+")
     content = open("http://api.duckduckgo.com/?q=#{name}&format=json").read
-    JSON.parse(content)['Image']
+    json = JSON.parse(content)
+    image = json['Image']
+    if image.length < 5
+      content = open("http://api.duckduckgo.com/?q=#{self.stock_symbol.upcase}&format=json").read
+      json = JSON.parse(content)
+      image = json['Image']
+    end
+    return image
   end
 
 
@@ -28,7 +37,7 @@ class Stock < ActiveRecord::Base
     (YahooFinance::get_historical_quotes_days( self.stock_symbol, days_ago ).last.last.to_f)
   end
 
-  def open
+  def open_price
     YahooFinance::get_quotes( YahooFinance::StandardQuote, self.stock_symbol.upcase )[self.stock_symbol.upcase].open
   end
 
