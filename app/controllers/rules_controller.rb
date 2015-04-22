@@ -45,7 +45,7 @@ class RulesController < ApplicationController
 
     respond_to do |format|
       if @rule.save
-        format.html { redirect_to rule_url, notice: 'Rule was successfully created.' }
+        format.html { redirect_to rules_url, notice: 'Rule was successfully created.' }
         format.json { render :show, status: :created, location: @rule }
         @user.save
       else
