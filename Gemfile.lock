@@ -251,6 +251,7 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  json
   less-rails
   pg
   pusher
