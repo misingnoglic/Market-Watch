@@ -7,7 +7,7 @@ class LastPriceRule < Rule
 			#Rails.logger.debug "xyz #{notification.attributes.inspect}"
         	#Rails.logger.debug "zyx #{stock.attributes.inspect}"
 			#Rails.logger.debug "hello-xyz #{stock[:symbol]}"
-			#RuleMailer.sample_email(self).deliver_now
+			RuleMailer.sample_email(self).deliver_now
 		end
 	end
 

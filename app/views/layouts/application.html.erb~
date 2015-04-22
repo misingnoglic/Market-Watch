@@ -44,8 +44,8 @@
      channel.bind('client-new_message', function(data) {
 $(document).ready(function() {
 $.notify({
-	icon: 'https://randomuser.me/api/portraits/med/men/77.jpg',
-	title: data.stock_symbol,
+	icon: data.image_url,
+	title: 'Alert!,
 	message: data.stock_symbol + ' has hit the price of ' + data.target
 },{
 	type: 'minimalist',
