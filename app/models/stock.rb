@@ -17,7 +17,7 @@ class Stock < ActiveRecord::Base
     prices[self.stock_symbol.upcase].lastTrade
   end
 
-  def get_image_by_symbol(symbol)
+  def get_image_by_symbol
     name = YahooFinance::get_quotes( YahooFinance::StandardQuote, self.stock_symbol.upcase )[self.stock_symbol.upcase].name.gsub(" ","+")
     content = open("http://api.duckduckgo.com/?q=#{name}&format=json").read
     JSON.parse(content)['Image']
