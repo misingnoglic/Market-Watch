@@ -36,7 +36,7 @@ class RulesController < ApplicationController
 
     @user = current_user
     @stock = Stock.find_by_stock_symbol(params[:rule][:stock_symbol])
-    @rule = Rule.create(rule_params)
+    @rule = LastPriceRule.create(rule_params)
     @rule[:user_id] = @user.id
     @rule[:stock_id] = @stock.id
     @user.save
@@ -45,7 +45,7 @@ class RulesController < ApplicationController
 
     respond_to do |format|
       if @rule.save
-        format.html { redirect_to @rule, notice: 'Rule was successfully created.' }
+        format.html { redirect_to rule_url, notice: 'Rule was successfully created.' }
         format.json { render :show, status: :created, location: @rule }
         @user.save
       else
