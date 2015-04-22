@@ -21,6 +21,7 @@ class Stock < ActiveRecord::Base
     name = YahooFinance::get_quotes( YahooFinance::StandardQuote, self.stock_symbol.upcase )[self.stock_symbol.upcase].name.gsub(" ","+")
     content = open("http://api.duckduckgo.com/?q=#{name}&format=json").read
     JSON.parse(content)['Image']
+  end
 
 
   def historical_price(days_ago)
