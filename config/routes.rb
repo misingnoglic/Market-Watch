@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '', to: redirect('/portfolios/1')
+  
   resources :tweets
 
   resources :notifications
