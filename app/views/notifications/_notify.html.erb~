@@ -46,24 +46,6 @@ $.notify({
 });
 });
 
-    /*  msg = data.stock_symbol + 'has hit the price of' + data.target + " with a current value of " + data.stock_price ;
-      Notification.requestPermission( function () {
-        var notification = new Notification ('pop', {
-          body: msg
-        });
-      })
-  });
-
-   function dom_notify(msg) {
-  $('#notify').text(msg);
-  $('#notify').fadeIn();
-  setTimeout(function() {
-    $('#notify').fadeOut
-    ();
-  }, 20000);
-}
-
-*/
  
       });
 
