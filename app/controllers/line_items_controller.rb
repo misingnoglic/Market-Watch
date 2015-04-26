@@ -1,5 +1,6 @@
 class LineItemsController < ApplicationController
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  before_action :portfolio_value
 
   # GET /line_items
   # GET /line_items.json
@@ -71,6 +72,13 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to curr_portfolio, notice: 'Line item was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def portfolio_value
+    @current_value = 0
+    current_portfolio.line_items.each do |item|
+      @current_value = @current_value + item.stock.price 
     end
   end
 

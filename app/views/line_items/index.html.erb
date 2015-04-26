@@ -35,6 +35,8 @@
   </tbody> 
 </table> 
 
+<h4><b>Portfolio Value: </b><%= @current_value %></h4>
+
 <%= form_tag(line_items_path, method: "create") do %> 
   <%= label_tag(:stock, "Stock Name:") %> 
   <%= text_field_tag(:stock_name) %> 
