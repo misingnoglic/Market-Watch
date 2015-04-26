@@ -10,7 +10,7 @@ if user and user.authenticate(params[:password])
     if user.admin 
     	redirect_to admin_url
 	else
-		redirect_to current_portfolio
+		redirect_to line_items_path
 	end
 else
 	redirect_to login_url, alert: "Invalid user/password combination"

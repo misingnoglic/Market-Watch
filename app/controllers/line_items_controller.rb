@@ -4,7 +4,8 @@ class LineItemsController < ApplicationController
   # GET /line_items
   # GET /line_items.json
   def index
-    @line_items = LineItem.all
+    @portfolio = current_portfolio
+    @line_items = @portfolio.line_items
   end
 
   # GET /line_items/1

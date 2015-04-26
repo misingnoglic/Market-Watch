@@ -1,29 +1,46 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Portfolio -%> 
+<div class="page-header"> 
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1> 
+  <% user = current_user %> 
+  <h3> Welcome <%= user.user_name %> </h3> 
+</div> 
+<table class="table table-striped"> 
+  <thead> 
+    <tr> 
+      <th>Stock name</th> 
+      <th>Stock symbol</th> 
+      <th>Last Trade Price</th> 
+      <th>Number Shares</th> 
+      <th>Stock graph</th> 
+      <th colspan="3"></th> 
+    </tr> 
+  </thead> 
+ 
+ 
+<tbody> 
+    <% @line_items.each do |item| %> 
+      <tr> 
+        <td><%= item.stock.stock_name %></td> 
+        <td><%= item.stock.stock_symbol %></td> 
+        <td><%= item.stock.price %></td>    
+        <td><%= item.number_shares %></td> 
+        <td><%= link_to 'Show', item.stock %></td> 
+    <td> <%= link_to t('.destroy', :default => t("helpers.links.destroy")), 
+                      line_item_path(item), 
+                      :method => :delete, 
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, 
+                      :class => 'btn btn-xs btn-danger' %> </td> 
+      </tr> 
+    <% end %> 
+  </tbody> 
+</table> 
 
-<h1>Listing Line Items</h1>
+<%= form_tag(line_items_path, method: "create") do %> 
+  <%= label_tag(:stock, "Stock Name:") %> 
+  <%= text_field_tag(:stock_name) %> 
+  <%= label_tag(:stock, "Stock Symbol:") %> 
+  <%= text_field_tag(:stock_symbol) %> 
+  <%= submit_tag("Add Investment") %> 
+<% end %> 
 
-<table>
-  <thead>
-    <tr>
-      <th>Stock</th>
-      <th>Portfolio</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @line_items.each do |line_item| %>
-      <tr>
-        <td><%= line_item.stock_id %></td>
-        <td><%= line_item.portfolio_id %></td>
-        <td><%= link_to 'Show', line_item %></td>
-        <td><%= link_to 'Edit', edit_line_item_path(line_item) %></td>
-        <td><%= link_to 'Destroy', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Line item', new_line_item_path %>
+ 
