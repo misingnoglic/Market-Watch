@@ -12,7 +12,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
-  <% render "notifications/notify" %>
+  <%= render "notifications/notify" %>
 
 
   <!--[if lt IE 9]>
@@ -21,35 +21,41 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
 
 
+
+<body  class="metro">
 <div class="container">
+<nav class="navigation-bar dark">
+<nav class="navigation-bar-content">
 
-  <!-- Static navbar -->
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Market-Watch 166b</a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><%= link_to "Stocks", stocks_path  %></li>
-          <li><%= link_to "My Porfolio", portfolio_path(current_portfolio) unless current_portfolio == nil %></li>          <li><%= link_to "Rules", rules_path %></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right" >
-          <%= button_to 'Logout', logout_path, :method => :delete %>
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div><!--/.container-fluid -->
-  </nav>
+<a class="element" href=>   <i class="fa fa-home fa-lg"></i> Market-Watch</a>
+
+<span class="element-divider"></span>
+ <%= link_to  stocks_path,  class: "element" do %> 
+   <i class="fa fa-money"> Stocks </i>
+ <% end %>
+
+<span class="element-divider"> </span>
+<%  if current_portfolio != nil  then %>
+ <%= link_to  portfolio_path(current_portfolio), class: "element" do %>
+   <i class="fa fa-folder"> My Portfolio </i>
+ <% end %>
+<span class="element-divider"></span>
+<% end %>
+
+ <%= link_to  rules_path , class: "element" do  %> 
+     <i class="fa fa-legal"> Rules </i>
+ <% end %>
+<span class="element-divider"></span>
+<% if current_user != nil %>
+ <%= button_to  logout_path, :method => :delete, class: "element" do %>
+      <i class="fa fa-lock"> Logout </i>
+<span class="element-divider"></span>
+<% end %>
+</nav>
+</nav>
+</div>
 
   <div class="container">
     <div class="row">

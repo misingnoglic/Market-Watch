@@ -10,7 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  * 
- *= require bootstrap_and_overrides.css.less
+ *= require bootstrap_and_overrides.css
  *= require metro-bootstrap.min
  *= require metro-bootstrap-responsive.min
  *= require iconFont.min
