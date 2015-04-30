@@ -4,7 +4,7 @@ class UpdateTweetsJob
   def perform(data)
 		puts "#{Time.now}: Start updating tweets data" 
 		::UpdateTweets.update
-		UpdateTweetsJob.new.async.perform(10800,"asdf") 
+		UpdateTweetsJob.new.async.later(10800,"asdf") 
 	end
 
 	def later(sec,data)

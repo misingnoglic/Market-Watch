@@ -1,0 +1,2 @@
+module StockHistoriesHelper
+end

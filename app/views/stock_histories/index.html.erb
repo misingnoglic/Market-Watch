@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Stock Histories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stock symbol</th>
+      <th>Last trade price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stock_histories.each do |stock_history| %>
+      <tr>
+        <td><%= stock_history.stock_symbol %></td>
+        <td><%= stock_history.last_trade_price %></td>
+        <td><%= stock_history.created_at.time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stock history', new_stock_history_path %>
