@@ -15,7 +15,7 @@
 //= require jquery.widget.min
 //= require jquery.mousewheel
 //= require metro.min
-//= require bootstrap-notify
+//= require bootstrap-notify.min
 //= require turbolinks
 
 

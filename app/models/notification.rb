@@ -6,9 +6,9 @@ belongs_to :user
 after_create :notify
   def notify
     rule = self.rule
-    passed_in = rule.getNotification.map do |key, value|
-      "#{"  + value.to_s + "}"
-    end
+    Rails.logger.debug ("foo7000- #{rule.getNotification}")
+    passed_in = rule.getNotification
+    Rails.logger.debug ("foo2000- #{passed_in.to_s}")
     Pusher['private-'+self.rule.user.id.to_s].trigger('client-new_message', passed_in)
   end
 end

@@ -35,7 +35,7 @@ $.notify({
 	message: data.stock_symbol + ' has hit the price of ' + data.target + ' !'
 },{
 	type: 'minimalist',
-	delay: 5000,
+	delay: 10000,
 	icon_type: 'image',
 	template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
 		'<img data-notify="icon" class="img-thumbnail pull-left">' +
