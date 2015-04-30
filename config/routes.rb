@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :stock_histories
+
   get '', to: redirect('/portfolios/1')
   
   resources :tweets
