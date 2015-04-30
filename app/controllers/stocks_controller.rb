@@ -6,7 +6,6 @@ class StocksController < ApplicationController
   # GET /stocks
   # GET /stocks.json
   def index
-    ::UpdateStocks.update
     @stocks = Stock.all
   end
 

@@ -1,6 +1,6 @@
 require 'yahoofinance'
 
-class UpdateStocksJob
+class UpdateJob
 	include SuckerPunch::Job
 
 	 require 'update_stocks'
@@ -11,7 +11,7 @@ class UpdateStocksJob
 			::RuleEngine.start
 			#::UpdateStocks.update
 			#need to add call to read from yahoo api and update stocks 
-			UpdateStocksJob.new.async.later(60,"asdf") 
+			UpdateJob.new.async.later(60,"asdf") 
 		end
 	end
 

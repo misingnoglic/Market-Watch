@@ -9,7 +9,6 @@ class RulesController < ApplicationController
   # GET /rules.json
   def index
     @user = current_user
-    ::RuleEngine.start
     @rules = @user.rules
   end
 

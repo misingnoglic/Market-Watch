@@ -8,7 +8,6 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
-    ::UpdateTweets.update
     @tweets = Tweet.all
   end
 
