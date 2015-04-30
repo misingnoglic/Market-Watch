@@ -81,12 +81,12 @@ class StocksController < ApplicationController
 
     # method for default sort
     def sort_column
-      params[:sort] || "stock_name"
+      Stock.column_names.include?(params[:sort]) ? params[:sort] : "stock_name"
     end
 
     # method for default direction
     def sort_direction
-      params[:direction] || "asc"
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 
 
