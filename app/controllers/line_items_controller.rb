@@ -41,8 +41,8 @@ class LineItemsController < ApplicationController
      
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.portfolio, notice: 'Line item was successfully created.' }
-        format.json { render  @line_item, status: :created, location: @line_item }
+        format.html { redirect_to line_items_url, notice: 'Line item was successfully created.' }
+        format.json { render  line_items_url, status: :created, location: @line_item }
       else
         format.html { render :new }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
