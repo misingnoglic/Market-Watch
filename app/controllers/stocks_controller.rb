@@ -1,12 +1,13 @@
 #require 'yahoofinance'
   require 'update_stocks'
 class StocksController < ApplicationController
+    helper_method :sort_column, :sort_direction
     before_action :set_stock, only: [:show, :edit, :update, :destroy]
     
   # GET /stocks
   # GET /stocks.json
   def index
-    @stocks = Stock.order(params[:sort] + " " + params[:direction])
+    @stocks = Stock.order(sort_column + " " + sort_direction)
   end
 
   # GET /stocks/1
@@ -76,6 +77,16 @@ class StocksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def stock_params
       params.require(:stock).permit(:stock_name, :stock_symbol, :last_trade_price, :percent_change)
+    end
+
+    # method for default sort
+    def sort_column
+      params[:sort] || "stock_name"
+    end
+
+    # method for default direction
+    def sort_direction
+      params[:direction] || "asc"
     end
 
 
