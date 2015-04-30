@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:stock_name) %></th>
-      <th><%= model_class.human_attribute_name(:stock_symbol) %></th>
+      <th><%= link_to "Stock Name", :sort => "stock_name" %></th>
+      <th><%= link_to "Stock symbol", :sort => "stock_symbol" %></th>
       <th><%= model_class.human_attribute_name(:stock_price) %></th>
       <th> Today's Change </th>
     </tr>
