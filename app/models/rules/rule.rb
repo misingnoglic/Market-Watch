@@ -16,7 +16,7 @@ class Rule < ActiveRecord::Base
       
         def getNotification
           notifications = Hash.new
-          notifications = {stock_symbol: stock[:stock_symbol], stock_price: stock.price.to_s,  message: message, target: target.to_s, image: stock.get_image_by_symbol.to_s}
+          notifications = {stock_symbol: stock[:stock_symbol], stock_price: stock.price.to_s,  message: message, target: target.to_s, image_url: stock.get_image_by_symbol.to_s}
           return notifications 
         end
 
