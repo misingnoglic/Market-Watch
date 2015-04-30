@@ -5,9 +5,9 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:stock_name) %></th>
-      <th><%= model_class.human_attribute_name(:stock_symbol) %></th>
+      <th><% model_class.human_attribute_name(:id) %></th>
+      <th><%= sortable "stock_name" %></th>
+      <th><%= sortable "stock_symbol" %></th>
       <th><%= model_class.human_attribute_name(:stock_price) %></th>
       <th> Today's Change </th>
     </tr>
@@ -15,7 +15,7 @@
   <tbody>
     <% @stocks.each do |stock| %>
       <tr>
-        <td><%= link_to stock.id, stock_path(stock) %></td>
+        <td><% link_to stock.id, stock_path(stock) %></td>
         <td><%= stock.stock_name %></td>
         <td><%= stock.stock_symbol %></td>
 	<td><%= stock.last_trade_price.round(2) %></td>
