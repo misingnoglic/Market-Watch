@@ -13,6 +13,21 @@ class Stock < ActiveRecord::Base
 
     #attr_accessor :stock_symbol
 
+  def getSentimentScore
+     tweets = Tweet.where(:stock => self)
+     score = 0
+     count = 0
+     tweets.each do |tweet|
+       score = score + tweet.sentiment_score
+       count  = count + 1
+     end
+     if count == 0
+      return nil
+    else
+     return score/count
+   end
+  end
+
   def price
     prices = YahooFinance::get_quotes( YahooFinance::StandardQuote, self.stock_symbol.upcase )
     puts prices
