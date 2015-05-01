@@ -4,7 +4,7 @@ class CreateRules < ActiveRecord::Migration
       t.float :target_price
       t.integer :user_id
       t.integer :stock_id
-      t.integer :last_fired
+      t.integer :lastfired
 
       t.timestamps null: false
     end

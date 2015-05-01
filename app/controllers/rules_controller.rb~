@@ -35,6 +35,7 @@ class RulesController < ApplicationController
 
     @user = current_user
     @stock = Stock.find_by_stock_symbol(params[:rule][:stock_symbol])
+    params[:rule][:last_fired] = 0 #default minimum, updates to new time on firing
     @rule = LastPriceRule.create(rule_params)
     @rule[:user_id] = @user.id
     @rule[:stock_id] = @stock.id
@@ -87,6 +88,6 @@ class RulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rule_params
-      params.require(:rule).permit(:target_price, :user_id, :stock_id, :stock_symbol)
+      params.require(:rule).permit(:target_price, :user_id, :stock_id, :stock_symbol, :lastfired)
     end
 end

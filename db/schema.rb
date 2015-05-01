@@ -52,10 +52,10 @@ ActiveRecord::Schema.define(version: 20150501014444) do
     t.float    "target_price"
     t.integer  "user_id"
     t.integer  "stock_id"
+    t.integer  "last_fired"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "type"
-    t.datetime "lastfired"
   end
 
   create_table "settings", force: :cascade do |t|

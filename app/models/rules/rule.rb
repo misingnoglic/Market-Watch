@@ -21,12 +21,12 @@ class Rule < ActiveRecord::Base
         end
 
         def canfire?
-          if (self.lastfired - Time.now.utc).abs >= self.user.settings(:frequency).time
-            Rails.logger.debug "jootrue #{(self.lastfired - Time.now.utc).abs}"
-                        Rails.logger.debug "jooxyz #{Time.now.utc}"
+          if (self.last_fired.to_i- Time.now.to_i).abs >= self.user.settings(:frequency).time
+            Rails.logger.debug "jootrue #{(self.last_fired.to_i- Time.now.to_i)}"
+                        Rails.logger.debug "jooxyz #{self.last_fired.to_i}"
             return true
           end
-                     Rails.logger.debug "joofalse #{(self.lastfired - Time.now).abs}"
+                     Rails.logger.debug "joofalse #{(self.last_fired.to_i - Time.now.to_i).to_i.abs}"
           return false
         end
       
@@ -34,6 +34,16 @@ class Rule < ActiveRecord::Base
         def target
         
         end
+      
+        def set_time
+          self.lastfired = Time.now.to_i
+        end
+    
+        def get_time
+          self.lastfired
+        end
+
+        
      
         # returns string that can be used for notification, override when necessary
         def message
