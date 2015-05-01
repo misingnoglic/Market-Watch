@@ -12,14 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :target_price %><br>
+    <%= f.label "Rule Type" %>
+    <%= f.select(:type, options_for_select([["Target Price", "LastPriceRule"], ["Twitter Sentiment", "SentimentRule"]]), :prompt => 'Select One') %>   
+  </div>
+
+  <div class="field">
+    <%= f.label "Rule Type" %>
+    <%= f.select(:compare, options_for_select([["Greater than equal to", ">="], ["Less than equal to", "<="]])) %>   
+  </div>
+
+  <div class="field">
+    <%= f.label "Target" %>
     <%= f.number_field :target_price %>
   </div>
+
   <div class="field">
-    <%= f.label :stock_symbol %><br>
+    <%= f.label :stock_symbol %>
     <%= f.text_field :stock_symbol %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

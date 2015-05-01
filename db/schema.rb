@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150501014444) do
+ActiveRecord::Schema.define(version: 20150501060921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,10 +52,18 @@ ActiveRecord::Schema.define(version: 20150501014444) do
     t.float    "target_price"
     t.integer  "user_id"
     t.integer  "stock_id"
+<<<<<<< HEAD
     t.integer  "last_fired"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "type"
+=======
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "type"
+    t.datetime "lastfired"
+    t.integer  "compare",      default: 0
+>>>>>>> 2c925a6d3470643ddb3428ce4b72e927b9c503ee
   end
 
   create_table "settings", force: :cascade do |t|

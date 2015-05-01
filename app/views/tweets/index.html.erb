@@ -21,7 +21,7 @@
         <td><%= tweet.content %></td>
         <td><%= tweet.sentiment %></td>
         <td><%= tweet.sentiment_score %></td>
-        <td><%= tweet.stock_id %></td>
+        <td><%= tweet.stock.stock_name %></td>
         <td><%= link_to 'Show', tweet %></td>
         <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
         <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
