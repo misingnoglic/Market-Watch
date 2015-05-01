@@ -88,6 +88,6 @@ class RulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rule_params
-      params.require(:rule).permit(:target_price, :user_id, :stock_id, :stock_symbol, :lastfired)
+      params.require(:rule).permit(:target_price, :user_id, :stock_id, :stock_symbol, :lastfired, :compare)
     end
 end
