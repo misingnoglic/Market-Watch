@@ -1,3 +1,5 @@
+require 'update_tweets'
+
 class UpdateTweetsJob
   include SuckerPunch::Job
 
