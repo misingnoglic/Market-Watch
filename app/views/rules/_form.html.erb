@@ -1,3 +1,9 @@
+
+
+
+<%= select_tag(:type, options_for_select([['Target Price', 1], ['Sentiment', 2]])) %>
+
+
 <%= form_for(@rule) do |f| %>
   <% if @rule.errors.any? %>
     <div id="error_explanation">
