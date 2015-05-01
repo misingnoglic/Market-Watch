@@ -111,6 +111,8 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    ledermann-rails-settings (2.4.0)
+      activerecord (>= 3.1)
     less (2.6.0)
       commonjs (~> 0.2.7)
     less-rails (2.7.0)
@@ -252,6 +254,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   json
+  ledermann-rails-settings
   less-rails
   pg
   pusher

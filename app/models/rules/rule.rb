@@ -20,7 +20,15 @@ class Rule < ActiveRecord::Base
           return notifications 
         end
 
-       
+        def canfire?
+          if (self.lastfired - Time.now.utc).abs >= self.user.settings(:frequency).time
+            Rails.logger.debug "jootrue #{(self.lastfired - Time.now.utc).abs}"
+                        Rails.logger.debug "jooxyz #{Time.now.utc}"
+            return true
+          end
+                     Rails.logger.debug "joofalse #{(self.lastfired - Time.now).abs}"
+          return false
+        end
       
         #target predicate, override
         def target
