@@ -46,6 +46,12 @@
  <%= link_to  rules_path , class: "element" do  %> 
      <i class="fa fa-legal"> Rules </i>
  <% end %>
+
+<span class="element-divider"></span>
+ <%= link_to  tweets_path,  class: "element" do %> 
+   <i class="fa fa-money"> Tweets </i>
+ <% end %>
+ 
 <span class="element-divider"></span>
 <% if current_user != nil %>
  <%= button_to  logout_path, :method => :delete, class: "element" do %>
@@ -53,6 +59,9 @@
  <% end %>
 <span class="element-divider"></span>
 <% end %>
+
+
+
 </nav>
 </nav>
 </div>
