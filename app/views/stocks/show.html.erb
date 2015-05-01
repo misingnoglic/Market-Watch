@@ -11,7 +11,7 @@
         google.setOnLoadCallback(drawChart);
 
         function drawChart() {
-            var data = google.visualization.arrayToDataTable(<%= raw @stock.chart_prices(7) %>);
+            var data = google.visualization.arrayToDataTable(<%= raw StockHistory.createGoogleJSON(@stock.stock_symbol) %>);
 
             var options = {
                 title: 'Stock Graph',
