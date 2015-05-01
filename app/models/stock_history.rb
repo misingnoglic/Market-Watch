@@ -1,7 +1,6 @@
 class StockHistory < ActiveRecord::Base
   require 'json'
-
-  def createHighchartsJSON(symbol)
+  def self.createHighchartsJSON(symbol)
     stock_histories = StockHistory.where(stock_symbol: symbol)
     histories = []
     for stock_history in stock_histories do
