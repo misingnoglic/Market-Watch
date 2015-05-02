@@ -12,7 +12,7 @@ class Rule < ActiveRecord::Base
 
         # called to see if main condition is met, must be overridden
         def checkTrigger
-	end
+	      end
       
         def getNotification
           notifications = Hash.new

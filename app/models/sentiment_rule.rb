@@ -1,0 +1,3 @@
+class SentimentRule < Rule
+
+end

@@ -84,6 +84,8 @@ ActiveRecord::Schema.define(version: 20150501060046) do
     t.datetime "updated_at",                     null: false
     t.float    "last_trade_price", default: 0.0
     t.float    "percent_change",   default: 0.0
+    t.text     "sentiment"
+    t.float    "sentiment_score"
   end
 
   create_table "tweets", force: :cascade do |t|

@@ -8,8 +8,9 @@
       <th><% model_class.human_attribute_name(:id) %></th>
       <th><%= sortable "stock_name" %></th>
       <th><%= sortable "stock_symbol" %></th>
-      <th><%= model_class.human_attribute_name(:stock_price) %></th>
-      <th> Today's Change </th>
+      <th><%= sortable "last_trade_price" %></th>
+      <th> <%= sortable "percent_change" %> </th>
+      <th><%= sortable "sentiment_score" %> </th>
     </tr>
   </thead>
   <tbody>
@@ -18,9 +19,9 @@
         <td><% link_to stock.id, stock_path(stock) %></td>
         <td><%= stock.stock_name %></td>
         <td><%= stock.stock_symbol %></td>
-	<td><%= stock.last_trade_price.round(2) %></td>
-	<td><%= "#{((1-(stock.price / stock.open_price))*100).round(2)}%" %></td
-        <td><%= stock.created_at %></td>
+	     <td><%= stock.last_trade_price.round(2) %></td>
+	     <td><%= "#{((1-(stock.price / stock.open_price))*100).round(2)}%" %></td>
+        <td><%= stock.getSentimentScore %></td>
         <td><%= button_to 'Add to Portfolio', line_items_path(stock_id: stock) %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

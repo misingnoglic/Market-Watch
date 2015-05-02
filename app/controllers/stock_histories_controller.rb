@@ -71,4 +71,9 @@ class StockHistoriesController < ApplicationController
     def stock_history_params
       params.require(:stock_history).permit(:stock_symbol, :last_trade_price)
     end
+
+  require 'json'
+
+
+
 end
