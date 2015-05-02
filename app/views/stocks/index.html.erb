@@ -8,9 +8,9 @@
       <th><% model_class.human_attribute_name(:id) %></th>
       <th><%= sortable "stock_name" %></th>
       <th><%= sortable "stock_symbol" %></th>
-      <th><%= model_class.human_attribute_name(:stock_price) %></th>
-      <th> Today's Change </th>
-      <th> Sentiment Score </th>
+      <th><%= sortable "last_trade_price" %></th>
+      <th> <%= sortable "percent_change" %> </th>
+      <th><%= sortable "sentiment_score" %> </th>
     </tr>
   </thead>
   <tbody>
