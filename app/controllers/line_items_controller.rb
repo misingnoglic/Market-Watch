@@ -6,7 +6,7 @@ class LineItemsController < ApplicationController
   # GET /line_items.json
   def index
     @portfolio = current_portfolio
-    @line_items = @portfolio.line_items
+    @line_items = @portfolio.line_items.order(params[:sort])
   end
 
   # GET /line_items/1
