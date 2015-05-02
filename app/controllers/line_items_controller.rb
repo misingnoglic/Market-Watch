@@ -6,7 +6,7 @@ class LineItemsController < ApplicationController
   # GET /line_items.json
   def index
     @portfolio = current_portfolio
-    @line_items = @portfolio.line_items.ordered_by_stock_name
+    sorted_portfolio
   end
 
   # GET /line_items/1
@@ -91,5 +91,19 @@ class LineItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
       params.require(:line_item).permit(:stock_id, :portfolio_id)
+    end
+
+    def sorted_portfolio
+      if (params[:sort]=="sort_by_stock_name")
+        @line_items = @portfolio.line_items.ordered_by_stock_name
+      elsif (params[:sort]=="sort_by_stock_symbol")
+        @line_items = @portfolio.line_items.ordered_by_stock_symbol
+      elsif (params[:sort]=="sort_by_last_trade_price")
+        @line_items = @portfolio.line_items.ordered_by_price
+      elsif (params[:sort]=="number_shares")
+        @line_items = @portfolio.line_items.order(params[:sort])
+      else 
+        @line_items = @portfolio.line_items
+      end
     end
 end
