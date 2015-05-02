@@ -1,0 +1,41 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> 
+        prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<fieldset>
+<legend>Enter User Details</legend>
+ 
+
+     <div><%= label :admin, "Every minute" %>
+      <%= f.radio_button :admin, false , :checked => true , :value => 60 %>
+    </div>
+  <div><%= label :admin, "Every half hour"%>
+       <%= f.radio_button :admin,  true, :value => 1800  %>
+  </div>
+
+
+  <div><%= label :admin, "Every hour"%>
+       <%= f.radio_button :admin,  true, :value => 3600%>
+  </div>
+
+
+  <div><%= label :admin, "Once a day"%>
+       <%= f.radio_button :admin,  true, :value => 86400%>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+ 
+</fieldset>
+<% end %>

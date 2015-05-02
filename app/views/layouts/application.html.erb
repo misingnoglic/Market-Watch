@@ -49,15 +49,26 @@
 
 <span class="element-divider"></span>
  <%= link_to  tweets_path,  class: "element" do %> 
-   <i class="fa fa-money"> Tweets </i>
+   <i class="fa fa-twitter"> Tweets </i>
  <% end %>
  
-<span class="element-divider"></span>
+
 <% if current_user != nil %>
- <%= button_to  logout_path, :method => :delete, class: "element" do %>
+
+<%= button_to  logout_path, { :method => :delete, style: 'float: right;',  class: "element"} do %>
       <i class="fa fa-lock"> Logout </i>
  <% end %>
+
 <span class="element-divider"></span>
+
+ <%= link_to  edit_user_path(current_user), { style: 'float: right;',  class: "element"} do %> 
+   <i class="fa fa-cog"> Settings </i>
+ <% end %>
+
+
+ 
+
+
 <% end %>
 
 

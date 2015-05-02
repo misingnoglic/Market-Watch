@@ -2,14 +2,14 @@
 <html>
 <head>
   <title>Store</title>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script src="http://js.pusher.com/2.0/pusher.min.js"></script>
+  <script src="/javascripts/jquery.titlealert.js"></script>
 
  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-  <script src="http://js.pusher.com/2.0/pusher.min.js"></script>s
-
+  
 
   <%= render "notifications/notify" %>
 
@@ -37,7 +37,7 @@
 
 <span class="element-divider"> </span>
 <%  if current_portfolio != nil  then %>
- <%= link_to  portfolio_path(current_portfolio), class: "element" do %>
+ <%= link_to  line_items_url, class: "element" do %>
    <i class="fa fa-folder"> My Portfolio </i>
  <% end %>
 <span class="element-divider"></span>
@@ -46,13 +46,33 @@
  <%= link_to  rules_path , class: "element" do  %> 
      <i class="fa fa-legal"> Rules </i>
  <% end %>
+
+<span class="element-divider"></span>
+ <%= link_to  tweets_path,  class: "element" do %> 
+   <i class="fa fa-twitter"> Tweets </i>
+ <% end %>
+ 
 <span class="element-divider"></span>
 <% if current_user != nil %>
- <%= button_to  logout_path, :method => :delete, class: "element" do %>
+
+<%= button_to  logout_path, { :method => :delete, style: 'float: right;',  class: "element"} do %>
       <i class="fa fa-lock"> Logout </i>
  <% end %>
+
 <span class="element-divider"></span>
+
+ <%= link_to  edit_user_path(current_user), { style: 'float: right;',  class: "element"} do %> 
+   <i class="fa fa-cog"> Settings </i>
+ <% end %>
+
+
+ 
+
+
 <% end %>
+
+
+
 </nav>
 </nav>
 </div>

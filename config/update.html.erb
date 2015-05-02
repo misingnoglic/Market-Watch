@@ -1,0 +1,5 @@
+<%= form_tag("/users", :method => "update") do %>
+ f.radiobutton(time: 3600)
+ f.radiobutton(time: 21600)
+  <%= submit_tag("Save Changes") %>
+<% end %>
