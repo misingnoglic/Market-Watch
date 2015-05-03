@@ -28,7 +28,12 @@
   <div><%= label :admin, "Admin"%>
        <%= f.radio_button :admin,  true, :value => true%></div>
   </div>
-
+<!--
+  <div>
+    <%= f.label :password_confirmation, 'Confirm' %>:
+    <%= f.password_field :password_confirmation, size:40 %>
+  </div>
+-->
   <div>
     <%= f.label :email, 'Email' %>:
     <%= f.text_field :email, size:40 %>
