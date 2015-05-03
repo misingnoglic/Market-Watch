@@ -27,14 +27,14 @@ class Chart < ActiveRecord::Base
   end
 
   
-  def self.get_target_price_json (stock_symbol)
-    curr_rule = self.rule
-    time_v_target = []
-    Stock.by_stock_symbol(stock_symbol).each do |stock|
-      time_v_target.append([stock.created_at.strftime("%m-%d %H:%M"), curr_rule.target])
+  def self.add_target_to_json(old_chart, target)
+    old_chart = JSON.parse(old_chart)
+    old_chart[0]+=["Target"]
+    (old_chart.length - 1).times do |index|
+      old_chart[index+1]+=[target]
     end
-    return JSON.generate(time_v_target)
   end
+  return JSON.generate(old_chart)
 end
 
   
