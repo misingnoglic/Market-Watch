@@ -71,7 +71,7 @@ class LineItemsController < ApplicationController
     curr_portfolio = @line_item.portfolio
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to curr_portfolio, notice: 'Line item was successfully destroyed.' }
+      format.html { redirect_to line_items_url, notice: 'Line item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
