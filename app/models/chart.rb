@@ -27,11 +27,11 @@ class Chart < ActiveRecord::Base
   end
 
   
-  def self.add_target_to_json(old_chart, target)
+  def self.add_target_to_json(old_chart, target_price, target_label)
     old_chart = JSON.parse(old_chart)
-    old_chart[0]+=["Target"]
+    old_chart[0]+=[target_label]
     (old_chart.length - 1).times do |index|
-      old_chart[index+1]+=[target]
+      old_chart[index+1]+=[target_price]
     end
   end
   return JSON.generate(old_chart)
