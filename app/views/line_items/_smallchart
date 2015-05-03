@@ -1,0 +1,7 @@
+
+
+
+<img src= chart.finance.yahoo.com/z?s=<%= stock_symbol %> >
+
+
+
