@@ -3,7 +3,7 @@ require 'json'
 require 'open-uri'
 
 class Stock < ActiveRecord::Base
-  validates :stock_exists?
+  validates :stock_symbol, presence: true, if: :stock_exists?
   has_many :line_items
   has_many :rules
   has_many :tweets
