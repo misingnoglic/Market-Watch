@@ -3,12 +3,14 @@ class Portfolio < ActiveRecord::Base
 	has_many :line_items, dependent: :destroy
 	has_many :rules, dependent: :destroy
 
-	def add_product(stock_id)
+	def add_product(stock_id, number_shares)
+		number_shares = number_shares.to_i
 		current_item = line_items.find_by_stock_id(stock_id) 
 		if current_item
-      	current_item.number_shares += 1
+      	current_item.number_shares = current_item.number_shares + number_shares
+      	current_item.save
 		else
-      	current_item = line_items.build(stock_id: stock_id)
+      	current_item = line_items.build(stock_id: stock_id, number_shares: number_shares)
 		end
     	current_item
 	end

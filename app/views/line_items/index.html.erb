@@ -44,6 +44,8 @@
 <%= form_tag(line_items_path, method: "create") do %>  
   <%= label_tag(:stock, "Stock Symbol:") %> 
   <%= text_field_tag(:stock_symbol) %> 
+  <%= label_tag(:number_shares, "Amount:") %> 
+  <%= text_field_tag(:number_shares) %> 
   <%= submit_tag("Add Investment") %> 
 <% end %> 
 

@@ -36,7 +36,7 @@ class LineItemsController < ApplicationController
       stock = Stock.new(stock_params(new_params))
       stock.save
     end
-    @line_item = @portfolio.add_product(stock[:id])
+    @line_item = @portfolio.add_product(stock[:id], params[:number_shares])
     @line_item.save
 
      
@@ -91,7 +91,7 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:stock_id, :portfolio_id)
+      params.require(:line_item).permit(:stock_id, :portfolio_id, :number_shares)
     end
 
     def sorted_portfolio
