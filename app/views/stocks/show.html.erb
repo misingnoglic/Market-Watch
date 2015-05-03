@@ -3,13 +3,11 @@
     google.load("visualization", "1.1", {packages:["corechart"]});
     google.setOnLoadCallback(drawChart);
     function drawChart() {
-        var data = google.visualization.arrayToDataTable(<%= raw @stock.chart_prices(7) %>);
+        var data = google.visualization.arrayToDataTable(<%= raw Chart.create_chart_data(@stock.stock_symbol) %>);
 
         var options = {
             title: 'Stock Graph',
             legend: { position: 'bottom' },
-            colors: ['#15A0C8'],
-            curveType: 'function',
             pointSize: 1
         };
 
