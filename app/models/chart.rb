@@ -46,9 +46,9 @@ class Chart < ActiveRecord::Base
     return JSON.generate(old_chart)
   end
 
-  def self.create_chart_data (stock_symbol)
+  def self.create_chart_data (stock_symbol, user_id)
     id = Stock.where(stock_symbol: stock_symbol)[0].id
-    rules = Rule.where(stock_id: id)
+    rules = Rule.where(stock_id: id, user_id: user_id)
     old_chart = get_API_history_json(stock_symbol, 7)
     for rule in rules.each do
 

@@ -3,7 +3,7 @@
     google.load("visualization", "1.1", {packages:["corechart"]});
     google.setOnLoadCallback(drawChart);
     function drawChart() {
-        var data = google.visualization.arrayToDataTable(<%= raw Chart.create_chart_data(@stock.stock_symbol) %>);
+        var data = google.visualization.arrayToDataTable(<%= raw Chart.create_chart_data(@stock.stock_symbol, current_user.id) %>);
 
         var options = {
             title: 'Stock Graph',
