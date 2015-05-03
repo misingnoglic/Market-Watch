@@ -1,35 +1,46 @@
+<div class="col-md-offset-1">
+<br>
+<%= form_tag(tweets_path , method: "get", class: "form") do %>
+ <%= text_field_tag(:search, params[:search]) %> 
+ <%= submit_tag("Search", :name => nil, class: "btn btn-default") %> 
+<% end %>
+
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Tweets</h1>
+<%if @tweets.nil? || @tweets.length == 0%>
 
-<table>
-  <thead>
-    <tr>
-      <th>Screen name</th>
-      <th>Content</th>
-      <th>Sentiment</th>
-      <th>Sentiment score</th>
-      <th>Stock</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <p>No Matches Found</p>
 
-  <tbody>
-    <% @tweets.each do |tweet| %>
+<% else %>
+
+  <h1>Listing Tweets</h1>
+
+  <table>
+    <thead>
       <tr>
-        <td><%= tweet.screen_name %></td>
-        <td><%= tweet.content %></td>
-        <td><%= tweet.sentiment %></td>
-        <td><%= tweet.sentiment_score %></td>
-        <td><%= tweet.stock.stock_name %></td>
-        <td><%= link_to 'Show', tweet %></td>
-        <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-        <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Screen name</th>
+        <th>Content</th>
+        <th>Sentiment</th>
+        <th>Sentiment score</th>
+        <th>Stock</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @tweets.each do |tweet| %>
+        <tr>
+          <td><%= tweet.screen_name %></td>
+          <td><%= tweet.content %></td>
+          <td><%= tweet.sentiment %></td>
+          <td><%= tweet.sentiment_score %></td>
+          <td><%= tweet.stock.stock_name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Tweet', new_tweet_path %>
+ <% end %> 
+
+

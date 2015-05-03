@@ -8,7 +8,7 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.search(params[:search])
   end
 
   # GET /tweets/1
