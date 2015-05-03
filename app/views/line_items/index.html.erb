@@ -7,10 +7,10 @@
 <table class="table table-striped"> 
   <thead> 
     <tr> 
-      <th> Stock name </th> 
-      <th>Stock symbol</th> 
-      <th>Last Trade Price</th> 
-      <th><%= link_to "Number Shares", :sort => "number_shares" %></th> 
+      <th> <%= link_to "Stock Name", :sort => "sort_by_stock_name" %> </th> 
+      <th> <%= link_to "Stock Symbol", :sort => "sort_by_stock_symbol" %></th> 
+      <th> <%= link_to "Stock Price", :sort => "sort_by_last_trade_price" %></th> 
+      <th> <%= link_to "Number Shares", :sort => "number_shares" %></th> 
       <th>Stock graph</th> 
       <th colspan="3"></th> 
     </tr> 
