@@ -25,8 +25,8 @@
         <td><%= item.stock.stock_symbol %></td> 
         <td><%= item.stock.price %></td>    
         <td><%= item.number_shares %></td> 
-        <td><%= link_to 'Show', item.stock %></td> 
-        <td> <%= render partial: 'smallchart' , locals: {stock_symbol: item.stock.stock_symbol} %> </td>
+        
+        <td> <%= render partial: 'smallchart' , locals: {stock_symbol: item.stock.stock_symbol} %> <br> <%= link_to 'Show', item.stock %> </td>
     <td>    <%= link_to t('.destroy', :default => t("helpers.links.destroy")), 
                       line_item_path(item), 
                       :method => :delete, 
