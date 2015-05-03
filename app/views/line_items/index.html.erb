@@ -40,9 +40,7 @@
 
 
 
-<%= form_tag(line_items_path, method: "create") do %> 
-  <%= label_tag(:stock, "Stock Name:") %> 
-  <%= text_field_tag(:stock_name) %> 
+<%= form_tag(line_items_path, method: "create") do %>  
   <%= label_tag(:stock, "Stock Symbol:") %> 
   <%= text_field_tag(:stock_symbol) %> 
   <%= submit_tag("Add Investment") %> 
