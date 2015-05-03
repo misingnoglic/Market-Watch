@@ -24,6 +24,7 @@ module Project
     config.active_record.raise_in_transactional_callbacks = true
     config.action_mailer.default_url_options = { :host => 'localhost', :port => 3000 }
     config.autoload_paths += %W(#{config.root}/app/models/rules)
+    config.assets.initialize_on_precompile = false
   end
 end
 
