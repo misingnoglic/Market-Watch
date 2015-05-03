@@ -18,5 +18,4 @@ class StockHistory < ActiveRecord::Base
     return JSON.generate(histories)
   end
 
-
 end

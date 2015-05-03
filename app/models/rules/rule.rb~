@@ -12,7 +12,7 @@ class Rule < ActiveRecord::Base
 
         # called to see if main condition is met, must be overridden
         def checkTrigger
-	end
+	      end
       
         def getNotification
           notifications = Hash.new
@@ -26,7 +26,7 @@ class Rule < ActiveRecord::Base
                         Rails.logger.debug "jooxyz #{self.last_fired.to_i}"
             return true
           end
-                     Rails.logger.debug "joofalse #{(self.last_fired - Time.now).to_i.abs}"
+                     Rails.logger.debug "joofalse #{(self.last_fired.to_i - Time.now.to_i).to_i.abs}"
           return false
         end
       
