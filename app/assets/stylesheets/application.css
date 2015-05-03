@@ -14,5 +14,5 @@
  *= require metro-bootstrap.min
  *= require metro-bootstrap-responsive.min
  *= require iconFont.min
- *= require_self
+ *= require custom
  */
