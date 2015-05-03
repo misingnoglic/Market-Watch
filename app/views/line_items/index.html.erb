@@ -7,7 +7,7 @@
         var data = google.visualization.arrayToDataTable(<%= raw Chart.create_pie_chart_json(@portfolio.id) %>);
 
         var options = {
-            title: 'My Daily Activities'
+            title: 'Stock Proportions'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -57,7 +57,7 @@
   </tbody> 
 </table>
 
-<div id="piechart" style="width: 450px; height: 250px;"></div>
+<div id="piechart" style="width: 300px; height: 250px;"></div>
 
 
 <%= form_tag(line_items_path, method: "create") do %>  
