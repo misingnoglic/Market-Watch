@@ -31,32 +31,39 @@
 <a class="element" href=>   <i class="fa fa-home fa-lg"></i> Market-Watch</a>
 
 <span class="element-divider"></span>
- <%= link_to  stocks_path,  class: "element" do %> 
-   <i class="fa fa-money"> Stocks </i>
- <% end %>
+<%= link_to  stocks_path,  class: "element" do %> 
+<i class="fa fa-money"> Stocks </i>
+<% end %>
 
 <span class="element-divider"> </span>
 <%  if current_portfolio != nil  then %>
- <%= link_to  line_items_url, class: "element" do %>
-   <i class="fa fa-folder"> My Portfolio </i>
- <% end %>
-<span class="element-divider"></span>
+  <%= link_to  line_items_url, class: "element" do %>
+  <i class="fa fa-folder"> My Portfolio </i>
+  <% end %>
+  <span class="element-divider"></span>
 <% end %>
 
- <%= link_to  rules_path , class: "element" do  %> 
-     <i class="fa fa-legal"> Rules </i>
- <% end %>
+<span class="element-divider"></span>
+<%  if current_portfolio != nil  then %>
+  <%= link_to  rules_path , class: "element" do  %> 
+  <i class="fa fa-legal"> Rules </i>
+  <% end %>
+  <span class="element-divider"></span>
+<% end %>
 
 <span class="element-divider"></span>
- <%= link_to  tweets_path,  class: "element" do %> 
-   <i class="fa fa-twitter"> Tweets </i>
- <% end %>
- 
+<%  if current_portfolio != nil  then %>
+  <%= link_to  tweets_path,  class: "element" do %> 
+  <i class="fa fa-twitter"> Tweets </i>
+  <% end %>
+  <span class="element-divider"></span>
+<% end %>
+
 
 <% if current_user != nil %>
 
 <%= button_to  logout_path, { :method => :delete, style: 'float: right;',  class: "element"} do %>
-      <i class="fa fa-lock"> Logout </i>
+    <i class="fa fa-lock"> Logout </i>
  <% end %>
 
 <span class="element-divider"></span>
