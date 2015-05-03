@@ -3,6 +3,7 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1> 
   <% user = current_user %> 
   <h3> Welcome <%= user.user_name %> </h3> 
+  <h4><b>Portfolio Value: </b><%= @current_value.round(2) %></h4>
 </div> 
 <table class="table table-striped"> 
   <thead> 
@@ -37,7 +38,7 @@
   </tbody> 
 </table> 
 
-<h4><b>Portfolio Value: </b><%= @current_value.round(2) %></h4>
+
 
 <%= form_tag(line_items_path, method: "create") do %> 
   <%= label_tag(:stock, "Stock Name:") %> 
