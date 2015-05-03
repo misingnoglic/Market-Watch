@@ -28,6 +28,8 @@
                 <%= time_ago_in_words Time.now %> ago
             </div>
         </div>
+        <div><%=tweet.sentiment_score %></div>
+        <div><%= tweet.sentiment%></div>
         <br>
     </li>
 <% end %>
