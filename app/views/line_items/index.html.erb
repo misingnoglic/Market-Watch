@@ -12,11 +12,12 @@
       <th> Ticker <%= link_to "▲", :sort => "sort_by_stock_symbol_asc" %> <%= link_to "▼", :sort => "sort_by_stock_symbol_desc" %></th> 
       <th> Price <%= link_to "▲", :sort => "sort_by_last_trade_price_asc" %><%= link_to "▼", :sort => "sort_by_last_trade_price_desc" %></th> 
       <th> Amount <%= link_to "▲", :sort => "number_shares_asc" %><%= link_to "▼", :sort => "number_shares_desc" %></th> 
+      <th> Sentiment <%= link_to "▲", :sort => "sentiment_score_asc" %><%= link_to "▼", :sort => "sentiment_score_desc" %></th> 
       <th>Stock graph</th> 
       <th colspan="3"></th> 
     </tr> 
   </thead> 
-
+  
   
  
 <tbody> 
@@ -26,7 +27,7 @@
         <td><%= item.stock.stock_symbol %></td> 
         <td><%= item.stock.price %></td>    
         <td><%= item.number_shares %></td> 
-        
+        <td><%= item.stock.sentiment_score %></td> 
         <td> <%= render partial: 'smallchart' , locals: {stock_symbol: item.stock.stock_symbol} %> <br> <%= link_to 'Show', item.stock %> </td>
     <td>    <%= link_to t('.destroy', :default => t("helpers.links.destroy")), 
                       line_item_path(item), 

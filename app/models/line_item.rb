@@ -8,6 +8,8 @@ class LineItem < ActiveRecord::Base
     scope :ordered_by_stock_symbol_desc, -> { joins(:stock).order('stocks.stock_symbol DESC') }
     scope :ordered_by_price_asc, -> { joins(:stock).order('stocks.last_trade_price') }
     scope :ordered_by_price_desc, -> { joins(:stock).order('stocks.last_trade_price DESC') }
+    scope :ordered_by_sentiment_asc, -> { joins(:stock).order('stocks.sentiment_score') }
+    scope :ordered_by_sentiment_desc, -> { joins(:stock).order('stocks.sentiment_score DESC') }
     def check_unique
          curr_portfolio = Portfolio.find(portfolio_id)
          curr_stock = Stock.find (stock_id)

@@ -111,6 +111,10 @@ class LineItemsController < ApplicationController
         @line_items = @portfolio.line_items.order("number_shares")
       elsif (params[:sort]=="number_shares_desc")
         @line_items = @portfolio.line_items.order("number_shares DESC")
+      elsif (params[:sort]=="sentiment_score_asc")
+        @line_items = @portfolio.line_items.ordered_by_sentiment_asc
+      elsif (params[:sort]=="sentiment_score_desc")
+        @line_items = @portfolio.line_items.ordered_by_sentiment_desc
       else 
         @line_items = @portfolio.line_items
       end
