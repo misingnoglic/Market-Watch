@@ -79,7 +79,7 @@ class LineItemsController < ApplicationController
   def portfolio_value
     @current_value = 0
     current_portfolio.line_items.each do |item|
-      @current_value = @current_value + item.stock.price 
+      @current_value = @current_value + (item.stock.price * item.number_shares) 
     end
   end
 
