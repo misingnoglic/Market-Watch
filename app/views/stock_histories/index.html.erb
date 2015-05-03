@@ -7,6 +7,7 @@
     <tr>
       <th>Stock symbol</th>
       <th>Last trade price</th>
+      <th>Sentiment Score</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= stock_history.stock_symbol %></td>
         <td><%= stock_history.last_trade_price %></td>
+        <td><%= stock_history.sentiment_score %></td>
         <td><%= stock_history.created_at.time %></td>
       </tr>
     <% end %>

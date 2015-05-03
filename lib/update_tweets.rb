@@ -28,6 +28,7 @@ class UpdateTweets
 			   )
 
 			end
+      Stock.update(stock.id, :sentiment_score => stock.getSentimentScore)
 		end
 
   end

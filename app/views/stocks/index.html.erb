@@ -21,7 +21,7 @@
         <td><%= stock.stock_symbol %></td>
 	     <td><%= stock.last_trade_price.round(2) %></td>
 	     <td><%= "#{((1-(stock.price / stock.open_price))*100).round(2)}%" %></td>
-        <td><%= stock.getSentimentScore %></td>
+        <td><%= stock.sentiment_score %></td>
         <td><%= button_to 'Add to Portfolio', line_items_path(stock_id: stock) %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

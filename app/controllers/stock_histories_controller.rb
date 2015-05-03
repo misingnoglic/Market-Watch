@@ -69,7 +69,7 @@ class StockHistoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stock_history_params
-      params.require(:stock_history).permit(:stock_symbol, :last_trade_price)
+      params.require(:stock_history).permit(:stock_symbol, :last_trade_price, :sentiment_score)
     end
 
   require 'json'
