@@ -1,4 +1,6 @@
 
+
+
 <%- model_class = Portfolio -%> 
 <div class="page-header"> 
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1> 
@@ -37,6 +39,7 @@
 </table> 
 
 <h4><b>Portfolio Value: </b><%= @current_value.round(2) %></h4>
+<div id="piechart" style="width: 900px; height: 500px;"></div>
 
 <%= form_tag(line_items_path, method: "create") do %> 
   <%= label_tag(:stock, "Stock Name:") %> 

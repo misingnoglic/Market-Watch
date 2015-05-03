@@ -16,8 +16,17 @@ class Portfolio < ActiveRecord::Base
 	end
 
 	def add_rule(stock_id, target_price)
-      	current_item = rules.build(stock_id: stock_id, target_price: target_price)
+		current_item = rules.build(stock_id: stock_id, target_price: target_price)
 	end
 
+	def pie_chart_JSON
+
+		returned_list = []
+		prices.each do |price_list|
+			returned_list.push([price_list.first,price_list.last.to_f])
+		end
+		returned_list = returned_list.reverse
+		return [['Date','Price']]+returned_list
+	end
 
 end

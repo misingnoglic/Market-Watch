@@ -1,10 +1,28 @@
-<%- model_class = Portfolio -%> 
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+
+        var data = google.visualization.arrayToDataTable(<%= raw Chart.create_pie_chart_json(@portfolio.id) %>);
+
+        var options = {
+            title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+    }
+</script>
+
+<%- model_class = Portfolio -%>
 <div class="page-header"> 
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1> 
   <% user = current_user %> 
   <h3> Welcome <%= user.user_name %> </h3> 
   <h4><b>Portfolio Value: </b><%= @current_value.round(2) %></h4>
-</div> 
+</div>
 <table class="table table-striped"> 
   <thead> 
     <tr> 
@@ -37,8 +55,9 @@
       </tr> 
     <% end %> 
   </tbody> 
-</table> 
+</table>
 
+<div id="piechart" style="width: 450px; height: 250px;"></div>
 
 
 <%= form_tag(line_items_path, method: "create") do %>  

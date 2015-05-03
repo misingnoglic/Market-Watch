@@ -57,6 +57,16 @@ class Chart < ActiveRecord::Base
     return old_chart
   end
 
+  def self.create_pie_chart_json (portfolio_id)
+    portfolio = Portfolio.find(portfolio_id)
+    acc = [["Stock Name","Value"]]
+    portfolio.line_items.each do |item|
+      stock = Stock.find(item.stock_id)
+      acc.append([stock.stock_symbol, stock.last_trade_price*item.number_shares])
+    end
+    return JSON.generate(acc)
+  end
+
 end
 
   

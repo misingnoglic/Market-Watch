@@ -64,6 +64,7 @@ class PortfoliosController < ApplicationController
     end
   end
 
+
   def portfolio_value
     @current_value = 0
     @portfolio.line_items.each do |item|
