@@ -1,4 +1,5 @@
 class LineItemsController < ApplicationController
+  helper_method :sort_column, :sort_direction
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   before_action :portfolio_value
 
@@ -70,7 +71,7 @@ class LineItemsController < ApplicationController
     curr_portfolio = @line_item.portfolio
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to curr_portfolio, notice: 'Line item was successfully destroyed.' }
+      format.html { redirect_to line_items_url, notice: 'Line item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -78,7 +79,7 @@ class LineItemsController < ApplicationController
   def portfolio_value
     @current_value = 0
     current_portfolio.line_items.each do |item|
-      @current_value = @current_value + item.stock.price 
+      @current_value = @current_value + (item.stock.price * item.number_shares) 
     end
   end
 
@@ -94,14 +95,22 @@ class LineItemsController < ApplicationController
     end
 
     def sorted_portfolio
-      if (params[:sort]=="sort_by_stock_name")
-        @line_items = @portfolio.line_items.ordered_by_stock_name
-      elsif (params[:sort]=="sort_by_stock_symbol")
-        @line_items = @portfolio.line_items.ordered_by_stock_symbol
-      elsif (params[:sort]=="sort_by_last_trade_price")
-        @line_items = @portfolio.line_items.ordered_by_price
-      elsif (params[:sort]=="number_shares")
-        @line_items = @portfolio.line_items.order(params[:sort])
+      if (params[:sort]=="sort_by_stock_name_asc")
+        @line_items = @portfolio.line_items.ordered_by_stock_name_asc
+      elsif (params[:sort]=="sort_by_stock_name_desc")
+        @line_items = @portfolio.line_items.ordered_by_stock_name_desc
+      elsif (params[:sort]=="sort_by_stock_symbol_asc")
+        @line_items = @portfolio.line_items.ordered_by_stock_symbol_asc
+      elsif (params[:sort]=="sort_by_stock_symbol_desc")
+        @line_items = @portfolio.line_items.ordered_by_stock_symbol_desc
+      elsif (params[:sort]=="sort_by_last_trade_price_asc")
+        @line_items = @portfolio.line_items.ordered_by_price_asc
+      elsif (params[:sort]=="sort_by_last_trade_price_desc")
+        @line_items = @portfolio.line_items.ordered_by_price_desc
+      elsif (params[:sort]=="number_shares_asc")
+        @line_items = @portfolio.line_items.order("number_shares")
+      elsif (params[:sort]=="number_shares_desc")
+        @line_items = @portfolio.line_items.order("number_shares DESC")
       else 
         @line_items = @portfolio.line_items
       end

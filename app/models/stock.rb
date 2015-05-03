@@ -3,7 +3,7 @@ require 'json'
 require 'open-uri'
 
 class Stock < ActiveRecord::Base
-
+  validates :stock_symbol, presence: true, if: :stock_exists?
   has_many :line_items
   has_many :rules
   has_many :tweets
@@ -78,6 +78,10 @@ class Stock < ActiveRecord::Base
       errors.add(:base, 'Line Items present')
       return false 
     end
+  end
+
+  def stock_exists?
+    return YahooFinance::get_quotes( YahooFinance::StandardQuote, self.stock_symbol)[self.stock_symbol].name != "N/A"
   end
 
 end

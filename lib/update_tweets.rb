@@ -16,7 +16,7 @@ class UpdateTweets
     Tweet.destroy_all
     @stocks = Stock.all
     @stocks.each do |stock| 
-      @client.search("$#{stock.stock_symbol} since:#{Date.yesterday()}", result_type: "popular").take(3).collect do |tweet| 
+      @client.search("$#{stock.stock_symbol} ", result_type: "recent").take(100).collect do |tweet| 
 			 analyzer = Sentimental.new
        Tweet.create(
 			   	:screen_name => tweet.user.screen_name,
@@ -24,6 +24,7 @@ class UpdateTweets
           :sentiment => (analyzer.get_sentiment tweet.text),
           :sentiment_score => (analyzer.get_score tweet.text),
 				  :stock_id => stock.id
+          
 			   )
 
 			end
