@@ -78,6 +78,10 @@ class Stock < ActiveRecord::Base
     end
   end
 
+  def exists
+    return YahooFinance::get_quotes( YahooFinance::StandardQuote, self.stock_symbol)[self.stock_symbol].name != "N/A"
+  end
+
 end
 
 
