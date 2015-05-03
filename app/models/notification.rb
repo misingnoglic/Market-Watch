@@ -12,5 +12,6 @@ after_create :notify
     Pusher['private-'+self.rule.user.id.to_s].trigger('client-new_message', passed_in)
     puts("The rule has fired!")
     #This is where I will put the other notifications
+
   end
 end

@@ -72,3 +72,4 @@ end
 gem 'sucker_punch', '~> 1.0'
 gem 'rails_12factor', group: :production
 gem 'json'
+gem 'slack-notifier'
