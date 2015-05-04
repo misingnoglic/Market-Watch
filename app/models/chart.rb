@@ -7,12 +7,17 @@ class Chart < ActiveRecord::Base
   belongs_to :rule
 
   def self.get_price_history_json (stock_symbol)
-    price_histories = Stock.by_stock_symbol(stock_symbol)
+    api_histories = JSON.parse(get_API_history_json(stock_symbol, 7))
     
-    time_v_price = [["Date","Price"]]
+    price_histories = Stock.by_stock_symbol(stock_symbol) 
+
+    
+    time_v_price = []
     price_histories.each do |price_history|
       time_v_price.append([price_history.created_at.strftime("%m-%d %H:%M"), price_history.last_trade_price])
     end
+    
+    time_v_price = (api_histories + time_v_price)
     return JSON.generate(time_v_price)
   end
 
@@ -46,13 +51,12 @@ class Chart < ActiveRecord::Base
     return JSON.generate(old_chart)
   end
 
-  def self.create_chart_data (stock_symbol, user_id)
+  def self.create_target_price_chart (stock_symbol, user_id)
     id = Stock.where(stock_symbol: stock_symbol)[0].id
-    rules = Rule.where(stock_id: id, user_id: user_id)
+    rules = Rule.where(stock_id: id, user_id: user_id, rule_type: "target_price")
     old_chart = get_API_history_json(stock_symbol, 7)
     for rule in rules.each do
-
-      old_chart = self.add_target_to_json(old_chart,rule.target_price, "target")
+      old_chart = self.add_target_to_json(old_chart,rule.target_price, "target price")
     end
     return old_chart
   end
