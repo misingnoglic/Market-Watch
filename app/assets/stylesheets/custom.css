@@ -9,3 +9,7 @@ background: -webkit-linear-gradient(top,  #efefef 0%,#ffffff 100%);
 }
 
 
+#backLayer{
+	background-color: #600000;
+	opacity: 0.8;
+}
