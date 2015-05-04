@@ -9,8 +9,3 @@ background: -webkit-linear-gradient(top,  #efefef 0%,#ffffff 100%);
 }
 
 
-#graphPosition {
-	position:absolute;
-	right:240px;
-	top:175px;
-}
