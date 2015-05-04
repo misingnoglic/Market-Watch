@@ -1,13 +1,11 @@
 
 
 
-h3
- {
-color: white;
-}
+
 
 
 body {
-    /*background:         linear-gradient(360deg, #738276 10%, #5b92e5 90%); */
-
+background: -webkit-linear-gradient(top,  #efefef 0%,#ffffff 100%);
 }
+
+
