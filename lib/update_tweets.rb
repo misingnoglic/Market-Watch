@@ -28,7 +28,9 @@ class UpdateTweets
 			   )
 
 			end
-      Stock.update(stock.id, :sentiment_score => stock.getSentimentScore)
+      sentiment_score = stock.getSentimentScore
+      Stock.update(stock.id, :sentiment_score => sentiment_score)
+      StockHistory.create(:stock_symbol => stock.stock_symbol, :last_trade_price => stock.price, :sentiment_score => sentiment_score)
 		end
 
   end
