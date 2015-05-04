@@ -11,13 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
+ <h1> Sentiment Rule </h1>
+
+   <div class="field">
     <%= f.label :stock_symbol %>
     <%= f.text_field :stock_symbol %>
   </div>
 
   <div class="field">
-    <%= f.label "Rule Type" %>
+    <%= f.label "Sentiment Score" %>
     <%= f.select(:compare, options_for_select([["Greater than equal to", ">="], ["Less than equal to", "<="]])) %>   
   </div>
 
@@ -26,7 +28,7 @@
     <%= f.number_field :target_price %>
   </div>
 
-  
+
 
   <div class="actions">
     <%= f.submit %>

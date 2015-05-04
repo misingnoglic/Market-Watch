@@ -24,6 +24,11 @@ class RulesController < ApplicationController
     @rule = Rule.new
   end
 
+  def new_sentiment
+    @user = current_user
+    @rule = Rule.new
+  end
+
   # GET /rules/1/edit
   def edit
   end
