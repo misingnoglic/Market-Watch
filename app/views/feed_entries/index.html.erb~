@@ -5,7 +5,7 @@
  <%= submit_tag("Search", :name => nil, class: "btn btn-default") %> 
 <% end %>
 
-<%if @feed_entries.nil? || @feed_entries.length == 0%>
+<%if @feed_entries.nil? || @tweets.length == 0%>
 
   <p>No Matches Found</p>
 
