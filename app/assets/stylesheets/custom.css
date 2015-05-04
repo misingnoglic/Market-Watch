@@ -5,17 +5,7 @@
 
 
 body {
-	background-image: url(stockMarket.jpg);
-	background-size:cover;
-	opacity: .95;
-
+background: -webkit-linear-gradient(top,  #efefef 0%,#ffffff 100%);
 }
 
 
-.test {
-	background-color: black;
-}
-
-#backLayer {
-	background: -webkit-linear-gradient(top,  #efefef 0%,#ffffff 100%);
-}
