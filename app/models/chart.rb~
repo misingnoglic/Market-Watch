@@ -45,7 +45,7 @@ class Chart < ActiveRecord::Base
     return JSON.generate(time_v_sentiment)
   end
 
-  
+#takes chart and combines it with target
   def self.add_target_to_json(old_chart, target_price, target_label)
     old_chart = JSON.parse(old_chart)
     old_chart[0]+=[target_label]

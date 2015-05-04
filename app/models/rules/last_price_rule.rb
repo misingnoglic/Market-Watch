@@ -15,5 +15,11 @@ class LastPriceRule < Rule
         def target
           return self.target_price
         end
+   
+        def create_chart 
+          target= self.target
+          stock_symbol = self.stock.stock_symbol
+          return add_target_to_json(Chart.get_price_history_json(stock_symbol),target, "Target Price")
+        end 
 
 end
