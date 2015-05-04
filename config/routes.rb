@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :feed_entries
+
   resources :stock_histories
 
   get '', to: redirect('/portfolios/1')

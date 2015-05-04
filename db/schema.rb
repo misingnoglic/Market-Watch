@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150503075258) do
+ActiveRecord::Schema.define(version: 20150504080450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "feed_entries", force: :cascade do |t|
+    t.text     "title"
+    t.text     "description"
+    t.string   "link"
+    t.datetime "published_at"
+    t.string   "guid"
+    t.integer  "stock_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "last_price_rules", force: :cascade do |t|
     t.datetime "created_at", null: false
