@@ -11,7 +11,7 @@
   <%= csrf_meta_tags %>
 
 
-<META HTTP-EQUIV="Pragma" CONTENT="no-cache"><META HTTP-EQUIV="Expires" CONTENT="-1">
+
   <%= render "notifications/notify" %>
 
 
@@ -22,23 +22,6 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<script type='text/javascript'>
-
-(function()
-{
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem( 'firstLoad' ) )
-    {
-      localStorage[ 'firstLoad' ] = true;
-      window.location.reload();
-    }  
-    else
-      localStorage.removeItem( 'firstLoad' );
-  }
-})();
-
-</script>
 
 
 <body   class="metro">

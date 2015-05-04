@@ -1,4 +1,4 @@
-<div class="col-md-offset-1">
+
 <br>
 <%= form_tag(tweets_path , method: "get", class: "form") do %>
  <%= text_field_tag(:search, params[:search]) %> 
@@ -19,13 +19,8 @@
 	<div class="cell">
 	<div class="listview-outlook" data-role="listview">
 <% @tweets.each do |tweet| %>
-<a class="list" href="#">
+    <a class="list" href="#">
 	<div class="list-content">
-	<span class="list-title">subscribe@metroui.net</span>
-	<span class="list-subtitle">MetroUI: News on 26/10/2013</span>
-	<span class="list-remark">Hello friend! Newest for Metro UI CSS</span>
-	
-    <li >
         <%= link_to "@" + tweet.screen_name, "http://twitter.com/#{tweet.screen_name}", :class => "username", :target => "_blank" %> : 
         <div class="tweet_text_area">
             <div class="tweet_text">
@@ -37,19 +32,22 @@
         </div>
         <div><%=tweet.sentiment_score %></div>
         <div><%= tweet.sentiment%></div>
-        <br>
-    </li>
-</div>
-	</a>
+        
+   </div>
+</a>
+    
 <% end %>
- <% end %> 
-
- </div>
-   </div>
-   </div>
- </div>
 </div>
-   
+	</div>
+    </div>
+   </div>
+   </div>
+
+
+
+
+
+ <% end %> 
 
 
 

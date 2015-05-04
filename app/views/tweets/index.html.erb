@@ -1,4 +1,4 @@
-<div class="col-md-offset-1">
+
 <br>
 <%= form_tag(tweets_path , method: "get", class: "form") do %>
  <%= text_field_tag(:search, params[:search]) %> 
@@ -13,15 +13,13 @@
 <% else %>
 
 
-<div>
-<ul>
 <div class="example" data-text="News">
 	<div class="grid">
 	<div class="row cells2">
 	<div class="cell">
 	<div class="listview-outlook" data-role="listview">
 <% @tweets.each do |tweet| %>
-    <a class="list" href="#">
+    <div class="list" href="#">
 	<div class="list-content">
         <%= link_to "@" + tweet.screen_name, "http://twitter.com/#{tweet.screen_name}", :class => "username", :target => "_blank" %> : 
         <div class="tweet_text_area">
@@ -34,9 +32,9 @@
         </div>
         <div><%=tweet.sentiment_score %></div>
         <div><%= tweet.sentiment%></div>
-        <br>
+        
    </div>
-</a>
+</div>
     
 <% end %>
 </div>
@@ -47,8 +45,7 @@
 
 
 
-</ul>
-</div>
+
 
  <% end %> 
 

@@ -11,7 +11,7 @@
   <%= csrf_meta_tags %>
 
 
-<META HTTP-EQUIV="Pragma" CONTENT="no-cache"><META HTTP-EQUIV="Expires" CONTENT="-1">
+
   <%= render "notifications/notify" %>
 
 
@@ -22,7 +22,6 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 
 
 <body   class="metro">
@@ -58,6 +57,14 @@
 <%  if current_portfolio != nil  then %>
   <%= link_to  tweets_path,  class: "element" do %> 
   <i class="fa fa-twitter"> Tweets </i>
+  <% end %>
+  <span class="element-divider"></span>
+<% end %>
+
+<span class="element-divider"></span>
+<%  if current_portfolio != nil  then %>
+  <%= link_to  feed_entries_path,  class: "element" do %> 
+  <i class="fa fa-twitter"> News Feed </i>
   <% end %>
   <span class="element-divider"></span>
 <% end %>
