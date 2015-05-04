@@ -59,6 +59,14 @@
   <span class="element-divider"></span>
 <% end %>
 
+<span class="element-divider"></span>
+<%  if current_portfolio != nil  then %>
+  <%= link_to  feed_entries_path,  class: "element" do %> 
+  <i class="fa fa-twitter"> News Feed </i>
+  <% end %>
+  <span class="element-divider"></span>
+<% end %>
+
 
 <% if current_user != nil %>
 

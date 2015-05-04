@@ -1,37 +1,32 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Feed Entries</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Link</th>
-      <th>Published at</th>
-      <th>Guid</th>
-      <th>Stock</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @feed_entries.each do |feed_entry| %>
-      <tr>
-        <td><%= feed_entry.title %></td>
-        <td><%= feed_entry.description %></td>
-        <td><%= feed_entry.link %></td>
-        <td><%= feed_entry.published_at %></td>
-        <td><%= feed_entry.guid %></td>
-        <td><%= feed_entry.stock.stock_symbol %></td>
-        <td><%= link_to 'Show', feed_entry %></td>
-        <td><%= link_to 'Edit', edit_feed_entry_path(feed_entry) %></td>
-        <td><%= link_to 'Destroy', feed_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="col-md-offset-1">
 <br>
+<%= form_tag(feed_entries_path , method: "get", class: "form") do %>
+ <%= text_field_tag(:search, params[:search]) %> 
+ <%= submit_tag("Search", :name => nil, class: "btn btn-default") %> 
+<% end %>
 
-<%= link_to 'New Feed entry', new_feed_entry_path %>
+<div>
+<ul>
+  <% @feed_entries.each do |feed_entry| %>
+    <li >
+        <%= feed_entry.title %>  
+        <div >
+            <div>
+              <%=raw display_content_with_links(feed_entry.link) %>
+            </div>
+            <div>
+              <%=feed_entry.description %>
+            </div>
+            <div >
+                Published: <%= feed_entry.published_at %> 
+            </div>
+             <div >
+                Stock: <%= feed_entry.stock.stock_symbol %> 
+            </div>
+            <br>
+        </div>
+    </li>
+<% end %>
+</ul>
+</div>
+

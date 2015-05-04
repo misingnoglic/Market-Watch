@@ -4,7 +4,7 @@ class FeedEntriesController < ApplicationController
   # GET /feed_entries
   # GET /feed_entries.json
   def index
-    @feed_entries = FeedEntry.all
+    @feed_entries = FeedEntry.search(params[:search])
   end
 
   # GET /feed_entries/1
