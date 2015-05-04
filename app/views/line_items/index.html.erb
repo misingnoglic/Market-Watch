@@ -17,7 +17,7 @@
 </script>
 
 <%- model_class = Portfolio -%>
-<div class="page-header" id= "backLayer"> 
+<div class="page-header"> 
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1> 
   <% user = current_user %> 
   <h3> Welcome <%= user.user_name %> </h3> 
@@ -59,7 +59,7 @@
 
 <div id="piechart" style="width: 300px; height: 250px;"></div>
 
-<div id= "backLayer">
+
 <%= form_tag(line_items_path, method: "create") do %>  
   <%= label_tag(:stock, "Stock Symbol:") %> 
   <%= text_field_tag(:stock_symbol) %> 
@@ -67,6 +67,5 @@
   <%= text_field_tag(:number_shares) %> 
   <%= submit_tag("Add Investment") %> 
 <% end %> 
-</div>
 
  
