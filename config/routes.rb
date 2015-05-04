@@ -7,8 +7,11 @@ Rails.application.routes.draw do
 
   resources :notifications
 
-  resources :rules 
-  
+  resources :rules do
+    collection do
+    get 'new_sentiment'
+  end
+end
 
   resources :line_items
 
