@@ -36,6 +36,9 @@ class Rule < ActiveRecord::Base
         
         end
       
+        def create_chart
+          
+        end
         def set_time
           self.lastfired = Time.now.to_i
         end

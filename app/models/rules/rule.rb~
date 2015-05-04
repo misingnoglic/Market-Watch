@@ -3,6 +3,7 @@ class Rule < ActiveRecord::Base
 	belongs_to :user
     has_many :notifications
 	accepts_nested_attributes_for :stock
+        has_one :chart
 
 
 	validates :user, presence: true, length: { minimum: 1 }

@@ -6,6 +6,7 @@ class Chart < ActiveRecord::Base
 
   belongs_to :rule
 
+  #gets native price_history and combines with api stock_history
   def self.get_price_history_json (stock_symbol)
     api_histories = JSON.parse(get_API_history_json(stock_symbol, 7))
     
@@ -21,6 +22,8 @@ class Chart < ActiveRecord::Base
     return JSON.generate(time_v_price)
   end
 
+
+ # gets raw api data for price_history
   def self.get_API_history_json (stock_symbol, days_ago)
     prices = (YahooFinance::get_historical_quotes_days( stock_symbol, days_ago ))
     returned_list = []
@@ -31,6 +34,7 @@ class Chart < ActiveRecord::Base
     return JSON.generate([['Date','Price']]+returned_list)
   end
 
+#gets native sentiment history
   def self.get_sentiment_history_json (stock_symbol)
     sentiment_histories = Stock.by_stock_symbol(stock_symbol)
     
@@ -41,7 +45,7 @@ class Chart < ActiveRecord::Base
     return JSON.generate(time_v_sentiment)
   end
 
-  
+#takes chart and combines it with target
   def self.add_target_to_json(old_chart, target_price, target_label)
     old_chart = JSON.parse(old_chart)
     old_chart[0]+=[target_label]
@@ -51,7 +55,8 @@ class Chart < ActiveRecord::Base
     return JSON.generate(old_chart)
   end
 
-  def self.create_target_price_chart (stock_symbol, user_id)
+=begin
+  def self.create_target_price_chart (stock_symbol, user_id, )
     id = Stock.where(stock_symbol: stock_symbol)[0].id
     rules = Rule.where(stock_id: id, user_id: user_id, rule_type: "target_price")
     old_chart = get_API_history_json(stock_symbol, 7)
@@ -60,6 +65,7 @@ class Chart < ActiveRecord::Base
     end
     return old_chart
   end
+=end
 
   def self.create_pie_chart_json (portfolio_id)
     portfolio = Portfolio.find(portfolio_id)
