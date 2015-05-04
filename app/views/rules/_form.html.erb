@@ -17,7 +17,7 @@
   </div>
 
   <div class="field">
-    <%= f.label "Rule Type" %>
+    <%= f.label "Comparator" %>
     <%= f.select(:compare, options_for_select([["Greater than equal to", ">="], ["Less than equal to", "<="]])) %>   
   </div>
 
@@ -26,7 +26,7 @@
     <%= f.number_field :target_price %>
   </div>
 
-  
+  <% f.text_field :type, :value => "Price" %>
 
   <div class="actions">
     <%= f.submit %>
