@@ -19,7 +19,7 @@
 	<div class="cell">
 	<div class="listview-outlook" data-role="listview">
 <% @tweets.each do |tweet| %>
-    <a class="list" href="#">
+    <div class="list" href="#">
 	<div class="list-content">
         <%= link_to "@" + tweet.screen_name, "http://twitter.com/#{tweet.screen_name}", :class => "username", :target => "_blank" %> : 
         <div class="tweet_text_area">
@@ -34,7 +34,7 @@
         <div><%= tweet.sentiment%></div>
         
    </div>
-</a>
+</div>
     
 <% end %>
 </div>
