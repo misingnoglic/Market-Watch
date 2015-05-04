@@ -1,6 +1,6 @@
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
-    $( document ).ready(function() {
+
     google.load("visualization", "1", {packages:["corechart"]});
     drawChart();
     function drawChart() {
@@ -15,7 +15,6 @@
 
         chart.draw(data, options);
     }
-});
 </script>
 
 <%- model_class = Portfolio -%>
