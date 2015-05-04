@@ -18,7 +18,7 @@
 
 <%- model_class = Portfolio -%>
 <div class="page-header"> 
-  <h1 id="backLayer"><%=t '.title', :default => model_class.model_name.human.titleize %></h1> 
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1> 
   <% user = current_user %> 
   <h3> Welcome <%= user.user_name %> </h3> 
   <h4><b>Portfolio Value: </b><%= @current_value.round(2) %></h4>
