@@ -1,0 +1,32 @@
+<div class="col-md-offset-1">
+<br>
+<%= form_tag(feed_entries_path , method: "get", class: "form") do %>
+ <%= text_field_tag(:search, params[:search]) %> 
+ <%= submit_tag("Search", :name => nil, class: "btn btn-default") %> 
+<% end %>
+
+<div>
+<ul>
+  <% @feed_entries.each do |feed_entry| %>
+    <li >
+        <%= feed_entry.title %>  
+        <div >
+            <div>
+              <%=raw display_content_with_links(feed_entry.link) %>
+            </div>
+            <div>
+              <%=feed_entry.description %>
+            </div>
+            <div >
+                Published: <%= feed_entry.published_at %> 
+            </div>
+             <div >
+                Stock: <%= feed_entry.stock.stock_symbol %> 
+            </div>
+            <br>
+        </div>
+    </li>
+<% end %>
+</ul>
+</div>
+

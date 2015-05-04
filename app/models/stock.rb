@@ -7,6 +7,7 @@ class Stock < ActiveRecord::Base
   has_many :line_items
   has_many :rules
   has_many :tweets
+  has_many :feed_entries
 
   scope :by_stock_symbol, -> stock_symbol { where(stock_symbol: stock_symbol)}
 
