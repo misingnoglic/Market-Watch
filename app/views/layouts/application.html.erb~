@@ -11,8 +11,9 @@
   <%= csrf_meta_tags %>
 
 
-
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"><META HTTP-EQUIV="Expires" CONTENT="-1">
   <%= render "notifications/notify" %>
+
 
 
   <!--[if lt IE 9]>
@@ -24,10 +25,12 @@
 
 
 
-<body  class="metro">
+<body   class="metro">
+
 <div class="container">
 <nav class="navigation-bar dark">
 <nav class="navigation-bar-content">
+
 
 <a class="element" href=>   <i class="fa fa-home fa-lg"></i> Market-Watch</a>
 
@@ -44,7 +47,6 @@
   <span class="element-divider"></span>
 <% end %>
 
-<span class="element-divider"></span>
 <%  if current_portfolio != nil  then %>
   <%= link_to  rules_path , class: "element" do  %> 
   <i class="fa fa-legal"> Rules </i>

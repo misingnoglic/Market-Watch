@@ -1,8 +1,10 @@
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
+    $( document ).ready(function() {
     google.load("visualization", "1.1", {packages:["corechart"]});
-    google.setOnLoadCallback(drawChart);
+   drawChart()
+    //google.setOnLoadCallback(drawChart);
     function drawChart() {
         var data = google.visualization.arrayToDataTable(<%= raw rule.create_chart %>);
 
@@ -15,6 +17,8 @@
         var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
         chart.draw(data, options);
     }
+});
+
 </script>
 
 
