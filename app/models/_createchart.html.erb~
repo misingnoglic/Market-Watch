@@ -1,0 +1,15 @@
+ google.load("visualization", "1.1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable(<%= raw Chart.create_chart_data(chart) %>);
+
+        var options = {
+            title: 'Stock Graph',
+            legend: { position: 'bottom' },
+            pointSize: 1
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+*/

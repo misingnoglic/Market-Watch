@@ -1,10 +1,9 @@
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
-/*
     google.load("visualization", "1.1", {packages:["corechart"]});
     google.setOnLoadCallback(drawChart);
     function drawChart() {
-        var data = google.visualization.arrayToDataTable(<%= raw Chart.create_chart_data(@stock.stock_symbol, current_user.id) %>);
+        var data = google.visualization.arrayToDataTable(<%= raw rule.create_chart_data(@stock.stock_symbol, current_user.id) %>);
 
         var options = {
             title: 'Stock Graph',
@@ -15,7 +14,6 @@
         var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
         chart.draw(data, options);
     }
-*/
 </script>
 
 

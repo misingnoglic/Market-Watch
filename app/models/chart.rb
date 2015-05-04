@@ -4,13 +4,13 @@ require 'open-uri'
 
 class Chart < ActiveRecord::Base
 
-
+  
 
   #gets native price_history and combines with api stock_history
   def self.get_price_history_json (stock_symbol)
     api_histories = JSON.parse(get_API_history_json(stock_symbol, 7))
     
-    price_histories = Stock.by_stock_symbol(stock_symbol) 
+    price_histories = StockHistory.by_stock_symbol(stock_symbol) 
 
     
     time_v_price = []

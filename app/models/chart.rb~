@@ -4,7 +4,7 @@ require 'open-uri'
 
 class Chart < ActiveRecord::Base
 
-  belongs_to :rule
+  
 
   #gets native price_history and combines with api stock_history
   def self.get_price_history_json (stock_symbol)

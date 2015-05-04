@@ -8,7 +8,6 @@ class RuleEngine
 		::UpdateStocks.update
 		rules = Rule.all
 		rules.each do |rule|
-                         Rails.logger.debug "foo125"
 			rule.checkTrigger()
 		end
 

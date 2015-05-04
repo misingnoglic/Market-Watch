@@ -1,5 +1,8 @@
 class StockHistory < ActiveRecord::Base
   require 'json'
+  scope :by_stock_symbol, -> stock_symbol { where(stock_symbol: stock_symbol)}
+
+=begin
   def self.createHighchartsJSON(symbol)
     stock_histories = StockHistory.where(stock_symbol: symbol)
     histories = []
@@ -17,6 +20,7 @@ class StockHistory < ActiveRecord::Base
     end
     return JSON.generate(histories)
   end
+=end
 
 
 end

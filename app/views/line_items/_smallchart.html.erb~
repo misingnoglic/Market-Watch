@@ -1,7 +1,1 @@
-
-
-
-<img  width="100" height="50" src= "http://chart.finance.yahoo.com/z?s=<%= stock_symbol %>" >
-
-
-
+<img style="width:100px;height:100px" , src= http://chart.finance.yahoo.com/z?s=<%= stock_symbol %>>

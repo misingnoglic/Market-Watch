@@ -11,7 +11,7 @@ class UpdateJob
 			::RuleEngine.start
 			#::UpdateStocks.update
 			#need to add call to read from yahoo api and update stocks 
-			UpdateJob.new.async.later(1,"asdf") 
+			UpdateJob.new.async.later(60,"asdf") 
 		end
 	end
 
