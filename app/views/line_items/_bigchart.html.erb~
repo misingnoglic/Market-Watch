@@ -3,7 +3,7 @@
 <script type="text/javascript">
     $( document ).ready(function() {
     google.load("visualization", "1.1", {packages:["corechart"]});
-   drawChart()
+   drawChart();
     //google.setOnLoadCallback(drawChart);
     function drawChart() {
         var data = google.visualization.arrayToDataTable(<%= raw rule.create_chart %>);
