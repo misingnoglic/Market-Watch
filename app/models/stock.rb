@@ -26,7 +26,7 @@ class Stock < ActiveRecord::Base
      if count == 0
       return nil
     else
-     return score/count
+     return (score/count).round(4)
    end
   end
 
