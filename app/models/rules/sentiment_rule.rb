@@ -3,7 +3,7 @@ class SentimentRule < Rule
 
 
 	def checkTrigger
-        if self.compare==1 || self.compare == 3
+        if self.compare==1 
             if target <= stock.sentiment_score  #should the comparator be a seperate function to prevent seperate class for each for >, >= <= etc ??? 
                 if canfire? 
                 myobj = Rule.find(self.id)
