@@ -7,13 +7,13 @@ class LineItemsController < ApplicationController
   # GET /line_items.json
   def index
     @portfolio = current_portfolio
+    @feed = FeedEntry.all
     sorted_portfolio
   end
 
   # GET /line_items/1
   # GET /line_items/1.json
   def show
-
     @rules = Rule.where(user_id: current_user)
   end
 
