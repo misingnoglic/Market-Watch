@@ -1,6 +1,7 @@
 require 'yahoofinance'
 require 'json'
 require 'open-uri'
+require 'slack-notify'
 
 class Stock < ActiveRecord::Base
   validates :stock_symbol, presence: true, if: :stock_exists?
@@ -60,6 +61,7 @@ class Stock < ActiveRecord::Base
   end
 
   def chart_prices(days_ago)
+
     prices = (YahooFinance::get_historical_quotes_days( self.stock_symbol, days_ago ))
     returned_list = []
     prices.each do |price_list|

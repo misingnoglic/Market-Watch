@@ -1,6 +1,7 @@
 require 'yahoofinance'
 require 'json'
 require 'open-uri'
+require 'slack-notify'
 
 class Chart < ActiveRecord::Base
 
@@ -25,6 +26,8 @@ class Chart < ActiveRecord::Base
 
  # gets raw api data for price_history
   def self.get_API_history_json (stock_symbol, days_ago)
+
+
     prices = (YahooFinance::get_historical_quotes_days( stock_symbol, days_ago ))
     returned_list = []
     prices.each do |price_list|
