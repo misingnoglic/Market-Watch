@@ -26,10 +26,9 @@
     <%= f.number_field :target_price , :class => 'text_field', :step => 'any'%>
   </div>
 
-    <% f.text_field :rule_type, :value => "target_price" %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'price' ,  :name => 'submit' %>
   </div>
 
 <% end %>
