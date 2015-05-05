@@ -51,8 +51,10 @@ class Rule < ActiveRecord::Base
      
         # returns string that can be used for notification, override when necessary
         def message
-           return " has reached the price of "
+           
         end
+
+
        
         
         
