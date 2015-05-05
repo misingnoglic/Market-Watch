@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_portfolio
   helper_method :current_user
-  helper_method :get_image_by_symbol
+  helper_method :get_image_by_stock_symbol
 
 
 end

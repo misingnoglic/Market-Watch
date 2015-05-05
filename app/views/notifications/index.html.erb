@@ -27,6 +27,7 @@
     <div class="list" href="#">
 	<div class="list-content">
         <div> <b>Alert!</b> </div>
+        <img src = "<%= get_image_by_symbol(notification[:stock_symbol]) %>" width = 50 height= 50>
         <div> <%= notification[:stock_symbol] + notification[:message] + notification[:target] + "!" %>   </div>
         
         </div>

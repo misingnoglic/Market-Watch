@@ -1,4 +1,6 @@
 
+
+<h1> Notifications</h1>
 <br>
 <%= form_tag(notifications_path , method: "get", class: "form") do %>
  <%= text_field_tag(:search, params[:search]) %> 
@@ -24,6 +26,8 @@
 <% @notifications.each do |notification| %>
     <div class="list" href="#">
 	<div class="list-content">
+        <div> <b>Alert!</b> </div>
+        <img src = "<%= get_image_stock_symbol(notification[:stock_symbol]) %>" width = 50 height= 50>
         <div> <%= notification[:stock_symbol] + notification[:message] + notification[:target] + "!" %>   </div>
         
         </div>

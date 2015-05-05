@@ -72,6 +72,7 @@ class Chart < ActiveRecord::Base
     acc = [["Stock Name","Value"]]
     portfolio.line_items.each do |item|
       stock = Stock.find(item.stock_id)
+      Rails.logger.debug "ZOOFOO - #{stock.stock_symbol} === #{stock.last_trade_price} ---- #{item.number_shares}"
       acc.append([stock.stock_symbol, stock.last_trade_price*item.number_shares])
     end
     return JSON.generate(acc)
