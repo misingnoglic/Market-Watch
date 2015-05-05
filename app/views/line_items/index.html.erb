@@ -39,14 +39,14 @@
 <table class="table table-striped"> 
   <thead> 
     <tr> 
-      <th> Name<%= link_to "▲", :sort => "sort_by_stock_name_asc" %> <%= link_to "▼", :sort => "sort_by_stock_name_desc" %> </th> 
-      <th> Ticker <%= link_to "▲", :sort => "sort_by_stock_symbol_asc" %> <%= link_to "▼", :sort => "sort_by_stock_symbol_desc" %></th> 
-      <th> Price <%= link_to "▲", :sort => "sort_by_last_trade_price_asc" %><%= link_to "▼", :sort => "sort_by_last_trade_price_desc" %></th> 
-      <th> Amount <%= link_to "▲", :sort => "number_shares_asc" %><%= link_to "▼", :sort => "number_shares_desc" %></th> 
-      <th> Sentiment <%= link_to "▲", :sort => "sentiment_score_asc" %><%= link_to "▼", :sort => "sentiment_score_desc" %></th> 
+      <th> Name<br><%= link_to "▲", :sort => "sort_by_stock_name_asc" %> <%= link_to "▼", :sort => "sort_by_stock_name_desc" %> </th> 
+      <th> Ticker<br> <%= link_to "▲", :sort => "sort_by_stock_symbol_asc" %> <%= link_to "▼", :sort => "sort_by_stock_symbol_desc" %></th> 
+      <th> Price<br> <%= link_to "▲", :sort => "sort_by_last_trade_price_asc" %><%= link_to "▼", :sort => "sort_by_last_trade_price_desc" %></th> 
+      <th> Amount<br> <%= link_to "▲", :sort => "number_shares_asc" %><%= link_to "▼", :sort => "number_shares_desc" %></th> 
+      <th> Sentiment<br> <%= link_to "▲", :sort => "sentiment_score_asc" %><%= link_to "▼", :sort => "sentiment_score_desc" %></th> 
       <th>Graph</th> 
       <th>RSS News Feed</th>
-
+      <th>Tweets</th>
          </tr> 
   </thead> 
   
@@ -60,12 +60,23 @@
         <td><%= item.stock.price %></td>    
         <td><%= item.number_shares %></td> 
         <td><%= item.stock.sentiment_score %></td> 
-        <td> <%= render partial: 'smallchart' , locals: {stock_symbol: item.stock.stock_symbol} %> <%= link_to 'Show', item %> </td>
+        <td> <%= render partial: 'smallchart' , locals: {stock_symbol: item.stock.stock_symbol} %> <br> <%= link_to 'Show', item %> </td>
         
-          <td>
+          <td class="col-md-3">
           <%@feed.where(:stock_id => item.stock.id).order(published_at: :desc).limit(3).each do |item|%> 
-         <li> <small> <%=   item.title %> </small> <br>
-             <small>   <%=   time_ago_in_words item.published_at %> ago  </small> 
+         <li> <small> <%=   item.title %><br>  </small> 
+        
+             
+
+             <small> <i>(<%=   time_ago_in_words item.published_at %> ago)</i>  </small> 
+         </li>  
+          <%end%>
+        </td>
+
+        <td class="col-md-3">
+          <%@tweets.where(:stock_id => item.stock.id).order(created_at: :desc).limit(3).each do |item|%> 
+         <li> <small> @<%=   item.screen_name %>:<%=raw display_content_with_links item.content%> </small>
+             <small> <i>(<%=   time_ago_in_words item.created_at %> ago) </i> </small> 
          </li>  
           <%end%>
         </td>

@@ -8,6 +8,7 @@ class LineItemsController < ApplicationController
   def index
     @portfolio = current_portfolio
     @feed = FeedEntry.all
+    @tweets = Tweet.all
     sorted_portfolio
   end
 

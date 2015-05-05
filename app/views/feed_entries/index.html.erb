@@ -23,7 +23,8 @@
         <%= feed_entry.title %>  
         <div >
             <div>
-              <%=raw display_content_with_links(feed_entry.link) %>
+              <%link = feed_entry.link.split("/*")[1]%>
+              <%=raw display_content_with_links(link) %>
             </div>
             <div>
               <%=feed_entry.description %>
