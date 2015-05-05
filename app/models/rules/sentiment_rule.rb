@@ -1,5 +1,7 @@
 class SentimentRule < Rule
 
+
+
 	def checkTrigger
           if target <= stock.sentiment_score  #should the comparator be a seperate function to prevent seperate class for each for >, >= <= etc ??? 
             if canfire? 
@@ -8,6 +10,7 @@ class SentimentRule < Rule
             myobj.save!
             Rails.logger.debug "goo #{myobj.attributes.inspect}"
              notification = self.notifications.create
+             RuleMailer.sample_email(self).deliver_now
             end
           end
 	end

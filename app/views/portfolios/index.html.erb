@@ -1,5 +1,8 @@
-<p id="notice"><%= notice %></p>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script src="http://js.pusher.com/2.0/pusher.min.js"></script>
+  <script src="/javascripts/jquery.titlealert.js"></script>
 
+<div class="container">
 <h1>Listing Portfolios</h1>
 
 <table class="table table-striped">
@@ -25,3 +28,4 @@
 
 <%= link_to 'New Portfolio', new_portfolio_path %>
 <%= button_to 'Logout', logout_path, :method => :delete %>
+</div>
