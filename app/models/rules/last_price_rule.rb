@@ -1,7 +1,7 @@
 class LastPriceRule < Rule
 
 	def checkTrigger
-          if self.compare ==1
+          if self.compare ==1 || self.compare == 3 
             if target <= stock.last_trade_price  #should the comparator be a seperate function to prevent seperate class for each for >, >= <= etc ??? 
               if canfire? 
               myobj = Rule.find(self.id)
