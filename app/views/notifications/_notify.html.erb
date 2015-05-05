@@ -32,7 +32,7 @@ $(document).ready(function() {
 $.notify({
 	icon: data.image_url,
 	title: 'Alert!',
-	message: data.stock_symbol + ' has hit the price of ' + data.target + ' !'
+	message: data.stock_symbol + data.message + data.target + ' !'
 },{
 	type: 'minimalist',
 	delay: 10000,

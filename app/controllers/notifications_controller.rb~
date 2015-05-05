@@ -5,10 +5,11 @@ class NotificationsController < ApplicationController
   # GET /notifications.json
   def index
     
-    temp = current_user.rules.map do |rule|
-      rule.notifications
+    rules = Rule.where(user_id: current_user)
+    @notifications = []
+    rules.each do |rule|
+      @notifications += rule.getNotification
     end
-    @notifications = temp.flatten
   end
 
   # GET /notifications/1
@@ -32,7 +33,7 @@ class NotificationsController < ApplicationController
 
     @notification = Notification.new(notification_params)
 
-      Pusher['private-'+current_user.id.to_s].trigger('client-new_message', {:stock_symbol => "goog ", :stock_price => "100"})
+    
 
       if @notification.save
      redirect_to @notification

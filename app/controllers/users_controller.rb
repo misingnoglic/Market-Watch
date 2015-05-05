@@ -53,7 +53,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user
-        @user.settings(:frequency).time = params[:time]
+        @user.settings(:frequency).time = params[:user][:time]
+        @user.save!
+             Rails.logger.debug "android #{params.inspect}"
+             Rails.logger.debug "iphone #{@user.settings(:frequency).time } +++++ #{params[:user][:time]}"
         Rails.logger.debug "time123 = #{@user.settings(:frequency).time}"
         format.html { redirect_to users_url, notice: "User #{@user.user_name} was successfully updated." }
       else

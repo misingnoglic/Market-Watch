@@ -5,10 +5,11 @@ class NotificationsController < ApplicationController
   # GET /notifications.json
   def index
     
-    temp = current_user.rules.map do |rule|
-      rule.notifications
+    rules = Rule.where(user_id: current_user)
+    @notifications = []
+    rules.each do |rule|
+      @notifications.push (rule.getNotification)
     end
-    @notifications = temp.flatten
   end
 
   # GET /notifications/1

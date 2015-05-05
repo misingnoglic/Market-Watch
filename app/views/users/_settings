@@ -16,21 +16,21 @@
 <legend>Enter User Details</legend>
  
 
-     <div><%= label :admin, "Every minute" %>
-      <%= f.radio_button :admin, false , :checked => true , :value => 60 %>
+     <div><%= label :time, "Every minute" %>
+      <%= f.radio_button :time, 60 , :checked => false , :value => 60 %>
     </div>
-  <div><%= label :admin, "Every half hour"%>
-       <%= f.radio_button :admin,  true, :value => 1800  %>
+  <div><%= label :time, "Every half hour"%>
+       <%= f.radio_button :time,  1800,  :checked => false, :value => 1800  %>
   </div>
 
 
-  <div><%= label :admin, "Every hour"%>
-       <%= f.radio_button :admin,  true, :value => 3600%>
+  <div><%= label :time, "Every hour"%>
+       <%= f.radio_button :time,  3600, :checked => false,:value => 3600%>
   </div>
 
 
-  <div><%= label :admin, "Once a day"%>
-       <%= f.radio_button :admin,  true, :value => 86400%>
+  <div><%= label :time, "Once a day"%>
+       <%= f.radio_button :time,  86400, :checked => false,:value => 86400%>
   </div>
 
   <div>
