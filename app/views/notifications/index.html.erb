@@ -1,28 +1,53 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Notifications</h1>
-
-<table class="table table-striped"> 
-  <thead>
-    <tr>
-      <th>Stock name</th> 
-      <th>Stock symbol</th>
-    </tr>
-  </thead>
-  
-  <tbody>
-    <% @notifications.each do |notification| %>
-      <tr>
-        <td><%= notification.symbol %> </td>
-        <td><%= "Alert Target Price #{notification.rule.target_price} reached for #{notification.symbol}!" %>
-        <td><%= link_to 'Show', notification %></td>
-        <td><%= link_to 'Edit', edit_notification_path(notification) %></td>
-        <td><%= link_to 'Destroy', notification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
+<%= form_tag(notifications_path , method: "get", class: "form") do %>
+ <%= text_field_tag(:search, params[:search]) %> 
+ <%= submit_tag("Search", :name => nil, class: "btn btn-default") %> 
+<% end %>
 
-<%= link_to 'New Notification', new_notification_path %>
+
+<%if @notifications.nil? || @notifications.length == 0%>
+
+  <p>No Matches Found</p>
+
+<% else %>
+
+
+<div class="example" data-text="News">
+	<div class="grid">
+	<div class="row cells2">
+	<div class="cell">
+	<div class="listview-outlook" data-role="listview">
+<% @notifications.each do |tweet| %>
+    <div class="list" href="#">
+	<div class="list-content">
+        <%= link_to "@" + tweet.screen_name, "http://twitter.com/#{tweet.screen_name}", :class => "username", :target => "_blank" %> : 
+        <div class="tweet_text_area">
+            <div class="tweet_text">
+              <%=raw display_content_with_links(tweet.content) %>
+            </div>
+            <div class="tweet_created_at">
+                <%= time_ago_in_words Time.now %> ago
+            </div>
+        </div>
+        <div><%=tweet.sentiment_score %></div>
+        <div><%= tweet.sentiment%></div>
+        
+   </div>
+</div>
+    
+<% end %>
+</div>
+	</div>
+    </div>
+   </div>
+   </div>
+
+
+
+
+
+ <% end %> 
+
+
+

@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
     has_many :notifications
     has_one :portfolio
  has_settings do |s|
-    s.key :frequency, :defaults => { :time => 1.hour }
+    s.key :frequency, :defaults => { :time => 15 }
   end
 
 
