@@ -2,10 +2,9 @@
 
 
 
-
-
-body {
-background: -webkit-linear-gradient(top,  #efefef 0%,#ffffff 100%);
+body{
+	background-color: #867970;
 }
-
-
+.container{
+ background: -webkit-linear-gradient(top,  #efefef 0%,#ffffff 100%);
+}
