@@ -1,3 +1,2 @@
-class SentimentRule < Rule
-
+class SentimentRule < ActiveRecord::Base
 end

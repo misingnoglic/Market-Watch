@@ -25,11 +25,10 @@
 
   <div class="field">
     <%= f.label "Target" %>
-    <%= f.number_field :target_price %>
+    <%= f.number_field :target_price , :class => 'text_field', :step => 'any'%>
   </div>
 
-
-  <% f.text_field :type, :value => "Sentiment" %>
+    <% f.text_field :rule_type, :value => "sentiment" %>
 
   <div class="actions">
     <%= f.submit %>

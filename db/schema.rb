@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150504080450) do
+ActiveRecord::Schema.define(version: 20150505020350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,13 @@ ActiveRecord::Schema.define(version: 20150504080450) do
     t.datetime "updated_at",               null: false
     t.string   "type"
     t.integer  "compare",      default: 0
+  end
+
+  create_table "sentiment_rules", force: :cascade do |t|
+    t.string   "rails"
+    t.string   "s"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "settings", force: :cascade do |t|
