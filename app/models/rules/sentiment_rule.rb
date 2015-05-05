@@ -36,9 +36,9 @@ class SentimentRule < Rule
 
     def message
         if target <= stock.sentiment_score
-            return " sentiment score has reached the target score of "
+            return " last sentiment score has exceeded the target score of "
         else
-            return " last sentiment score has dropped below "
+            return " last sentiment score has dropped below the target score of "
         end
     end
 

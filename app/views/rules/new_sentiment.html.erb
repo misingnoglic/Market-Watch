@@ -19,12 +19,12 @@
   </div>
 
   <div class="field">
-    <%= f.label "Sentiment Score" %>
+    <%= f.label "Comparator" %>
     <%= f.select(:compare, options_for_select([["Greater than equal to", 1], ["Less than equal to", 2]])) %>   
   </div>
 
   <div class="field">
-    <%= f.label "Target" %>
+    <%= f.label "Target Score" %>
     <%= f.number_field :target_price , :class => 'text_field', :step => 'any'%>
   </div>
 

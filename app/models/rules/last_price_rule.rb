@@ -40,9 +40,9 @@ class LastPriceRule < Rule
 
         def message
             if target <= stock.last_trade_price
-              return " price has reached the target price of "
+              return " last trade price has exceeded the target price of "
            else
-            return " last trade price has dropped below "
+            return " last trade price has dropped below the target price of "
            end
         end
 end
