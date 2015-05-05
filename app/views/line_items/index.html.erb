@@ -1,3 +1,4 @@
+
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
 
@@ -17,6 +18,7 @@
     }
 </script>
 
+<div class="container">
 <%- model_class = Portfolio -%>
 <div class="page-header"> 
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1> 
@@ -68,5 +70,7 @@
   <%= text_field_tag(:number_shares) %> 
   <%= submit_tag("Add Investment") %> 
 <% end %> 
+
+</div>
 
  
