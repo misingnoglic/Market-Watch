@@ -53,6 +53,16 @@
   <span class="element-divider"></span>
 <% end %>
 
+<%  if current_portfolio != nil  then %>
+  <%= link_to  notifications_path,  class: "element notification-conainer" do %> 
+
+  <i class="fa fa-exclamation-triangle "> Alerts </i>
+   <div class="notification-counter">1</div>
+
+  <% end %>
+  <span class="element-divider"></span>
+<% end %>
+
 <span class="element-divider"></span>
 <%  if current_portfolio != nil  then %>
   <%= link_to  tweets_path,  class: "element" do %> 
@@ -64,7 +74,7 @@
 <span class="element-divider"></span>
 <%  if current_portfolio != nil  then %>
   <%= link_to  feed_entries_path,  class: "element" do %> 
-  <i class="fa fa-twitter"> News Feed </i>
+  <i class="fa fa-cloud"> News Feed </i>
   <% end %>
   <span class="element-divider"></span>
 <% end %>
