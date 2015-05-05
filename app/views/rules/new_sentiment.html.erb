@@ -20,7 +20,7 @@
 
   <div class="field">
     <%= f.label "Comparator" %>
-    <%= f.select(:compare, options_for_select([["Greater than equals to", 1], ["Less than equals to", 2]])) %>   
+    <%= f.select(:compare_type, options_for_select([["Greater than equals to", "greater"], ["Less than equals to", "lesser"]])) %>   
   </div>
 
   <div class="field">
