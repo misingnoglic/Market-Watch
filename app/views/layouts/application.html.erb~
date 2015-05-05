@@ -5,6 +5,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
   <script src="http://js.pusher.com/2.0/pusher.min.js"></script>
   <script src="/javascripts/jquery.titlealert.js"></script>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -57,7 +58,7 @@
   <%= link_to  notifications_path,  class: "element notification-conainer" do %> 
 
   <i class="fa fa-exclamation-triangle "> Alerts </i>
-   <span class="notification-counter">1</span>
+   <div class="notification-counter">1</div>
 
   <% end %>
   <span class="element-divider"></span>

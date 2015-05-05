@@ -259,6 +259,7 @@ DEPENDENCIES
   fastercsv
   feedjira
   figaro
+  font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
   json
