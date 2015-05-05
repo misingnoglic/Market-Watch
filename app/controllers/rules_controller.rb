@@ -10,6 +10,8 @@ class RulesController < ApplicationController
   def index
     @user = current_user
     @rules = @user.rules
+    @sentiment_rules = @rules.where(:type => SentimentRule)
+    @last_price_rules = @rules.where(:type => LastPriceRule)
   end
 
   # GET /rules/1

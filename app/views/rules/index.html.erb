@@ -2,35 +2,62 @@
 
 <h1>Rules</h1>
 
+<div class="col-xs-6">
+  <h2 class="sub-header">Sentiment Rules</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Stock Name</th>
+          <th>Stock Symbol</th>
+          <th>Target Sentiment</th>
+          <th>Rule Type</th>
+       </tr>
+    </thead>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Target Price/Sentiment</th>
-      <th>Stock Name</th>
-      <th>Stock Symbol</th>
-      <th>Rule Type</th>
-      
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <tbody>
+      <% @sentiment_rules.each do |rule| %>
+        <tr>
+          <td><%= rule.stock.stock_name %></td>
+          <td><%= rule.stock.stock_symbol %></td>
+          <td><%= rule.target_price %></td>
+          <td><%= rule.type %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= link_to 'Add Target Price Rule', new_user_rule_path(current_user) %> </br>
+</div>
 
-  <tbody>
-    <% @rules.each do |rule| %>
-      <tr>
-        <td><%= rule.target_price %></td>
-        <td><%= rule.stock.stock_name %></td>
-        <td><%= rule.stock.stock_symbol %></td>
-        <td><%= rule.type %></td>
-        
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+<div class="col-xs-6">
+  <h2 class="sub-header">Last Trade Prcie Rules</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Stock Name</th>
+          <th>Stock Symbol</th>
+          <th>Target Last Trade Price</th>
+          <th>Rule Type</th>
+       </tr>
+    </thead>
 
-<%= link_to 'Target Price Rule', new_user_rule_path(current_user) %> </br>
-<%= link_to 'Sentiment score Rule', new_sentiment_rules_path(current_user)%>
+    <tbody>
+      <% @last_price_rules.each do |rule| %>
+        <tr>
+          <td><%= rule.stock.stock_name %></td>
+          <td><%= rule.stock.stock_symbol %></td>
+          <td><%= rule.target_price %></td>
+          <td><%= rule.type %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= link_to 'Add Sentiment Score Rule', new_sentiment_rules_path(current_user)%>
+</div>
+
 
 </div>
