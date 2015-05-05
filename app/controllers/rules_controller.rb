@@ -43,7 +43,7 @@ class RulesController < ApplicationController
     params[:rule][:last_fired] = 0 #default minimum, updates to new time on firing
     if params[:submit] == "price"
       @rule = LastPriceRule.create(rule_params)
-    elsif params[:submit] == "sentiment"
+    else
       @rule = SentimentRule.create(rule_params)
     end
     @rule[:user_id] = @user.id
