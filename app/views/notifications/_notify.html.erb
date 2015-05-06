@@ -29,6 +29,11 @@
 
      channel.bind('client-new_message', function(data) {
 $(document).ready(function() {
+val = document.getElementById('notification-counter').text.parseInt();
+val +=1 ;
+
+
+
 $.notify({
 	icon: data.image_url,
 	title: 'Alert!',

@@ -74,7 +74,7 @@ class Chart < ActiveRecord::Base
   end
     
           
-  end
+  
 
 =begin
   def self.create_target_price_chart (stock_symbol, user_id, )
@@ -101,4 +101,4 @@ class Chart < ActiveRecord::Base
 
 end
 
- #test ----
+ 

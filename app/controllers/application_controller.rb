@@ -35,10 +35,10 @@ class ApplicationController < ActionController::Base
  end
  
  def get_API_history_json (stock_symbol, days_ago)
-   Chart.get_API_history_json (stock_symbol, days_ago)
+   Chart.get_API_history_json stock_symbol, days_ago
  end
 
- def self.create_chart (old_chart, rule, label)
+ def create_chart (old_chart, rule, label)
           rule = Rule.find(rule)
           target= rule.target
    return Chart.add_target_to_json(old_chart,target, label)
