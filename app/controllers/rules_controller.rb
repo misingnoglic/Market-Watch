@@ -43,8 +43,10 @@ class RulesController < ApplicationController
     @user = current_user
     @stock = Stock.find_by_stock_symbol(params[:rule][:stock_symbol])
     params[:rule][:last_fired] = 0 #default minimum, updates to new time on firing
+
     if params[:submit] == "price"
       @rule = LastPriceRule.create(rule_params)
+          Rails.logger.debug "thz --- #{@rule.attributes}"
     else
       @rule = SentimentRule.create(rule_params)
     end
@@ -99,7 +101,7 @@ class RulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rule_params
-      params.require(:rule).permit(:target_price, :user_id, :stock_id, :stock_symbol, :last_fired, :compare)
+      params.require(:rule).permit(:target_price, :user_id, :stock_id, :stock_symbol, :last_fired, :compare_type)
     end
 
 end

@@ -8,6 +8,7 @@ class RuleEngine
 		::UpdateStocks.update
 		rules = Rule.all
 		rules.each do |rule|
+                        Rails.logger.debug "geth12 ---"
 			rule.checkTrigger()
 		end
 

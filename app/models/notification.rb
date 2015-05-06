@@ -13,7 +13,8 @@ after_create :notify
     Pusher['private-'+self.rule.user.id.to_s].trigger('client-new_message', passed_in)
     Rails.logger.debug ("The client message was sent")
     client = SlackNotify::Client.new(webhook_url: "https://hooks.slack.com/services/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")
-    client.notify("Your rule for #{rule.getNotification} has fired - Check Market Watch!")
+    s = "#{rule.getNotification[:stock_symbol]}  #{rule.message}  #{rule.target}"
+    client.notify(s)
     Rails.logger.debug ("Slack should have been sent")
     #This is where I will put the other notifications
 

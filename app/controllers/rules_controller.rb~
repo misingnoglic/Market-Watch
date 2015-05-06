@@ -10,6 +10,8 @@ class RulesController < ApplicationController
   def index
     @user = current_user
     @rules = @user.rules
+    @sentiment_rules = @rules.where(:type => SentimentRule)
+    @last_price_rules = @rules.where(:type => LastPriceRule)
   end
 
   # GET /rules/1
@@ -20,6 +22,11 @@ class RulesController < ApplicationController
 
   # GET /rules/new
   def new
+    @user = current_user
+    @rule = Rule.new
+  end
+
+  def new_sentiment
     @user = current_user
     @rule = Rule.new
   end
@@ -36,7 +43,13 @@ class RulesController < ApplicationController
     @user = current_user
     @stock = Stock.find_by_stock_symbol(params[:rule][:stock_symbol])
     params[:rule][:last_fired] = 0 #default minimum, updates to new time on firing
-    @rule = LastPriceRule.create(rule_params)
+
+    if params[:submit] == "price"
+      @rule = LastPriceRule.create(rule_params)
+          Rails.logger.debug "thz --- #{@rule.attributes}"
+    else
+      @rule = SentimentRule.create(rule_params)
+    end
     @rule[:user_id] = @user.id
     @rule[:stock_id] = @stock.id
     @user.save
@@ -88,10 +101,7 @@ class RulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rule_params
-<<<<<<< HEAD
-      params.require(:rule).permit(:target_price, :user_id, :stock_id, :stock_symbol, :last_fired)
-=======
-      params.require(:rule).permit(:target_price, :user_id, :stock_id, :stock_symbol, :lastfired, :compare)
->>>>>>> 2c925a6d3470643ddb3428ce4b72e927b9c503ee
+      params.require(:rule).permit(:target_price, :user_id, :stock_id, :stock_symbol, :last_fired, :compare_type)
     end
+
 end
