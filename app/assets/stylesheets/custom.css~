@@ -3,8 +3,53 @@
 
 
 body{
-	background-color: #867970;
+
 }
 .container{
  background: -webkit-linear-gradient(top,  #efefef 0%,#ffffff 100%);
 }
+
+.notification-container {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  top: 15px;
+  left: 15px;
+}
+.notification-container i {
+  color: #fff;
+}
+
+.notification-counter {
+  position: absolute;
+  top: -2px;
+  left: 12px;
+  background-color: #d4130d;
+  color: #fff;
+  border-radius: 3px;
+  padding: 1px 3px;
+  font: 8px Verdana;
+}
+
+body {
+  font-family: Arial;
+ background: -webkit-linear-gradient(top,  #efefef 0%,#ffffff 100%);
+}
+
+ul {
+  background: #000;
+  width: 100%;
+  height: 50px;
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fake-notification {
+  font: 10px Arial;
+  margin-top: 50px;
+}
+

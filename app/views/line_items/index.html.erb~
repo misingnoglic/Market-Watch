@@ -39,10 +39,11 @@
 <table class="table table-striped"> 
   <thead> 
     <tr> 
-      <th> Name<br><%= link_to "▲", :sort => "sort_by_stock_name_asc" %> <%= link_to "▼", :sort => "sort_by_stock_name_desc" %> </th> 
+      <th> Logo<br><%= link_to "▲", :sort => "sort_by_stock_name_asc" %> <%= link_to "▼", :sort => "sort_by_stock_name_desc" %> </th> 
       <th> Ticker<br> <%= link_to "▲", :sort => "sort_by_stock_symbol_asc" %> <%= link_to "▼", :sort => "sort_by_stock_symbol_desc" %></th> 
-      <th> Price<br> <%= link_to "▲", :sort => "sort_by_last_trade_price_asc" %><%= link_to "▼", :sort => "sort_by_last_trade_price_desc" %></th> 
-      <th> Amount<br> <%= link_to "▲", :sort => "number_shares_asc" %><%= link_to "▼", :sort => "number_shares_desc" %></th> 
+      <th> Price<br> <%= link_to "▲", :sort => "sort_by_last_trade_price_asc" %><%= link_to "▼", :sort => "sort_by_last_trade_price_desc" %></th>
+      <th> Daily Percent Change <br> <%= link_to "▲", :sort => "sort_by_last_trade_price_asc" %><%= link_to "▼", :sort => "sort_by_last_trade_price_desc" %></th>
+      <th> Amount<br> <%= link_to "▲", :sort => "number_shares_asc" %><%= link_to "▼", :sort => "number_shares_desc" %></th>
       <th> Sentiment<br> <%= link_to "▲", :sort => "sentiment_score_asc" %><%= link_to "▼", :sort => "sentiment_score_desc" %></th> 
       <th>Graph</th> 
       <th>RSS News Feed</th>
@@ -57,7 +58,8 @@
       <tr> 
         <td><img src = "<%= item.stock.get_image_by_symbol %>" width = 50 height= 50> </td> 
         <td><%= item.stock.stock_symbol %></td> 
-        <td><%= item.stock.price %></td>    
+        <td><%= item.stock.price %></td>
+        <td><%= "#{((1-(item.stock.price / item.stock.open_price))*100).round(2)}%" %></td>
         <td><%= item.number_shares %></td> 
         <td><%= item.stock.sentiment_score %></td> 
         <td> <%= render partial: 'smallchart' , locals: {stock_symbol: item.stock.stock_symbol} %> <br> <%= link_to 'Show', item %> </td>

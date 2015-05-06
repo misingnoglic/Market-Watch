@@ -20,6 +20,10 @@ body{
   color: #fff;
 }
 
+table {
+ background: -webkit-linear-gradient(top,  #efefef 0%,#ffffff 100%);
+}
+
 .notification-counter {
   position: absolute;
   top: -2px;
@@ -33,6 +37,7 @@ body{
 
 body {
   font-family: Arial;
+ background: -webkit-linear-gradient(top,  #efefef 0%,#ffffff 100%);
 }
 
 ul {
