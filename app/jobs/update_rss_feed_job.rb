@@ -1,18 +1,17 @@
 require 'feedjira'
-require 'update_feed'
 
 class UpdateFeedJob
 
 	include SuckerPunch::Job
 
 	def perform(data)
-		::UpdateFeed.update
-		UpdateFeedJob.new.async.later(1800,"asdf") 
+		FeedEntry.update_from_feed
+		UpdateFeedJob.new.async.later(60,"asdf") 
 	end
 
 
 
-	def later(sec,data)
+	def later(sec,feed)
 		after(sec) { perform(data) }
 	end
 
