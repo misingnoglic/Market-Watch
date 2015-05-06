@@ -30,7 +30,7 @@
      channel.bind('client-new_message', function(data) {
 $(document).ready(function() {
 val = document.getElementById('no').innerHTML;
-val = parsInt(val) + 1;
+val = parseInt(val) + 1;
 val +=1 ;
 document.getElementById('no').innerHTML  = val.toString();
 
