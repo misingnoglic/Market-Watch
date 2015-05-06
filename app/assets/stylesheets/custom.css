@@ -1,5 +1,15 @@
 
+.positive{
+  color: green ;
+}
 
+.negative{
+  color: red;
+}
+
+.neutral{
+  color: blue;
+}
 
 
 body{

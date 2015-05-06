@@ -31,8 +31,16 @@
                 <%= time_ago_in_words tweet.tweeted_at %> ago
             </div>
         </div>
-        <div><%=tweet.sentiment_score %></div>
-        <div><%= tweet.sentiment%></div>
+        <br>
+        <div>STOCK:<%=tweet.stock.stock_name %>  </div>
+        <%if tweet.sentiment_score>0%>
+          <div class= 'positive'>  SENTIMENT:<%=tweet.sentiment_score %>, <%= tweet.sentiment%>
+        <%elsif tweet.sentiment_score<0%>
+          <div class= 'negative'>  SENTIMENT:<%=tweet.sentiment_score %>, <%= tweet.sentiment%>
+          <%else%>
+          <div class= 'neutral'>  SENTIMENT:<%=tweet.sentiment_score %>, <%= tweet.sentiment%>
+        <%end%>
+        
         
    </div>
 </div>
