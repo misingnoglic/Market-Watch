@@ -3,7 +3,7 @@ class SentimentRule < Rule
 
 
 	def checkTrigger
-        if self.compare_type = "greater"
+      
             if target <= stock.sentiment_score  #should the comparator be a seperate function to prevent seperate class for each for >, >= <= etc ??? 
                 if canfire? 
                 myobj = Rule.find(self.id)
@@ -14,7 +14,7 @@ class SentimentRule < Rule
                 #RuleMailer.sample_email(self).deliver_now
                 end
             end
-        else
+      
             if target >= stock.sentiment_score  #should the comparator be a seperate function to prevent seperate class for each for >, >= <= etc ??? 
                 if canfire? 
                 myobj = Rule.find(self.id)
@@ -25,7 +25,7 @@ class SentimentRule < Rule
                 #RuleMailer.sample_email(self).deliver_now
                 end
             end 
-        end
+       
 	end
      
     def target
