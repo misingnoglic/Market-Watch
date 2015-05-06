@@ -6,7 +6,7 @@
 
     //google.setOnLoadCallback(drawChart);
     function drawChart() {
-        var data = google.visualization.arrayToDataTable(<%= raw rule.create_chart %>);
+        var data = google.visualization.arrayToDataTable(<%= raw multi_create_chart @line_item.stock.stock_symbol %>);
 
         var options = {
             title: 'Stock Graph',

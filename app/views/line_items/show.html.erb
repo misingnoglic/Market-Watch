@@ -13,9 +13,6 @@
 </p>
 
 
-<% @rules.each do |rule| %>
-  <%= render partial: 'bigchart', locals: {rule: rule} %>
- <div id="chart_div" style="width: 900px; height: 500px"></div>
-<% end %>
-
+<%= render partial: 'bigchart' %>
+<div id="chart_div" style="width: 900px; height: 500px"></div>
 

@@ -58,12 +58,12 @@ class Chart < ActiveRecord::Base
     return JSON.generate(old_chart)
   end
 
-  def multi_create_chart(stock_symbol)
+  def self.multi_create_chart(stock_symbol)
     old_chart = Chart.get_API_history_json(stock_symbol, 7)
     list = []
     Rule.all.each do |rule |
       if rule.stock.stock_symbol == stock_symbol
-        list += rule
+        list += [rule]
       end
     end
     
