@@ -38,19 +38,23 @@ class Stock < ActiveRecord::Base
     prices[self.stock_symbol.upcase].lastTrade
   end
 
-  def get_image_by_symbol
-    name = YahooFinance::get_quotes( YahooFinance::StandardQuote, self.stock_symbol.upcase )[self.stock_symbol.upcase].name.gsub(" ","+")
-    content = open("http://api.duckduckgo.com/?q=#{name}&format=json").read
-    json = JSON.parse(content)
-    image = json['Image']
-    if image.length < 5
-      content = open("http://api.duckduckgo.com/?q=#{self.stock_symbol.upcase}&format=json").read
-      json = JSON.parse(content)
-      image = json['Image']
-    end
-    return image
-  end
-
+def get_image_by_symbol
+   begin
+     name = YahooFinance::get_quotes( YahooFinance::StandardQuote, self.stock_symbol.upcase )[self.stock_symbol.upcase].name.gsub(" ","+")
+     content = open("http://api.duckduckgo.com/?q=#{name}&format=json").read
+     json = JSON.parse(content)
+     image = json['Image']
+     if image.length < 5
+       content = open("http://api.duckduckgo.com/?q=#{self.stock_symbol.upcase}&format=json").read
+       json = JSON.parse(content)
+       image = json['Image']
+     end
+     return image
+   rescue
+     return ""
+   end
+   
+ end
 
   def historical_price(days_ago)
     (YahooFinance::get_historical_quotes_days( self.stock_symbol, days_ago ).last.last.to_f)

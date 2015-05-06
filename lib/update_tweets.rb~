@@ -4,7 +4,6 @@ require 'sentimental'
 class UpdateTweets
 
   def self.update 
-    begin 
     @client = Twitter::REST::Client.new do |config|
         config.consumer_key        = "UwWwQ9SG3zL9kpi7PsTRMRNLI"
         config.consumer_secret     = "0FWAqiWafcDcE9uY8lfNW7JLJRsf7aLgHUedUruLP8Dmhy45FR"
@@ -34,9 +33,6 @@ class UpdateTweets
       StockHistory.create(:stock_symbol => stock.stock_symbol, :last_trade_price => stock.price, :sentiment_score => sentiment_score)
 		end
 
-  end
-  rescue 
-    ""
   end
 
 

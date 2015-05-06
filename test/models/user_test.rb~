@@ -37,8 +37,8 @@ class UserTest < ActiveSupport::TestCase
     user.password_digest = "1234567"
     assert user.valid?
   end
-=begin
-   test "There cannot be less one available user" do
+
+  test "There cannot be less one available user" do
       user = User.new(user_name: "xxxxxx",
       email: "xxxxxx@gmail.com")
       user.password_digest = "123456"
@@ -51,6 +51,6 @@ class UserTest < ActiveSupport::TestCase
       
   end
    
-=end
+
   
 end 
