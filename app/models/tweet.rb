@@ -5,10 +5,10 @@ class Tweet < ActiveRecord::Base
   		if search
   			stock = Stock.find_by_stock_symbol(search)
   			if stock != nil
-  				where(:stock_id => stock.id)
+  				where(:stock_id => stock.id).order('tweeted_at DESC')
   			end
   		else
-    		all
+    		all.order('tweeted_at DESC')
   		end
 	end
 
