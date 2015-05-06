@@ -1,8 +1,7 @@
 require 'feedjira'
 require 'update_rss_feed_job'
 
-
-FeedEntry.get_feed
+FeedEntry.new.get_feed
 
 ::UpdateFeedJob.new.async.perform("asdf")
 
