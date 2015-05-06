@@ -22,7 +22,7 @@
 <%- model_class = Portfolio -%>
 <div class="page-header"> 
   <% user = current_user %> 
-  <h3> Welcome <%= user.user_name %> </h3> 
+  <h3>Hi <%= user.user_name %> !</h3> 
   <h4><b>Portfolio Value: </b>$ <%= @current_value.round(2) %></h4>
 </div>
 
