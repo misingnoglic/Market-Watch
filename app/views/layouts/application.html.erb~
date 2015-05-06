@@ -27,7 +27,7 @@
 
 <body   class="metro">
 
-<div class="container">
+<div class="grid padding10">
 <nav class="navigation-bar dark">
 <nav class="navigation-bar-content">
 
@@ -103,16 +103,14 @@
 
 </nav>
 </nav>
+
+
+
+      <%= yield %>
+      
+
+
 </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="span9"><%= yield %></div>
-      <div class="span3">
-      </div>
-    </div>
-  </div>
-
 
 </body>
 </html>

@@ -18,7 +18,7 @@
     }
 </script>
 
-<div class="container">
+
 <%- model_class = Portfolio -%>
 <div class="page-header"> 
   <% user = current_user %> 
@@ -26,7 +26,9 @@
   <h4><b>Portfolio Value: </b>$ <%= @current_value.round(2) %></h4>
 </div>
 
-<div>
+
+<div class = "row cells12" >
+  <div class = "cell colspan9 "> 
 <%= form_tag(line_items_path, method: "create") do %>  
   <%= label_tag(:stock, "Stock Symbol:") %> 
   <%= text_field_tag(:stock_symbol) %> 
@@ -34,7 +36,11 @@
   <%= text_field_tag(:number_shares) %> 
   <%= submit_tag("Add Investment") %> 
 <% end %> 
+  </div>
+
+<div id="piechart" class = "cell  colspan3 place-right" style="width: 400px; height: 300px;" ></div>
 </div>
+
 
 <table class="table table-striped"> 
   <thead> 
@@ -93,9 +99,9 @@
   </tbody> 
 </table>
 
-<div id="piechart" style="width: 300px; height: 250px;"></div>
 
 
-</div>
+
+
 
  

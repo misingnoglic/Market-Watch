@@ -27,7 +27,7 @@
 
 <body   class="metro">
 
-<div class="container">
+<div class="grid padding15">
 <nav class="navigation-bar dark">
 <nav class="navigation-bar-content">
 
@@ -58,7 +58,7 @@
   <%= link_to  notifications_path,  class: "element notification-conainer" do %> 
 
   <i class="fa fa-exclamation-triangle "> Alerts </i>
-   <div id= "no" class="notification-counter">1</div>
+   <div class="notification-counter">1</div>
 
   <% end %>
   <span class="element-divider"></span>
@@ -103,16 +103,14 @@
 
 </nav>
 </nav>
+
+
+
+      <%= yield %>
+      
+
+
 </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="span9"><%= yield %></div>
-      <div class="span3">
-      </div>
-    </div>
-  </div>
-
 
 </body>
 </html>
