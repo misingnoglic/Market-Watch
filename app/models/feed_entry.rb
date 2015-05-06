@@ -6,8 +6,8 @@ class FeedEntry < ActiveRecord::Base
 	belongs_to :stock
 
       def self.get_feed
-    stocks = Stock.all
-    stocks.each do |stock|
+    @stocks = Stock.all
+    @stocks.each do |stock|
       stock_symbol = stock.stock_symbol
       feed_url = "http://finance.yahoo.com/rss/headline?s=#{stock_symbol}"
       feed = Feedjira::Feed.fetch_and_parse(feed_url)
