@@ -53,7 +53,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :get_image_by_symbol
   helper_method :get_API_history_json
-  helper_method :create_chart
+  helper_method :create_chart 
+  helper_method :multi_create_chart
+   
 
 
 end

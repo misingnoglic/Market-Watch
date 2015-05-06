@@ -1,6 +1,7 @@
 require 'yahoofinance'
 require 'json'
 require 'open-uri'
+require 'slack-notify'
 
 class Chart < ActiveRecord::Base
 
@@ -25,6 +26,8 @@ class Chart < ActiveRecord::Base
 
  # gets raw api data for price_history
   def self.get_API_history_json (stock_symbol, days_ago)
+
+
     prices = (YahooFinance::get_historical_quotes_days( stock_symbol, days_ago ))
     returned_list = []
     prices.each do |price_list|
@@ -55,6 +58,24 @@ class Chart < ActiveRecord::Base
     return JSON.generate(old_chart)
   end
 
+  def multi_create_chart(stock_symbol)
+    old_chart = Chart.get_API_history_json(stock_symbol, 7)
+    list = []
+    Rule.all.each do |rule |
+      if rule.stock.stock_symbol == stock_symbol
+        list += rule
+      end
+    end
+    
+    list.each do |rule|
+      old_chart= add_target_to_json(old_chart,rule.target,"Target")
+    end 
+    return old_chart
+  end
+    
+          
+  end
+
 =begin
   def self.create_target_price_chart (stock_symbol, user_id, )
     id = Stock.where(stock_symbol: stock_symbol)[0].id
@@ -72,7 +93,7 @@ class Chart < ActiveRecord::Base
     acc = [["Stock Name","Value"]]
     portfolio.line_items.each do |item|
       stock = Stock.find(item.stock_id)
-      Rails.logger.debug "#{stock.stock_symbol} === #{stock.last_trade_price} ---- #{item.number_shares}"
+      Rails.logger.debug "ZOOFOO - #{stock.stock_symbol} === #{stock.last_trade_price} ---- #{item.number_shares}"
       acc.append([stock.stock_symbol, stock.last_trade_price*item.number_shares])
     end
     return JSON.generate(acc)

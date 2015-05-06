@@ -58,6 +58,24 @@ class Chart < ActiveRecord::Base
     return JSON.generate(old_chart)
   end
 
+  def multi_create_chart(stock_symbol)
+    old_chart = Chart.get_API_history_json(stock_symbol, 7)
+    list = []
+    Rule.all.each do |rule |
+      if rule.stock.stock_symbol == stock_symbol
+        list += rule
+      end
+    end
+    
+    list.each do |rule|
+      old_chart= add_target_to_json(old_chart,rule.target,"Target")
+    end 
+    return old_chart
+  end
+    
+          
+  end
+
 =begin
   def self.create_target_price_chart (stock_symbol, user_id, )
     id = Stock.where(stock_symbol: stock_symbol)[0].id

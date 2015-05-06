@@ -43,6 +43,10 @@ class ApplicationController < ActionController::Base
           target= rule.target
    return Chart.add_target_to_json(old_chart,target, label)
  end 
+ 
+ def multi_create_chart(stock_symbol)
+   Chart.multi_create_chart(stock_symbol)
+ end
 
 
   def stock_params (params)
@@ -53,7 +57,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :get_image_by_symbol
   helper_method :get_API_history_json
-  helper_method :create_chart
+  helper_method :create_chart 
+  helper_method :multi_create_chart
+   
 
 
 end
