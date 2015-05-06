@@ -29,8 +29,10 @@
 
      channel.bind('client-new_message', function(data) {
 $(document).ready(function() {
-val = document.getElementById('notification-counter').text.parseInt();
+val = document.getElementById('no').innerHTML;
+val = parseInt(val) + 1;
 val +=1 ;
+document.getElementById('no').innerHTML  = val.toString();
 
 
 
