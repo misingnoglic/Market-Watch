@@ -58,7 +58,7 @@ class UsersController < ApplicationController
              Rails.logger.debug "android #{params.inspect}"
              Rails.logger.debug "iphone #{@user.settings(:frequency).time } +++++ #{params[:user][:time]}"
         Rails.logger.debug "time123 = #{@user.settings(:frequency).time}"
-        format.html { redirect_to users_url, notice: "User #{@user.user_name} was successfully updated." }
+        format.html { redirect_to line_items_url, notice: "User #{@user.user_name} was successfully updated." }
       else
         format.html { render action: "edit" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
