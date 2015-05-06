@@ -8,7 +8,7 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
-    @tweets = Tweet.search(params[:search])
+    @tweets = Tweet.search(params[:search]).order(:tweeted_at)
   end
 
   # GET /tweets/1
@@ -73,6 +73,6 @@ class TweetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tweet_params
-      params.require(:tweet).permit(:screen_name, :content, :sentiment, :sentiment_score, :stock_id)
+      params.require(:tweet).permit(:screen_name, :content, :sentiment, :sentiment_score, :stock_id, :tweeted_at)
     end
 end

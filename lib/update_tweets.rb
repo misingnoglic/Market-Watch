@@ -23,8 +23,8 @@ class UpdateTweets
 				  :content => tweet.text,
           :sentiment => (analyzer.get_sentiment tweet.text),
           :sentiment_score => (analyzer.get_score tweet.text),
-				  :stock_id => stock.id
-          
+				  :stock_id => stock.id,
+          :tweeted_at => tweet.created_at
 			   )
 
 			end
