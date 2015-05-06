@@ -3,7 +3,7 @@ class Rule < ActiveRecord::Base
 	belongs_to :user
     has_many :notifications
 	accepts_nested_attributes_for :stock
-        has_one :chart
+
 
 
 	validates :user, presence: true, length: { minimum: 1 }
@@ -51,8 +51,10 @@ class Rule < ActiveRecord::Base
      
         # returns string that can be used for notification, override when necessary
         def message
-           return " has reached the price of "
+           
         end
+
+
        
         
         

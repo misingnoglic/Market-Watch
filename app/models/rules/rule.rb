@@ -22,7 +22,7 @@ class Rule < ActiveRecord::Base
         end
 
         def canfire?
-          if (self.last_fired.to_i- Time.now.to_i).abs >= self.user.settings(:frequency).time
+          if (self.last_fired.to_i- Time.now.to_i).abs >= self.user.settings(:frequency).time.to_i
             Rails.logger.debug "jootrue #{(self.last_fired.to_i- Time.now.to_i)}"
                         Rails.logger.debug "jooxyz #{self.last_fired.to_i}"
             return true
