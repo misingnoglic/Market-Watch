@@ -1,13 +1,9 @@
 class LastPriceRule < Rule
 
 	def checkTrigger
-<<<<<<< HEAD
-                        Rails.logger.debug "if reach --- #{self.compare_type}"
           if self.compare_type == "greater"
             Rails.logger.debug "if reach7"
-=======
-          if self.compare_type == "greater"
->>>>>>> 1f2a5c1421f498216436d05098565fc916c2864d
+
             if target <= stock.last_trade_price  #should the comparator be a seperate function to prevent seperate class for each for >, >= <= etc ??? 
               if canfire? 
                         Rails.logger.debug "if reach2"
@@ -16,7 +12,6 @@ class LastPriceRule < Rule
               myobj.save!
               Rails.logger.debug "goo #{myobj.attributes.inspect}"
               notification = self.notifications.create
-              RuleMailer.sample_email(self).deliver_now
               end
             end
           else 
@@ -28,7 +23,6 @@ class LastPriceRule < Rule
               myobj.save!
               Rails.logger.debug "goo #{myobj.attributes.inspect}"
               notification = self.notifications.create
-              RuleMailer.sample_email(self).deliver_now
               end
             end
           end

@@ -12,7 +12,6 @@ class LastPriceRule < Rule
               myobj.save!
               Rails.logger.debug "goo #{myobj.attributes.inspect}"
               notification = self.notifications.create
-              RuleMailer.sample_email(self).deliver_now
               end
             end
           else 
@@ -24,7 +23,6 @@ class LastPriceRule < Rule
               myobj.save!
               Rails.logger.debug "goo #{myobj.attributes.inspect}"
               notification = self.notifications.create
-              RuleMailer.sample_email(self).deliver_now
               end
             end
           end
