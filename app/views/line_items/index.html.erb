@@ -67,7 +67,13 @@
         <td><%= item.stock.price %></td>
         <td><%= "#{((1-(item.stock.price / item.stock.open_price))*100).round(2)}%" %></td>
         <td><%= item.number_shares %></td> 
-        <td><%= item.stock.sentiment_score %></td> 
+        <%if item.stock.sentiment_score > 0%>
+          <td class='positive'><%= item.stock.sentiment_score %></td> 
+         <% elsif item.stock.sentiment_score < 0%> 
+          <td class='negative'><%= item.stock.sentiment_score %></td> 
+        <%else%>
+          <td class='neutral'><%= item.stock.sentiment_score %></td> 
+        <%end%>
         <td> <%= render partial: 'smallchart' , locals: {stock_symbol: item.stock.stock_symbol} %> <br> <%= link_to 'Show', item %> </td>
         
           <td class="col-md-3">
