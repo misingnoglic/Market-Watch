@@ -24,13 +24,13 @@
 
       $(function() {
 var val = 0;
- document.getElementById('no').innerHTML = val.toString();
+ document.getElementById('no').innerHTML = "";
             var pusher = new Pusher('b79e3ab119cc8a15cad7'); // Replace with your app key
     	    var channel = pusher.subscribe('private-'+<%= current_user.id.to_s if current_user %>);
 
      channel.bind('client-new_message', function(data) {
 $(document).ready(function() {
-val = document.getElementById('no').innerHTML;
+document.getElementById('no').innerHTML = val;
 val = parseInt(val) + 1;
 val +=1 ;
 document.getElementById('no').innerHTML  = val.toString();
