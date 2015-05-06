@@ -1,14 +1,16 @@
-<% user = current_user %> 
-  <h3> Hi <%= user.user_name %> !</h3> 
 
 
+<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Stock:</strong>
-  <%= @line_item.stock.stock_name %>
+  <%= @line_item.stock_id %>
 </p>
 
-
+<p>
+  <strong>Portfolio:</strong>
+  <%= @line_item.portfolio_id %>
+</p>
 
 
 <%= render partial: 'bigchart' %>

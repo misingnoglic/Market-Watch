@@ -22,7 +22,7 @@
 <%- model_class = Portfolio -%>
 <div class="page-header"> 
   <% user = current_user %> 
-  <h3>Hi <%= user.user_name %> !</h3> 
+  <h3> Welcome <%= user.user_name %> </h3> 
   <h4><b>Portfolio Value: </b>$ <%= @current_value.round(2) %></h4>
 </div>
 
@@ -67,25 +67,16 @@
         <td><%= item.stock.price %></td>
         <td><%= "#{((1-(item.stock.price / item.stock.open_price))*100).round(2)}%" %></td>
         <td><%= item.number_shares %></td> 
-
-        <%if item.stock.sentiment_score > 0%>
-          <td class='positive'><%= item.stock.sentiment_score %></td> 
-         <% elsif item.stock.sentiment_score < 0%> 
-          <td class='negative'><%= item.stock.sentiment_score %></td> 
-        <%else%>
-          <td class='neutral'><%= item.stock.sentiment_score %></td> 
-        <%end%>
-
+        <td><%= item.stock.sentiment_score %></td> 
         <td> <%= render partial: 'smallchart' , locals: {stock_symbol: item.stock.stock_symbol} %> <br> <%= link_to 'Show', item %> </td>
         
           <td class="col-md-3">
           <%@feed.where(:stock_id => item.stock.id).order(published_at: :desc).limit(3).each do |item|%> 
-         <li> <small> <%=   item.title %><br>  
+         <li> <small> <%=   item.title %><br>  </small> 
         
-              <%link = item.link.split("/*")[1]%>
-              <%=raw display_content_with_links(link) %> <br>
+             
 
-             <i>(<%=   time_ago_in_words item.published_at %> ago)</i>  </small> 
+             <small> <i>(<%=   time_ago_in_words item.published_at %> ago)</i>  </small> 
          </li>  
           <%end%>
         </td>
