@@ -28,7 +28,7 @@
               <%=raw display_content_with_links(tweet.content) %>
             </div>
             <div class="tweet_created_at">
-                <%= time_ago_in_words Time.now %> ago
+                <%= time_ago_in_words tweet.tweeted_at %> ago
             </div>
         </div>
         <div><%=tweet.sentiment_score %></div>
