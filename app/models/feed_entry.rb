@@ -4,6 +4,16 @@ require 'feedjira'
 class FeedEntry < ActiveRecord::Base
 
 	belongs_to :stock
+
+      def self.get_feed
+    stocks = Stock.all
+    stocks.each do |stock|
+      stock_symbol = stock.stock_symbol
+      feed_url = "http://finance.yahoo.com/rss/headline?s=#{stock_symbol}"
+      feed = Feedjira::Feed.fetch_and_parse(feed_url)
+        add_entries(feed.entries, stock.id)
+      end
+    end
   
   	def self.update_from_feed
   		stocks = Stock.all
