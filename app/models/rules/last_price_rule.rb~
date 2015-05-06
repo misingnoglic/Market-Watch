@@ -12,10 +12,7 @@ class LastPriceRule < Rule
               myobj.save!
               Rails.logger.debug "goo #{myobj.attributes.inspect}"
               notification = self.notifications.create
-<<<<<<< HEAD
-=======
-              #RuleMailer.sample_email(self).deliver_now
->>>>>>> c4bee10290156d0126237581c0a9c1a0e0caae82
+
               end
             end
           else 
@@ -27,10 +24,7 @@ class LastPriceRule < Rule
               myobj.save!
               Rails.logger.debug "goo #{myobj.attributes.inspect}"
               notification = self.notifications.create
-<<<<<<< HEAD
-=======
-              #RuleMailer.sample_email(self).deliver_now
->>>>>>> c4bee10290156d0126237581c0a9c1a0e0caae82
+
               end
             end
           end
@@ -42,11 +36,7 @@ class LastPriceRule < Rule
         end
         
 
-        def create_chart 
-          target= self.target
-          stock_symbol = self.stock.stock_symbol
-          return Chart.add_target_to_json(Chart.get_price_history_json(stock_symbol),target, "Target Price")
-        end 
+   
 
         def message
             if target <= stock.last_trade_price

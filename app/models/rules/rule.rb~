@@ -22,7 +22,7 @@ class Rule < ActiveRecord::Base
         end
 
         def canfire?
-          if (self.last_fired.to_i- Time.now.to_i).abs >= self.user.settings(:frequency).time
+          if (self.last_fired.to_i- Time.now.to_i).abs >= self.user.settings(:frequency).time.to_i
             Rails.logger.debug "jootrue #{(self.last_fired.to_i- Time.now.to_i)}"
                         Rails.logger.debug "jooxyz #{self.last_fired.to_i}"
             return true
@@ -46,7 +46,11 @@ class Rule < ActiveRecord::Base
         def get_time
           self.lastfired
         end
-
+        def self.create_chart (old_chart, rule, label)
+          rule = Rule.find(rule)
+          target= rule.target
+          return Chart.add_target_to_json(old_chart,target, label)
+        end 
         
      
         # returns string that can be used for notification, override when necessary

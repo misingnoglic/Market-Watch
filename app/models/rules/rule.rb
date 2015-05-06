@@ -47,6 +47,11 @@ class Rule < ActiveRecord::Base
           self.lastfired
         end
 
+        def self.create_chart (old_chart, rule, label)
+          rule = Rule.find(rule)
+          target= rule.target
+          return Chart.add_target_to_json(old_chart,target, label)
+        end 
         
      
         # returns string that can be used for notification, override when necessary

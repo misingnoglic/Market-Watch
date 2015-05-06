@@ -34,6 +34,16 @@ class ApplicationController < ActionController::Base
    stock.get_image_by_symbol
  end
  
+ def get_API_history_json (stock_symbol, days_ago)
+   Chart.get_API_history_json (stock_symbol, days_ago)
+ end
+
+ def self.create_chart (old_chart, rule, label)
+          rule = Rule.find(rule)
+          target= rule.target
+   return Chart.add_target_to_json(old_chart,target, label)
+ end 
+
 
   def stock_params (params)
     params.require(:stock).permit(:stock_name, :stock_symbol, :last_trade_price, :percent_change)
@@ -42,6 +52,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_portfolio
   helper_method :current_user
   helper_method :get_image_by_symbol
+  helper_method :get_API_history_json
+  helper_method :create_chart
 
 
 end
