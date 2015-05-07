@@ -7,10 +7,9 @@ Rails.application.configure do
 
 
 
-Pusher.app_id = '116280'
-Pusher.key = 'b79e3ab119cc8a15cad7'
-Pusher.secret = '92e0818e5ee7fd65db97'
-
+Pusher.app_id = '118993'
+Pusher.key    = 'c2ff1bcd4d8193739f46'
+Pusher.secret = '332eaf96dc0a9db08f26'
 
   # Settings specified here will take precedence over those in config/application.rb.
 
