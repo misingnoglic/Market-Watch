@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :stock_histories
 
-  get '', to: redirect('/portfolios/1')
+  get '', to: redirect('/line_items')
   
   resources :tweets
 
