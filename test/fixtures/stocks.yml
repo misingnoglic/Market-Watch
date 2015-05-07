@@ -5,3 +5,9 @@ Google:
   stock_symbol: GOOG
   last_trade_price:  400
 
+
+one:
+  stock_name: APPLE
+  stock_symbol: AAPL
+  last_trade_price:  200
+

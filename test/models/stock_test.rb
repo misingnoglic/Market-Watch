@@ -6,4 +6,9 @@ class StockTest < ActiveSupport::TestCase
      
   assert_equal 'GOOG', stocks(:Google).stock_symbol
   end
+
+  test 'stock created with a valid stock symbol' do
+     
+  assert_equal 'AAPL', stocks(:one).stock_symbol
+  end
 end
