@@ -1,8 +1,47 @@
-== README ==
+Presentation about project: https://docs.google.com/presentation/d/1GnuKy3RHoFy4bzSA7qmvgtI5-XvqEJcerau3qYhhCzI/edit?usp=sharing
+
+Market Watch: Get real time custom stock market notifications
+
+Team Members: Arya Boudaie, Shraddha Basnyat, Subahu Rayamajhi, Daniel Fiterman
+
+[img1](http://i.imgur.com/JYl2z9j.png)
+[img2](http://i.imgur.com/fPo2lhl.png)
+[img3](http://i.imgur.com/gdwlikj.png)
+[img4](http://i.imgur.com/bqgYiSJ.png)
+[img5](http://i.imgur.com/RtiL0W7.png)
+[img6](http://i.imgur.com/oZYnUDO.png)
+[img7](http://i.imgur.com/Kr8Ux6G.png)
+[img8](http://i.imgur.com/iSw4wsH.png)
+[img9](http://i.imgur.com/v9e23Rb.png)
+
+What's happening in the financial markets? Monitor your portfolio and get real time alerts on quantitative data(last trade price) and qualitative data through twitter sentiment analysis.
+
+Audience:
+* Advanced amateur investors, someone who knows what’s going but does not do this full-time
+* People who don’t have time to constantly check the news/market prices.
+
+Features:
+* Manage/track portfolio
+* Sentiment analysis of Tweets
+* Get alerts based on custom rules for the stocks
+ * Rules based on last trade price and twitter sentiment
+ * View custom stock graphs based on your portfolio, stocks, and rules
+* RSS news feed 
+
+Technologies Used:
+* Ruby on Rails Framework
+* Yahoo Finance API
+* Twitter API
+* Google Charts
+* Suckerpunch background processing
+* Pusher, Actionmailer and Slack notifications
+
+
+
 Now running on codeship!
+
 ![badge](https://codeship.com/projects/1a2def90-c4f3-0132-ed41-32942c6ecf59/status?branch=master)
 
-=end
 Directions for running project:
 
 1. Simply clone the git repo (make sure rails and ruby are installed)
