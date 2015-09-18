@@ -4,15 +4,15 @@ Market Watch: Get real time custom stock market notifications
 
 Team Members: Arya Boudaie, Shraddha Basnyat, Subahu Rayamajhi, Daniel Fiterman
 
-[img1](http://i.imgur.com/JYl2z9j.png)
-[img2](http://i.imgur.com/fPo2lhl.png)
-[img3](http://i.imgur.com/gdwlikj.png)
-[img4](http://i.imgur.com/bqgYiSJ.png)
-[img5](http://i.imgur.com/RtiL0W7.png)
-[img6](http://i.imgur.com/oZYnUDO.png)
-[img7](http://i.imgur.com/Kr8Ux6G.png)
-[img8](http://i.imgur.com/iSw4wsH.png)
-[img9](http://i.imgur.com/v9e23Rb.png)
+![img1](http://i.imgur.com/JYl2z9j.png)
+![img2](http://i.imgur.com/fPo2lhl.png)
+![img3](http://i.imgur.com/gdwlikj.png)
+![img4](http://i.imgur.com/bqgYiSJ.png)
+![img5](http://i.imgur.com/RtiL0W7.png)
+![img6](http://i.imgur.com/oZYnUDO.png)
+![img7](http://i.imgur.com/Kr8Ux6G.png)
+![img8](http://i.imgur.com/iSw4wsH.png)
+![img9](http://i.imgur.com/v9e23Rb.png)
 
 What's happening in the financial markets? Monitor your portfolio and get real time alerts on quantitative data(last trade price) and qualitative data through twitter sentiment analysis.
 
